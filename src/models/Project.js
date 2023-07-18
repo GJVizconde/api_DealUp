@@ -38,20 +38,17 @@ module.export = (sequelize) => {
             allowNull: false
         },
         gallery: {
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            allowNull: true
         },
         category: {
-            type: DataTypes.STRING,
+            type: DataTypes.ARRAY(DataTypes.STRING),
             allowNull: false
         },
         status: {
             type: DataTypes.STRING,
-            allowNull: false
-        },
-        created: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: true,
+            allowNull: false,
+            defaultValue: false
         }
     },
     { timestamps: false }
