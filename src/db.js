@@ -6,7 +6,7 @@ const UserModel = require('./models/User');
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/ideatingdb`,
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/dealupdb`,
   {
     logging: false,
     native: false,
