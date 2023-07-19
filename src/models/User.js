@@ -15,17 +15,47 @@ module.exports = (sequelize) => {
       },
       email: {
         type: DataTypes.STRING,
+        allowNull: false,
         unique: true,
+      },
+      rol: {
+        type: DataTypes.ENUM('user', 'moderator', 'admin'),
+        defaultValue: 'user',
+        allowNull: false,
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      gender: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      birthdate: {
+        type: DataTypes.STRING,
+        allowNull: false,
       },
       phone: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      created: {
+      country: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      avatar: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      status: {
         type: DataTypes.BOOLEAN,
         defaultValue: true,
       },
+      thirdPartycreated: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+      },
     },
-    { timestamps: false }
+    { timestamps: true }
   );
 };
