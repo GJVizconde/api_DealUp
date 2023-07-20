@@ -11,7 +11,8 @@ module.exports = (sequelize) => {
         },
         name: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            unique: true
         },
         description: {
             type: DataTypes.STRING,
@@ -42,13 +43,14 @@ module.exports = (sequelize) => {
             allowNull: true
         },
         category: {
-            type: DataTypes.ENUM('Art', 'Comics', 'Crafts', 'Dance', 'Design', 'Fashion', 'Film & Video', 'Food', 'Games', 'Journalism', 'Music', 'Photography', 'Publishing', 'Technology', 'Theater'),
+            type: DataTypes.ARRAY(DataTypes.ENUM('Art', 'Comics', 'Crafts', 'Dance', 'Design', 'Fashion', 'Film & Video', 'Food', 'Games', 'Journalism', 'Music', 'Photography', 'Publishing', 'Technology', 'Theater')),
             allowNull: false
         },
+      
         status: {
-            type: DataTypes.STRING,
+            type: DataTypes.ENUM('Inactive', 'Rejected', 'Pending', 'Active'),
             allowNull: false,
-            defaultValue: true
+            defaultValue: 'Pending'
         }
     },
     { timestamps: false }
