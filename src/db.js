@@ -2,11 +2,12 @@ const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
 const UserModel = require('./models/User');
+const ProjectModel = require('./models/Project');
 
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/ideatingdb`,
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/dealupdb`,
   {
     logging: false,
     native: false,
@@ -23,8 +24,9 @@ const sequelize = new Sequelize(
 // );
 
 UserModel(sequelize);
+ProjectModel(sequelize);
 
-const { User } = sequelize.models;
+const { User, Project } = sequelize.models;
 
 module.exports = {
   ...sequelize.models,

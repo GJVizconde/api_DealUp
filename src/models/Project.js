@@ -1,6 +1,6 @@
 const DataTypes = require ('sequelize');
 
-module.export = (sequelize) => {
+module.exports = (sequelize) => {
     sequelize.define('Project',
     {
 
@@ -18,15 +18,15 @@ module.export = (sequelize) => {
             allowNull: false
         },
         min_amount: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         max_amount: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         goal_amount: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         initial_date: {
@@ -42,15 +42,15 @@ module.export = (sequelize) => {
             allowNull: true
         },
         category: {
-            type: DataTypes.ARRAY(DataTypes.STRING),
+            type: DataTypes.ENUM('Art', 'Comics', 'Crafts', 'Dance', 'Design', 'Fashion', 'Film & Video', 'Food', 'Games', 'Journalism', 'Music', 'Photography', 'Publishing', 'Technology', 'Theater'),
             allowNull: false
         },
         status: {
             type: DataTypes.STRING,
             allowNull: false,
-            defaultValue: false
+            defaultValue: true
         }
     },
     { timestamps: false }
-    )
+    );
 };
