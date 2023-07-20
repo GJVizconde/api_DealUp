@@ -11,6 +11,9 @@ const sequelize = new Sequelize(
     logging: false,
     native: false,
     charset: 'utf8mb4',
+    define: {
+      validate: true,
+    },
   }
 );
 

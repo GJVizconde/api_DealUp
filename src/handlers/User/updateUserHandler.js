@@ -1,6 +1,7 @@
-const createNewUser = require('../../controllers/Users/createNewUser');
+const updateUser = require('../../controllers/User/updateUser');
 
-const createUserHandler = async (req, res) => {
+const updateUserHandler = async (req, res) => {
+  const { id } = req.params;
   const {
     name,
     email,
@@ -14,9 +15,9 @@ const createUserHandler = async (req, res) => {
     status,
     thirdPartyCreated,
   } = req.body;
-
   try {
-    const newUser = await createNewUser(
+    const result = await updateUser(
+      id,
       name,
       email,
       rol,
@@ -30,10 +31,10 @@ const createUserHandler = async (req, res) => {
       thirdPartyCreated
     );
 
-    res.status(201).json(newUser);
+    res.status(200).json({ message: 'Changes have been saved', result });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 };
 
-module.exports = createUserHandler;
+module.exports = updateUserHandler;
