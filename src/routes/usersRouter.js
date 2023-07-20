@@ -5,16 +5,22 @@ const getUserHandler = require('../handlers/User/getUserHandler');
 const updateUserHandler = require('../handlers/User/updateUserHandler');
 const deleteUserHandler = require('../handlers/User/deleteUserHandler');
 
+const {
+  validateCreateUser,
+  validateUpdateUser,
+  validateId,
+} = require('../middlewares/User/index');
+
 const usersRouter = Router();
 
 usersRouter.get('/', getUsersHandler);
 
-usersRouter.get('/:id', getUserHandler);
+usersRouter.get('/:id', validateId, getUserHandler);
 
-usersRouter.post('/', createUserHandler);
+usersRouter.post('/', validateCreateUser, createUserHandler);
 
-usersRouter.put('/:id', updateUserHandler);
+usersRouter.put('/:id', validateUpdateUser, updateUserHandler);
 
-usersRouter.delete('/:id', deleteUserHandler);
+usersRouter.delete('/:id', validateId, deleteUserHandler);
 
 module.exports = usersRouter;

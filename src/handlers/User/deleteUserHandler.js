@@ -1,6 +1,6 @@
 const deleteUser = require('../../controllers/User/deleteUser');
 
-deleteUserHandler = async (req, res) => {
+const deleteUserHandler = async (req, res) => {
   const { id } = req.params;
 
   console.log(id);

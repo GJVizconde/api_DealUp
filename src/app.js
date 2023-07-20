@@ -13,7 +13,7 @@ app.use(
     allowedHeaders: 'Content-Type, Authorization', // Especifica los encabezados permitidos
   })
 );
-
+// app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(cookieParser());
