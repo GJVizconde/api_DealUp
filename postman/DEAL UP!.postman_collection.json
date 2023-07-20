@@ -1,15 +1,43 @@
 {
 	"info": {
-		"_postman_id": "d1613f6a-4897-4afa-8f92-c9265e32dba4",
+		"_postman_id": "07bd91eb-eb8d-4e2b-914f-8e081f4c85a9",
 		"name": "DEAL UP!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "27477100",
-		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/28612822-d1613f6a-4897-4afa-8f92-c9265e32dba4?action=share&creator=27477100&source=collection_link"
+		"_collection_link": "https://www.postman.com/dealup/workspace/deal-up-public/collection/27477100-07bd91eb-eb8d-4e2b-914f-8e081f4c85a9?action=share&creator=27477100&source=collection_link"
 	},
 	"item": [
 		{
 			"name": "USER",
 			"item": [
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Daianeta\",\r\n    \"email\": \"daineta25@gmail.com\",\r\n    \"rol\": \"user\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"24/03/2000\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": \"true\",\r\n    \"thirdPartyCreated\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "getAllUsers",
 					"request": {
@@ -28,8 +56,103 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getUserByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/users?name=Dai",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Dai"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/users/b9d191a6-722d-42fa-8c91-f1e2381579f0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"b9d191a6-722d-42fa-8c91-f1e2381579f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Daianeta\",\r\n    \"email\": \"daineta25@gmail.com\",\r\n    \"rol\": \"user\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"24/03/2000\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": \"true\",\r\n    \"thirdPartyCreated\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/users/b9d191a6-722d-42fa-8c91-f1e2381579f0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"b9d191a6-722d-42fa-8c91-f1e2381579f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/users/b9d191a6-722d-42fa-8c91-f1e2381579f0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"b9d191a6-722d-42fa-8c91-f1e2381579f0"
+							]
+						}
+					},
+					"response": []
 				}
-			]
+			],
+			"description": "createUser: Crea un usuario;  \ngetAllUsers: Trae todos los usuarios;  \ngetUserByName: Busca el usuario por nombre por Query;  \ngetUserById: Buscar por usuario por Id.params  \nupdateUser: Actualiza datos del usuario con id params  \ndeleteUser: Elimina un usuario por id params"
 		},
 		{
 			"name": "PROJECT",
@@ -38,7 +161,10 @@
 					"name": "New Request",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				}

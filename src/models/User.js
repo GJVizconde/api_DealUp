@@ -37,7 +37,7 @@ module.exports = (sequelize) => {
       },
       phone: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       country: {
         type: DataTypes.STRING,
