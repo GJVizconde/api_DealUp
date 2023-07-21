@@ -1,5 +1,14 @@
-const validateCreateUser = (req, res, next) => {
+const alreadyExistsUser = require('../../controllers/User/alreadyExistsUser');
+
+const validateCreateUser = async (req, res, next) => {
   const { name, email, rol, birthdate } = req.body;
+
+  const validateAlreadyRegistered = await alreadyExistsUser(email);
+
+  if (validateAlreadyRegistered) {
+    return res.status(400).json({ error: validateAlreadyRegistered.message });
+  }
+
   if (!name) return res.status(400).json({ error: 'Missing name' });
   if (!email) return res.status(400).json({ error: 'Missing email' });
   if (!rol) return res.status(400).json({ error: 'Missing rol' });
@@ -11,6 +20,7 @@ const validateCreateUser = (req, res, next) => {
 const validateUpdateUser = (req, res, next) => {
   const { id } = req.params;
   const { name, email, rol, birthdate } = req.body;
+
   if (!id) return res.status(400).json({ error: 'Missing id' });
   if (!name) return res.status(400).json({ error: 'Missing name' });
   if (!email) return res.status(400).json({ error: 'Missing email' });
