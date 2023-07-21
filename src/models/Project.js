@@ -1,56 +1,85 @@
-const DataTypes = require ('sequelize');
+const DataTypes = require('sequelize');
 
 module.exports = (sequelize) => {
-    sequelize.define('Project',
+  sequelize.define(
+    'Project',
     {
-
-        id: {
-            type: DataTypes.UUID,
-            primaryKey : true,
-            defaultValue: DataTypes.UUIDV4,   
+      id: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        defaultValue: DataTypes.UUIDV4,
+      },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+      },
+      description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      min_amount: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      max_amount: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      goal_amount: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      initial_date: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      deadline: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      gallery: {
+        type: DataTypes.ARRAY(DataTypes.STRING),
+        allowNull: true,
+      },
+      category: {
+        type: DataTypes.JSONB, // Cambio a JSONB
+        allowNull: true,
+        defaultValue: null,
+        validate: {
+          isValidCategory(value) {
+            const validCategories = [
+              'Art',
+              'Comics',
+              'Crafts',
+              'Dance',
+              'Design',
+              'Fashion',
+              'Film & Video',
+              'Food',
+              'Games',
+              'Journalism',
+              'Music',
+              'Photography',
+              'Publishing',
+              'Technology',
+              'Theater',
+            ];
+            const isValid =
+              Array.isArray(value) &&
+              value.every((item) => validCategories.includes(item));
+            if (!isValid) {
+              throw new Error('Invalid category');
+            }
+          },
         },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        description: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        min_amount: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        max_amount: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        goal_amount: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        initial_date: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        deadline: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        gallery: {
-            type: DataTypes.ARRAY(DataTypes.STRING),
-            allowNull: true
-        },
-        category: {
-            type: DataTypes.ENUM('Art', 'Comics', 'Crafts', 'Dance', 'Design', 'Fashion', 'Film & Video', 'Food', 'Games', 'Journalism', 'Music', 'Photography', 'Publishing', 'Technology', 'Theater'),
-            allowNull: false
-        },
-        status: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            defaultValue: true
-        }
+      },
+      status: {
+        type: DataTypes.ENUM('Inactive', 'Rejected', 'Pending', 'Active'),
+        allowNull: false,
+        defaultValue: 'Pending',
+      },
     },
     { timestamps: false }
-    );
+  );
 };

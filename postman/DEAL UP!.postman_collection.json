@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "07bd91eb-eb8d-4e2b-914f-8e081f4c85a9",
+		"_postman_id": "bc78c4c2-05ef-428f-aed3-a8631bac08e1",
 		"name": "DEAL UP!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "27477100",
-		"_collection_link": "https://www.postman.com/dealup/workspace/deal-up-public/collection/27477100-07bd91eb-eb8d-4e2b-914f-8e081f4c85a9?action=share&creator=27477100&source=collection_link"
+		"_exporter_id": "28612822",
+		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=28612822&source=collection_link"
 	},
 	"item": [
 		{
@@ -25,14 +25,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/users",
+							"raw": "http://localhost:3001/user",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3001",
 							"path": [
-								"users"
+								"user"
 							]
 						}
 					},
@@ -44,14 +44,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/users",
+							"raw": "http://localhost:3001/user",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3001",
 							"path": [
-								"users"
+								"user"
 							]
 						}
 					},
@@ -63,14 +63,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/users?name=Dai",
+							"raw": "http://localhost:3001/user?name=Dai",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3001",
 							"path": [
-								"users"
+								"user"
 							],
 							"query": [
 								{
@@ -88,14 +88,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/users/b9d191a6-722d-42fa-8c91-f1e2381579f0",
+							"raw": "http://localhost:3001/user/b9d191a6-722d-42fa-8c91-f1e2381579f0",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3001",
 							"path": [
-								"users",
+								"user",
 								"b9d191a6-722d-42fa-8c91-f1e2381579f0"
 							]
 						}
@@ -117,14 +117,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/users/b9d191a6-722d-42fa-8c91-f1e2381579f0",
+							"raw": "http://localhost:3001/user/b9d191a6-722d-42fa-8c91-f1e2381579f0",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3001",
 							"path": [
-								"users",
+								"user",
 								"b9d191a6-722d-42fa-8c91-f1e2381579f0"
 							]
 						}
@@ -137,15 +137,44 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/users/b9d191a6-722d-42fa-8c91-f1e2381579f0",
+							"raw": "http://localhost:3001/user/b9d191a6-722d-42fa-8c91-f1e2381579f0",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3001",
 							"path": [
-								"users",
+								"user",
 								"b9d191a6-722d-42fa-8c91-f1e2381579f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"daineta29@gmail.com\",\r\n    \"password\":\"Henry12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user",
+								"login"
 							]
 						}
 					},
@@ -158,12 +187,172 @@
 			"name": "PROJECT",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "allProject",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:3001/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nameProjects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/projects?name=tienda",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "tienda"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "idProjects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/projects/5f6fc547-1ed1-4177-aed4-7551041eb86a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"5f6fc547-1ed1-4177-aed4-7551041eb86a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addProjects",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Tienda de perro\",\r\n  \"description\": \"Varias cosas\",\r\n  \"min_amount\": 12,\r\n  \"max_amount\": 16,\r\n  \"goal_amount\": 12,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"gallery\": [],\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProjectViejo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Tienda de musica4\",\r\n  \"description\": \"Varias cosas\",\r\n  \"min_amount\": 12,\r\n  \"max_amount\": 16,\r\n  \"goal_amount\": 120,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"gallery\": [],\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/projects/prueba/d984f2c8-abbc-41d7-adad-44159fbe33da",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"prueba",
+								"d984f2c8-abbc-41d7-adad-44159fbe33da"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/projects/d984f2c8-abbc-41d7-adad-44159fbe33da",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"d984f2c8-abbc-41d7-adad-44159fbe33da"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "campoUpdate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n  \"category\": [\"Comics\", \"Dance\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/projects/5f6fc547-1ed1-4177-aed4-7551041eb86a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"5f6fc547-1ed1-4177-aed4-7551041eb86a"
+							]
 						}
 					},
 					"response": []
