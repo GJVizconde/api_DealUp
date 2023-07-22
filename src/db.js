@@ -3,6 +3,7 @@ require('dotenv').config();
 
 const UserModel = require('./models/User');
 const ProjectModel = require('./models/Project');
+const RatingModel = require('./models/Rating');
 
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
@@ -28,8 +29,21 @@ const sequelize = new Sequelize(
 
 UserModel(sequelize);
 ProjectModel(sequelize);
+RatingModel(sequelize);
 
-const { User, Project } = sequelize.models;
+const { User, Project, Rating } = sequelize.models;
+
+//relacion de tablas
+User.belongsToMany(Project, { through: "user_project" });
+Project.belongsToMany(User, { through: "user_project" });
+
+
+// Rating.hasMany(User,{ foreignKey:"ratingId" });
+// User.belongsTo(Rating);
+
+// Project.hasMany(Rating, { foreignKey: 'projectId' });
+// Rating.belongsTo(Project);
+
 
 module.exports = {
   ...sequelize.models,
