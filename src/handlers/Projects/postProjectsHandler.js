@@ -14,6 +14,7 @@ const createProjectHandler = async (req, res) => {
     gallery,
     category,
     status,
+    userId,
   } = req.body;
 
   console.log(category);
@@ -32,8 +33,10 @@ const createProjectHandler = async (req, res) => {
       return res.status(400).json('Initial date is required');
     } else if (!deadline) {
       return res.status(400).json('Deadline is required');
-      // } else if(!category || category.length === 0 ) { return res.status(400).json('At least one category is required')
-    }
+     } else if(!category || category.length === 0 ) { return res.status(400).json('At least one category is required')
+    } else if (!userId) {
+      return res.status(400).json('User_id is required');
+     }
 
     const newProject = await createProject(
       name,
@@ -45,7 +48,8 @@ const createProjectHandler = async (req, res) => {
       deadline,
       gallery,
       category,
-      status
+      status,
+      userId
     );
 
     return res

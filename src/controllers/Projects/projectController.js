@@ -1,5 +1,8 @@
 const { getAllProjects } = require('./getAllProjects')
 
+const { Project, User } = require('../../db');
+
+
 //NAME
 const searchProjectByName = async (name) => {
     
@@ -18,9 +21,27 @@ const searchProjectById = async (id) => {
 
 console.log("controllers id:", id);
 
-const infoProject = await getAllProjects();
+// const infoProject = await getAllProjects();
 
-const project = infoProject.find((proje) => proje.id == id);
+// const project = infoProject.find((proje) => proje.id == id);
+
+const project = await Project.findAll({
+    where: { 
+        id
+    }, 
+    include:{
+        model:User,
+        attributes: [
+            "id",
+            "name",
+            "email",
+              "rol",
+          ],
+          through: {
+            attributes: [],
+          },
+    }
+});
 
 if(project) {
     return project;
