@@ -4,7 +4,7 @@ const projectRouter = require('./projectRouter');
 
 const mainRouter = Router();
 
-mainRouter.use('/users', usersRouter);
+mainRouter.use('/user', usersRouter);
 
 mainRouter.use('/projects', projectRouter);
 
