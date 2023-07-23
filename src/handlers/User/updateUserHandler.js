@@ -3,7 +3,7 @@ const updateUser = require('../../controllers/User/updateUser');
 const updateUserHandler = async (req, res) => {
   const { id } = req.params;
   const {
-    name,
+    fullName,
     email,
     rol,
     password,
@@ -18,7 +18,7 @@ const updateUserHandler = async (req, res) => {
   try {
     const result = await updateUser(
       id,
-      name,
+      fullName,
       email,
       rol,
       password,

@@ -1,11 +1,11 @@
 const { User } = require('../../db');
 const { Op } = require('sequelize');
 
-const searchUserByName = async (name) => {
+const searchUserByName = async (fullName) => {
   const foundUser = await User.findAll({
     where: {
-      name: {
-        [Op.iLike]: `%${name}%`,
+      fullName: {
+        [Op.iLike]: `%${fullName}%`,
       },
     },
   });

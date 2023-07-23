@@ -2,7 +2,7 @@ const { User } = require('../../db');
 
 const updateUser = async (
   id,
-  name,
+  fullName,
   email,
   rol,
   password,
@@ -20,7 +20,7 @@ const updateUser = async (
     if (!updatedUser) {
       throw new Error('User not found');
     }
-    updatedUser.name = name;
+    updatedUser.fullName = fullName;
     updatedUser.email = email;
     updatedUser.rol = rol;
     updatedUser.password = password;

@@ -2,7 +2,7 @@ const createNewUser = require('../../controllers/User/createNewUser');
 
 const createUserHandler = async (req, res) => {
   const {
-    name,
+    fullName,
     email,
     rol,
     password,
@@ -17,7 +17,7 @@ const createUserHandler = async (req, res) => {
 
   try {
     const newUser = await createNewUser(
-      name,
+      fullName,
       email,
       rol,
       password,
