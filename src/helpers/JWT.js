@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 const generateJWT = (user) => {
-  const jwtToken = jwt.sign(
+  const accessToken = jwt.sign(
     {
       id: user.id,
       rol: user.rol,
@@ -12,7 +12,7 @@ const generateJWT = (user) => {
     }
   );
 
-  return jwtToken;
+  return accessToken;
 };
 
 module.exports = { generateJWT };

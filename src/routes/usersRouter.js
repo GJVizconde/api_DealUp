@@ -10,7 +10,8 @@ const {
   validateCreateUser,
   validateUpdateUser,
   validateId,
-} = require('../middlewares/User/index');
+  validateLogin,
+} = require('../middlewares/User/RoutesValidation');
 
 const usersRouter = Router();
 
@@ -24,6 +25,6 @@ usersRouter.put('/:id', validateUpdateUser, updateUserHandler);
 
 usersRouter.delete('/:id', validateId, deleteUserHandler);
 
-usersRouter.post('/login', loginUserHandler);
+usersRouter.post('/login', validateLogin, loginUserHandler);
 
 module.exports = usersRouter;

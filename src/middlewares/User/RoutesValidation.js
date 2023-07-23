@@ -38,8 +38,18 @@ const validateId = (req, res, next) => {
   next();
 };
 
+const validateLogin = (req, res, next) => {
+  const { email, password } = req.params;
+
+  if (!email) return res.status(400).json({ error: 'Missing email' });
+  if (!password) return res.status(400).json({ error: 'Missing password' });
+
+  next();
+};
+
 module.exports = {
   validateCreateUser,
   validateUpdateUser,
   validateId,
+  validateLogin,
 };
