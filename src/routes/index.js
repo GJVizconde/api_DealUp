@@ -1,11 +1,11 @@
 const { Router } = require('express');
-const usersRouter = require('./usersRouter');
+const userRouter = require('./userRouter');
 const projectRouter = require('./projectRouter');
 const ratingRouter = require('./ratingRouter');
 
 const mainRouter = Router();
 
-mainRouter.use('/user', usersRouter);
+mainRouter.use('/user', userRouter);
 
 mainRouter.use('/projects', projectRouter);
 

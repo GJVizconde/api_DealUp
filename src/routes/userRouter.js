@@ -13,18 +13,18 @@ const {
   validateLogin,
 } = require('../middlewares/User/RoutesValidation');
 
-const usersRouter = Router();
+const userRouter = Router();
 
-usersRouter.get('/', getUsersHandler);
+userRouter.get('/', getUsersHandler);
 
-usersRouter.get('/:id', validateId, getUserHandler);
+userRouter.get('/:id', validateId, getUserHandler);
 
-usersRouter.post('/', validateCreateUser, createUserHandler);
+userRouter.post('/', validateCreateUser, createUserHandler);
 
-usersRouter.put('/:id', validateUpdateUser, updateUserHandler);
+userRouter.put('/:id', validateUpdateUser, updateUserHandler);
 
-usersRouter.delete('/:id', validateId, deleteUserHandler);
+userRouter.delete('/:id', validateId, deleteUserHandler);
 
-usersRouter.post('/login', validateLogin, loginUserHandler);
+userRouter.post('/login', validateLogin, loginUserHandler);
 
-module.exports = usersRouter;
+module.exports = userRouter;
