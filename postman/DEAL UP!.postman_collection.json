@@ -3,8 +3,8 @@
 		"_postman_id": "bc78c4c2-05ef-428f-aed3-a8631bac08e1",
 		"name": "DEAL UP!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "28612822",
-		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=28612822&source=collection_link"
+		"_exporter_id": "27477100",
+		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=27477100&source=collection_link"
 	},
 	"item": [
 		{
@@ -17,7 +17,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Daianeta\",\r\n    \"email\": \"daineta25@gmail.com\",\r\n    \"rol\": \"user\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"24/03/2000\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": \"true\",\r\n    \"thirdPartyCreated\": \"false\"\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shaki@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": \"true\",\r\n    \"thirdPartyCreated\": \"false\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -41,6 +41,16 @@
 				{
 					"name": "getAllUsers",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJiYzcyYjMxLWE0YjEtNDI1ZS1iYTMyLTIyZTBhYjk5ZWMyZCIsInJvbCI6ImVudHJlcHJlbmV1ciIsImlhdCI6MTY5MDE3MTg5MywiZXhwIjoxNjkwMTc5MDkzfQ.gc_cUS_CCvriITeatflKj7jdyHf06Q-plf1xzwJBna0",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -63,7 +73,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user?name=Dai",
+							"raw": "http://localhost:3001/user?name=shak",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -75,7 +85,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "Dai"
+									"value": "shak"
 								}
 							]
 						}
@@ -88,7 +98,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user/b9d191a6-722d-42fa-8c91-f1e2381579f0",
+							"raw": "http://localhost:3001/user/2bc72b31-a4b1-425e-ba32-22e0ab99ec2d",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -96,7 +106,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"b9d191a6-722d-42fa-8c91-f1e2381579f0"
+								"2bc72b31-a4b1-425e-ba32-22e0ab99ec2d"
 							]
 						}
 					},
@@ -158,7 +168,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"daineta29@gmail.com\",\r\n    \"password\":\"Henry12345\"\r\n}",
+							"raw": "{\r\n    \"email\":\"shaki@gmail.com\",\r\n    \"password\":\"Henry12345\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -236,7 +246,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects/5f6fc547-1ed1-4177-aed4-7551041eb86a",
+							"raw": "http://localhost:3001/projects/b1efb8d7-856d-4233-90ad-9cabcc880aa9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -244,7 +254,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"5f6fc547-1ed1-4177-aed4-7551041eb86a"
+								"b1efb8d7-856d-4233-90ad-9cabcc880aa9"
 							]
 						}
 					},
@@ -257,7 +267,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Tienda de perro\",\r\n  \"description\": \"Varias cosas\",\r\n  \"min_amount\": 12,\r\n  \"max_amount\": 16,\r\n  \"goal_amount\": 12,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"gallery\": [],\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\"\r\n}",
+							"raw": "{\r\n  \"name\": \"Veterinaria\",\r\n  \"description\": \"Local de veterinaria\",\r\n  \"min_amount\": 120,\r\n  \"max_amount\": 1600,\r\n  \"goal_amount\": 12000,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"gallery\": [],\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"userId\": \"966e434a-72a5-495d-ab79-1ab34317f725\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -309,7 +319,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "deleteProject",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -329,7 +339,7 @@
 					"response": []
 				},
 				{
-					"name": "campoUpdate",
+					"name": "updateForItem",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -352,6 +362,129 @@
 							"path": [
 								"projects",
 								"5f6fc547-1ed1-4177-aed4-7551041eb86a"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "addProjects: Crea un proyecto;  \nallProject: Trae todos los proyecto;  \nnameProjects: Busca el proyecto por nombre por Query;  \nidProjects: Buscar por proyecto por Id.params  \nupdateForItem: Actualiza datos del proyecto con id params y por uno o varios campos.\n\nupdateProjectViejo: Actualiza datos del proyecto con id params enviando todos los campos (no conviene utilizar)  \ndeleteProject: Elimina un proyecto por id params"
+		},
+		{
+			"name": "RATING",
+			"item": [
+				{
+					"name": "createRating",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"points\": 4,\r\n    \"comments\": \"FIRE PROOF\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/rating",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"rating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRating",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/rating/a2f7dd57-3f09-49a6-8e1b-c38c9dcb5a86",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"rating",
+								"a2f7dd57-3f09-49a6-8e1b-c38c9dcb5a86"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllRatings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/rating/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"rating",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRatingById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/rating/b12e56ff-8623-44c8-af9f-004640491e46",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"rating",
+								"b12e56ff-8623-44c8-af9f-004640491e46"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRating",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"points\": 7,\r\n    \"comments\": \"FIRE PROOF\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/rating/756c8445-fd87-49e7-aacc-eb32d037f428",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"rating",
+								"756c8445-fd87-49e7-aacc-eb32d037f428"
 							]
 						}
 					},

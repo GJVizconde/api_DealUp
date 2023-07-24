@@ -11,9 +11,13 @@ const {
   validateUpdateUser,
   validateId,
   validateLogin,
-} = require('../middlewares/User/RoutesValidation');
+} = require('../middlewares/User/routesValidation');
+
+const userAccess = require('../middlewares/User/userAccess');
 
 const userRouter = Router();
+
+// userAccess(['entrepreneur', 'admin'])
 
 userRouter.get('/', getUsersHandler);
 
