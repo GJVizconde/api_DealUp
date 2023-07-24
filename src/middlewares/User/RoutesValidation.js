@@ -1,7 +1,7 @@
-const alreadyExistsUser = require('../../controllers/User/alreadyExistsUser');
+const alreadyExistsUser = require('./alreadyExistsUser');
 
 const validateCreateUser = async (req, res, next) => {
-  const { name, email, rol, birthdate } = req.body;
+  const { fullName, email, rol, birthdate } = req.body;
 
   const validateAlreadyRegistered = await alreadyExistsUser(email);
 
@@ -9,7 +9,7 @@ const validateCreateUser = async (req, res, next) => {
     return res.status(400).json({ error: validateAlreadyRegistered.message });
   }
 
-  if (!name) return res.status(400).json({ error: 'Missing name' });
+  if (!fullName) return res.status(400).json({ error: 'Missing name' });
   if (!email) return res.status(400).json({ error: 'Missing email' });
   if (!rol) return res.status(400).json({ error: 'Missing rol' });
   if (!birthdate) return res.status(400).json({ error: 'Missing birthdate' });
@@ -19,10 +19,10 @@ const validateCreateUser = async (req, res, next) => {
 
 const validateUpdateUser = (req, res, next) => {
   const { id } = req.params;
-  const { name, email, rol, birthdate } = req.body;
+  const { fullName, email, rol, birthdate } = req.body;
 
   if (!id) return res.status(400).json({ error: 'Missing id' });
-  if (!name) return res.status(400).json({ error: 'Missing name' });
+  if (!fullName) return res.status(400).json({ error: 'Missing name' });
   if (!email) return res.status(400).json({ error: 'Missing email' });
   if (!rol) return res.status(400).json({ error: 'Missing rol' });
   if (!birthdate) return res.status(400).json({ error: 'Missing birthdate' });
@@ -38,8 +38,18 @@ const validateId = (req, res, next) => {
   next();
 };
 
+const validateLogin = (req, res, next) => {
+  const { email, password } = req.body;
+
+  if (!email) return res.status(400).json({ error: 'Missing email' });
+  if (!password) return res.status(400).json({ error: 'Missing password' });
+
+  next();
+};
+
 module.exports = {
   validateCreateUser,
   validateUpdateUser,
   validateId,
+  validateLogin,
 };

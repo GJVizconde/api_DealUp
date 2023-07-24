@@ -9,7 +9,7 @@ module.exports = (sequelize) => {
         primaryKey: true,
         defaultValue: DataTypes.UUIDV4,
       },
-      name: {
+      fullName: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -19,8 +19,8 @@ module.exports = (sequelize) => {
         unique: true,
       },
       rol: {
-        type: DataTypes.ENUM('user', 'moderator', 'admin'),
-        defaultValue: 'user',
+        type: DataTypes.ENUM('entrepreneur', 'investor', 'moderator', 'admin'),
+        defaultValue: 'entrepreneur',
         allowNull: false,
       },
       password: {
