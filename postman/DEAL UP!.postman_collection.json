@@ -17,7 +17,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shaki@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": \"true\",\r\n    \"thirdPartyCreated\": \"false\"\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"sfdgsdgdfgs@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": \"true\",\r\n    \"thirdPartyCreated\": \"false\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -46,7 +46,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJiYzcyYjMxLWE0YjEtNDI1ZS1iYTMyLTIyZTBhYjk5ZWMyZCIsInJvbCI6ImVudHJlcHJlbmV1ciIsImlhdCI6MTY5MDE3MTg5MywiZXhwIjoxNjkwMTc5MDkzfQ.gc_cUS_CCvriITeatflKj7jdyHf06Q-plf1xzwJBna0",
+									"value": "",
 									"type": "string"
 								}
 							]
@@ -493,10 +493,10 @@
 			]
 		},
 		{
-			"name": "New Folder",
+			"name": "GALLERY",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "uploadUrlImage",
 					"request": {
 						"method": "POST",
 						"header": []
