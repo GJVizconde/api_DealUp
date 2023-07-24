@@ -11,7 +11,12 @@ const loginUser = async (email, password) => {
   if (userRegistered.password !== password)
     throw new Error('Email or password does not match!');
 
-  return generateJWT(userRegistered);
+  const data = {
+    data: userRegistered,
+    accessToken: generateJWT(userRegistered),
+  };
+
+  return data;
 };
 
 module.exports = loginUser;
