@@ -4,6 +4,7 @@ require('dotenv').config();
 const UserModel = require('./models/User');
 const ProjectModel = require('./models/Project');
 const RatingModel = require('./models/Rating');
+const GalleryModel = require('./models/Gallery');
 
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
@@ -30,8 +31,9 @@ const sequelize = new Sequelize(
 UserModel(sequelize);
 ProjectModel(sequelize);
 RatingModel(sequelize);
+GalleryModel(sequelize);
 
-const { User, Project, Rating } = sequelize.models;
+const { User, Project, Rating, Gallery } = sequelize.models;
 
 //relacion de tablas
 User.belongsToMany(Project, { through: "user_project" });
