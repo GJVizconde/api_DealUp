@@ -6,6 +6,8 @@ const ProjectModel = require('./models/Project');
 const RatingModel = require('./models/Rating');
 const GalleryModel = require('./models/Gallery');
 const PostModel = require('./models/Post');
+const CommentModel = require('./models/Comment');
+
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
 const sequelize = new Sequelize(
@@ -32,8 +34,9 @@ UserModel(sequelize);
 ProjectModel(sequelize);
 RatingModel(sequelize);
 PostModel(sequelize);
+CommentModel(sequelize);
 
-const { User, Project, Rating, Gallery } = sequelize.models;
+const { User, Project, Rating, Gallery, Comment, Post } = sequelize.models;
 
 //relacion de tablas
 User.belongsToMany(Project, { through: "user_project" });
