@@ -8,7 +8,6 @@ const { searchProjectByName, searchProjectById } = require('../../controllers/Pr
 
 const getProjectsHandler = async (req, res) => {
 const { name } = req.query;
-console.log(name);
 
 try {
    const results = (name) ? await searchProjectByName(name) : await getAllProjects();
@@ -25,9 +24,7 @@ try {
 const getIdProjectsHandler = async (req, res) => {
 
     const { id } = req.params;
-    console.log("estoy en handler id");
-    console.log(id);
-
+   
     try {
         const projectById = await searchProjectById(id);
         res.status(200).json(projectById);

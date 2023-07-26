@@ -5,13 +5,7 @@ const { Project, User } = require('../../db');
 const getAllProjects = async () => {
 
     return dataBaseProjects = await Project.findAll({
-        // include: [
-        //     {
-        //       model: User,
-        //       attributes: ['id', 'fullName'],
-        //       // attributes: { exclude: ['createdAt', 'updatedAt'] }
-        //     }
-        //   ]
+       
         include: {
             model: User,
             attributes: ['id', 'fullName'],
