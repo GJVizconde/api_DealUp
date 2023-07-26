@@ -33,8 +33,8 @@ const updateProject =  async (id,
             if(campoActualizar.deadline !== undefined) {
                 updatedProjectById.deadline = campoActualizar.deadline;
             }
-            if(campoActualizar.gallery !== undefined) {
-                updatedProjectById.gallery = campoActualizar.gallery;
+            if(campoActualizar. image_cover !== undefined) {
+                updatedProjectById.image_cover = campoActualizar.image_cover;
             }
             if(campoActualizar.category !== undefined) {
                 updatedProjectById.category = campoActualizar.category;

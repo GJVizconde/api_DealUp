@@ -9,7 +9,7 @@ const updateProject = async (
   goal_amount,
   initial_date,
   deadline,
-  gallery,
+  image_cover,
   category,
   status
 ) => {
@@ -26,7 +26,7 @@ const updateProject = async (
     updatedProjectById.goal_amount = goal_amount;
     updatedProjectById.initial_date = initial_date;
     updatedProjectById.deadline = deadline;
-    updatedProjectById.gallery = gallery;
+    updatedProjectById.image_cover = image_cover;
     updatedProjectById.category = category;
     updatedProjectById.status = status;
 
