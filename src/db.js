@@ -5,7 +5,7 @@ const UserModel = require('./models/User');
 const ProjectModel = require('./models/Project');
 const RatingModel = require('./models/Rating');
 const GalleryModel = require('./models/Gallery');
-
+const PostModel = require('./models/Post');
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
 const sequelize = new Sequelize(
@@ -31,7 +31,7 @@ const sequelize = new Sequelize(
 UserModel(sequelize);
 ProjectModel(sequelize);
 RatingModel(sequelize);
-GalleryModel(sequelize);
+PostModel(sequelize);
 
 const { User, Project, Rating, Gallery } = sequelize.models;
 
