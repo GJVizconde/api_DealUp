@@ -9,9 +9,7 @@ const updateProject =  async (id,
     
             if (!updatedProjectById) {
               throw new Error('Project not found');
-            }
-
-           
+            }         
             if(campoActualizar.name !== undefined) {
                 updatedProjectById.name = campoActualizar.name;
             }

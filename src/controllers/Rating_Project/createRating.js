@@ -5,35 +5,34 @@ const { Op } = require('sequelize');
 const rateProject = async(req, res) => {
     try {
 
-      // const { projectId } = req.params;
-      const { points, comments  } = req.body;
-      // const { userId } = req.user;
+      const { points, comments, ProjectId, UserId } = req.body;
+     
+ const existingRating = await Rating.findOne({
+  where: {
+    UserId,
+    ProjectId,
+  },
+});
 
-      console.log(points, comments);
+if (existingRating) {
+ 
+  return res.status(400).json({ error: 'The user has already created a rating for this project' });
+}
 
-      // if(!points || !comments) return res.status(404).send('Faltan Datos');
 
-      const rate = await Rating.create({
-        points, comments
-      })
-
-      // if (projectId) {
-      //   const foundProject = await Project.findAll({ where: { id: {[Op.iLike]: `%${projectId}%`} } });
-      //   await rate.addProject(foundProject);
-      // }
-
-      // if (userId) {
-      // const foundUser = await User.findAll({ where: { id: {[Op.iLike]: `%${userId}%`} } });
-      // await rate.addUser(foundUser);
-      // }
+const rate = await Rating.create({
+  points,
+  comments,
+  ProjectId,
+  UserId,
+});
 
       return res.status(201).json(rate);
       }
 
-      catch (error) {
-
-        res.status(500).json({error: error.message});
+      catch (error) { res.status(500).json({error: error.message});
       }
 }
 
 module.exports = rateProject;
+

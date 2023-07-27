@@ -35,25 +35,49 @@ ProjectModel(sequelize);
 RatingModel(sequelize);
 PostModel(sequelize);
 CommentModel(sequelize);
+GalleryModel(sequelize);
 
 const { User, Project, Rating, Gallery, Comment, Post } = sequelize.models;
 
 //relacion de tablas
+
+//USER-PROJECT
 User.belongsToMany(Project, { through: "user_project" });
 Project.belongsToMany(User, { through: "user_project" });
 
+//USER-RATING
 
-// Rating.hasMany(User,{ foreignKey:"ratingId" });
-// User.belongsTo(Rating);
+//  Rating.hasMany(User,{ foreignKey:"user_Id" });
+//  User.belongsTo(Rating, { foreignKey:"user_Id" });
+User.hasOne(Rating, { foreignKey:"UserId", onDelete: "CASCADE", onUpdate: "CASCADE", });
+Rating.belongsTo(User, { foreignKey:"UserId", onDelete: "CASCADE", onUpdate: "CASCADE", });
 
-// Project.hasMany(Rating, { foreignKey: 'projectId' });
-// Rating.belongsTo(Project);
 
-//relacion tabla post-comment
+// USER-COMMENT
+User.hasMany(Comment, {onDelete: "CASCADE", onUpdate: "CASCADE", });
+Comment.belongsTo(User);
+
+
+//PROJECT-RATING
+Project.hasMany(Rating, { onDelete: "CASCADE", onUpdate: "CASCADE", });
+Rating.belongsTo(Project);
+
+
+//PROJECT-GALLERY
+Project.hasMany(Gallery, {  onDelete: "CASCADE", onUpdate: "CASCADE", });
+Gallery.belongsTo(Project);
+
+
+//PROJECT-POST
+Project.hasMany(Post, {  onDelete: "CASCADE", onUpdate: "CASCADE", }),
+Post.belongsTo(Project);
+
+
+//POST-COMMENT
 // Post.hasMany(Comment, { as:'comment', foreignKey: 'postId'});
 // Comment.belongsTo(Post, { as:'user', foreignKey: 'postId'});
-Post.hasMany(Comment, { foreignKey: 'postId'});
-Comment.belongsTo(Post, { foreignKey: 'postId'});
+Post.hasMany(Comment, { onDelete: "CASCADE", onUpdate: "CASCADE", });
+Comment.belongsTo(Post);
 
 module.exports = {
   ...sequelize.models,

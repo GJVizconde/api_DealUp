@@ -22,7 +22,7 @@ const updateRating = async (req, res) => {
       const rating = await Rating.findByPk(id);
   
       if (!rating) {
-        return res.status(404).json({ error: 'El rating no fue encontrado' });
+        return res.status(404).json({ error: 'The rating was not found' });
       }
 
       rating.points = points;
