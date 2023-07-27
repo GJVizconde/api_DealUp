@@ -3,8 +3,8 @@
 		"_postman_id": "bc78c4c2-05ef-428f-aed3-a8631bac08e1",
 		"name": "DEAL UP!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "27477100",
-		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=27477100&source=collection_link"
+		"_exporter_id": "28612822",
+		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=28612822&source=collection_link"
 	},
 	"item": [
 		{
@@ -221,7 +221,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects?name=tienda",
+							"raw": "http://localhost:3001/projects?name=auto",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -233,7 +233,7 @@
 							"query": [
 								{
 									"key": "name",
-									"value": "tienda"
+									"value": "auto"
 								}
 							]
 						}
@@ -246,7 +246,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects/037db671-98b1-4437-9bcf-6f714c169906",
+							"raw": "http://localhost:3001/projects/86655960-cc53-4620-8a29-a9dcdd0b3ad4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -254,7 +254,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"037db671-98b1-4437-9bcf-6f714c169906"
+								"86655960-cc53-4620-8a29-a9dcdd0b3ad4"
 							]
 						}
 					},
@@ -267,7 +267,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Dinco\",\r\n  \"description\": \"Discoteca\",\r\n  \"min_amount\": 120,\r\n  \"max_amount\": 1800,\r\n  \"goal_amount\": 20000,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"image_cover\": [],\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"96f4d770-a4d4-4be0-a29b-77848815ba4c\"\r\n}",
+							"raw": "{\r\n  \"name\": \"Automotriz\",\r\n  \"description\": \"Compra y venta de autos de juguetes\",\r\n  \"min_amount\": 120,\r\n  \"max_amount\": 180,\r\n  \"goal_amount\": 10000,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"image_cover\": [],\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"96f4d770-a4d4-4be0-a29b-77848815ba4c\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -380,7 +380,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"points\": 4,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"037db671-98b1-4437-9bcf-6f714c169906\",\r\n    \"UserId\": \"96f4d770-a4d4-4be0-a29b-77848815ba4c\"\r\n}",
+							"raw": "{\r\n    \"points\": 4,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"86655960-cc53-4620-8a29-a9dcdd0b3ad4\",\r\n    \"UserId\": \"96f4d770-a4d4-4be0-a29b-77848815ba4c\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -758,7 +758,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "allPostProject: Trae todos los Post creados;  \ncreatePOSTProject: Crea un Post para un proyecto determinado;\n\nupdatePost: Actualiza un post determinado;\n\ndeletePost: Elimina un post determinado;"
 		},
 		{
 			"name": "COMMENT_POST_PROJECT",
@@ -867,7 +868,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "allComment: Trae todos los COMENTARIOS creados;  \ncreateComment: Crea un COMENTARIO para un post determinado de un proyecto;\n\nupdateComment: Actualiza un COMENTARIO determinado;\n\ndeleteComment: Elimina un COMENTARIO determinado;"
 		}
 	]
 }
