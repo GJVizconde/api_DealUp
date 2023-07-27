@@ -47,8 +47,7 @@ Project.belongsToMany(User, { through: "user_project" });
 
 //USER-RATING
 
-//  Rating.hasMany(User,{ foreignKey:"user_Id" });
-//  User.belongsTo(Rating, { foreignKey:"user_Id" });
+
 User.hasOne(Rating, { foreignKey:"UserId", onDelete: "CASCADE", onUpdate: "CASCADE", });
 Rating.belongsTo(User, { foreignKey:"UserId", onDelete: "CASCADE", onUpdate: "CASCADE", });
 
@@ -74,8 +73,7 @@ Post.belongsTo(Project);
 
 
 //POST-COMMENT
-// Post.hasMany(Comment, { as:'comment', foreignKey: 'postId'});
-// Comment.belongsTo(Post, { as:'user', foreignKey: 'postId'});
+
 Post.hasMany(Comment, { onDelete: "CASCADE", onUpdate: "CASCADE", });
 Comment.belongsTo(Post);
 
