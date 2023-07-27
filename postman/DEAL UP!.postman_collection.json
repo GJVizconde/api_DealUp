@@ -3,8 +3,8 @@
 		"_postman_id": "bc78c4c2-05ef-428f-aed3-a8631bac08e1",
 		"name": "DEAL UP!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "28634703",
-		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=28634703&source=collection_link"
+		"_exporter_id": "27477100",
+		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=27477100&source=collection_link"
 	},
 	"item": [
 		{
@@ -246,7 +246,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects/b1efb8d7-856d-4233-90ad-9cabcc880aa9",
+							"raw": "http://localhost:3001/projects/037db671-98b1-4437-9bcf-6f714c169906",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -254,7 +254,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"b1efb8d7-856d-4233-90ad-9cabcc880aa9"
+								"037db671-98b1-4437-9bcf-6f714c169906"
 							]
 						}
 					},
@@ -267,7 +267,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Dinco\",\r\n  \"description\": \"Discoteca\",\r\n  \"min_amount\": 120,\r\n  \"max_amount\": 1800,\r\n  \"goal_amount\": 20000,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"image_cover\": [],\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"userId\": \"96f4d770-a4d4-4be0-a29b-77848815ba4c\"\r\n}",
+							"raw": "{\r\n  \"name\": \"Dinco\",\r\n  \"description\": \"Discoteca\",\r\n  \"min_amount\": 120,\r\n  \"max_amount\": 1800,\r\n  \"goal_amount\": 20000,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"image_cover\": [],\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"96f4d770-a4d4-4be0-a29b-77848815ba4c\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -380,7 +380,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"points\": 4,\r\n    \"comments\": \"FIRE PROOF\"\r\n}",
+							"raw": "{\r\n    \"points\": 4,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"037db671-98b1-4437-9bcf-6f714c169906\",\r\n    \"UserId\": \"96f4d770-a4d4-4be0-a29b-77848815ba4c\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -407,7 +407,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/rating/a2f7dd57-3f09-49a6-8e1b-c38c9dcb5a86",
+							"raw": "http://localhost:3001/rating/6f0d1bf1-f3c8-4885-930b-9299a64c623a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -415,7 +415,7 @@
 							"port": "3001",
 							"path": [
 								"rating",
-								"a2f7dd57-3f09-49a6-8e1b-c38c9dcb5a86"
+								"6f0d1bf1-f3c8-4885-930b-9299a64c623a"
 							]
 						}
 					},
@@ -535,11 +535,16 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "me.jpg"
+									"src": "/C:/Users/ESTEBAN/Desktop/cards.jpeg"
 								},
 								{
 									"key": "comments",
-									"value": "Helloo",
+									"value": "Foto",
+									"type": "text"
+								},
+								{
+									"key": "ProjectId",
+									"value": "86655960-cc53-4620-8a29-a9dcdd0b3ad4",
 									"type": "text"
 								}
 							]
@@ -680,7 +685,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"description\": \"posteo 3\"\r\n\r\n}",
+							"raw": "{\r\n    \"description\": \"Compro autos de juguetes\",\r\n    \"image_gallery\":[\"\"],\r\n    \"video_galley\":[\"\"],\r\n    \"ProjectId\": \"86655960-cc53-4620-8a29-a9dcdd0b3ad4\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -786,7 +791,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"comment\": \" segundo comentario al segundo post\",\r\n    \"postId\": \"05125217-141c-46d3-a571-4e3ff598e097\"\r\n\r\n}",
+							"raw": "{\r\n    \"comment\": \"Motos compras?\",\r\n    \"PostId\": \"0300d2d2-7452-487c-a279-e1587dbbcedc\",\r\n    \"UserId\": \"8c1fc291-05b8-4eb6-b615-8fbfc9a74de4\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -816,7 +821,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"comment\": \"prueba tercer cambio comentario\"\r\n}",
+							"raw": "{\r\n    \"comment\": \"edito el comentario del segundo post del segundo comentario\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -824,7 +829,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/projects/post/comment/f04efcdd-9ce1-4af6-8600-9209a9ca42af",
+							"raw": "http://localhost:3001/projects/post/comment/d480ae1a-413e-4029-aac2-bb29b43b169a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -834,7 +839,7 @@
 								"projects",
 								"post",
 								"comment",
-								"f04efcdd-9ce1-4af6-8600-9209a9ca42af"
+								"d480ae1a-413e-4029-aac2-bb29b43b169a"
 							]
 						}
 					},
@@ -846,7 +851,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects/post/comment/f04efcdd-9ce1-4af6-8600-9209a9ca42af",
+							"raw": "http://localhost:3001/projects/post/comment/a8e3b05d-79da-44bd-aca2-0673e7b740cb",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -856,7 +861,7 @@
 								"projects",
 								"post",
 								"comment",
-								"f04efcdd-9ce1-4af6-8600-9209a9ca42af"
+								"a8e3b05d-79da-44bd-aca2-0673e7b740cb"
 							]
 						}
 					},
