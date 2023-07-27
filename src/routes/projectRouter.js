@@ -12,9 +12,23 @@ const { createPostProjectHandler } = require('../handlers/PostProjects/createPos
 const { updatePostHandler } = require('../handlers/PostProjects/putPostHandler');
 const { deletePostHandler } = require('../handlers/PostProjects/deletePostHandler');
 
+//COMMENT_POST_PROJECT
+const { getAllComentHandler } = require('../handlers/Comment/getAllCommentsHandler');
+const { createCommentHandler } = require('../handlers/Comment/createCommentHandler');
+const { updateCommentHandler } = require('../handlers/Comment/updateCommentHandler');
+const { deleteCommentHandler } = require('../handlers/Comment/deleteCommentHandler');
+
+
 const projectRouter = Router();
 
 projectRouter.get('/', getProjectsHandler);
+
+//rute comment_post_project
+projectRouter.get('/post/comment', getAllComentHandler);
+projectRouter.post('/post/comment', createCommentHandler);
+projectRouter.put('/post/comment/:id', updateCommentHandler);
+projectRouter.delete('/post/comment/:id', deleteCommentHandler);
+
 //rute post_project
 projectRouter.get('/post', getPostProjectHandler);
 projectRouter.post('/post', createPostProjectHandler);
@@ -28,9 +42,5 @@ projectRouter.put('/prueba/:id', updateProjectHandler); //ruta vieja carga todos
 projectRouter.delete('/:id', deleteProjectHandler);
 projectRouter.put('/:id', updateHandler);
 
-
-
-
-// projectRouter.get('/post/comment', postProjectRouter);
 
 module.exports = projectRouter;

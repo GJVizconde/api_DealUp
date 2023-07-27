@@ -2,26 +2,19 @@ const DataTypes = require('sequelize');
 
 module.exports = (sequelize) => {
     sequelize.define(
-        'Post',
+        'Comment',
         {
             id: {
                 type: DataTypes.UUID,
                 primaryKey: true,
                 defaultValue: DataTypes.UUIDV4,
             },
-            description: {
+            comment: {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
-            image_gallery: {
-                type: DataTypes.ARRAY(DataTypes.STRING),
-                allowNull: true,
-            },
-            video_gallery: {
-                type: DataTypes.ARRAY(DataTypes.STRING),
-                allowNull: true,
-            },
+           
         },
-         { timestamps: false }
+        { timestamps: false }
     );
 };
