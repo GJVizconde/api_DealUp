@@ -3,8 +3,8 @@
 		"_postman_id": "bc78c4c2-05ef-428f-aed3-a8631bac08e1",
 		"name": "DEAL UP!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "28612822",
-		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=28612822&source=collection_link"
+		"_exporter_id": "28634703",
+		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=28634703&source=collection_link"
 	},
 	"item": [
 		{
@@ -267,7 +267,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Dinco\",\r\n  \"description\": \"Discoteca\",\r\n  \"min_amount\": 120,\r\n  \"max_amount\": 1800,\r\n  \"goal_amount\": 20000,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"image_cover\": [],\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"userId\": \"96f4d770-a4d4-4be0-a29b-77848815ba4c\"\r\n}",
+							"raw": "{\r\n  \"name\": \"Sport land\",\r\n  \"description\": \"deporte\",\r\n  \"min_amount\": 120,\r\n  \"max_amount\": 1800,\r\n  \"goal_amount\": 15000,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"image_cover\": [],\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"userId\": \"96f4d770-a4d4-4be0-a29b-77848815ba4c\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
