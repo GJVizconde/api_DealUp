@@ -3,7 +3,6 @@ const { deleteProject } = require('../../controllers/Projects/deleteProject');
 const deleteProjectHandler = async (req, res) => {
   const { id } = req.params;
 
-  console.log(id);
 
   try {
     const result = await deleteProject(id);

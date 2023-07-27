@@ -38,7 +38,7 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      gallery: {
+      image_cover: {
         type: DataTypes.ARRAY(DataTypes.STRING),
         allowNull: true,
       },
