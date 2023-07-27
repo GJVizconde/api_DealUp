@@ -18,7 +18,9 @@ const uploadFileImage = async(req, res) => {
 
       const cloudinaryResult = await cloudinaryService.handleUpload(path);
 
+
       const gallery = await Gallery.create({image: cloudinaryResult.secure_url, public_id: cloudinaryResult.public_id, comments, ProjectId});
+
 
       // fs.unlinkSync(file.path);
 

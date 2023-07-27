@@ -14,7 +14,9 @@ const uploadUrlImage = async(req, res) => {
 
       const cloudinaryResult = await cloudinaryService.handleUpload(url);
 
+
       const imageUrl = await Gallery.create({image: cloudinaryResult.secure_url, comments, ProjectId})
+
 
       return res.status(201).json(imageUrl);
       }
