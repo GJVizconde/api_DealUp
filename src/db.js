@@ -49,6 +49,11 @@ Project.belongsToMany(User, { through: "user_project" });
 // Project.hasMany(Rating, { foreignKey: 'projectId' });
 // Rating.belongsTo(Project);
 
+//relacion tabla post-comment
+// Post.hasMany(Comment, { as:'comment', foreignKey: 'postId'});
+// Comment.belongsTo(Post, { as:'user', foreignKey: 'postId'});
+Post.hasMany(Comment, { foreignKey: 'postId'});
+Comment.belongsTo(Post, { foreignKey: 'postId'});
 
 module.exports = {
   ...sequelize.models,

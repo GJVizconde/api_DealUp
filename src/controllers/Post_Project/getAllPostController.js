@@ -1,11 +1,17 @@
-const { Post } = require('../../db');
+const { Post, Comment } = require('../../db');
 
 const getAllPostProjects = async () => {
 
-    const dbPost = await Post.findAll();
+    const dbPost = await Post.findAll({
+        include: {
+            model: Comment,
+            attributes: ['comment'],
+        },
+        
+    });
 
     return dbPost;
-    //arreglar para que me traiga todos los post de un id determinado de proyecto
+
 };
 
 module.exports = { getAllPostProjects };
