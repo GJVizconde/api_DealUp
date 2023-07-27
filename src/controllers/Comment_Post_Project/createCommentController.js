@@ -1,14 +1,15 @@
 const { Comment, Post } = require('../../db');
 
-const createComment = async (comment, postId,as) => {
+const createComment = async (comment, PostId, UserId) => {
 
-const post = await Post.findByPk(postId);
+const post = await Post.findByPk(PostId);
 
-if(!post) { throw new Error('Post not found');}
+if(!PostId) { throw new Error('Post not found');}
 
 const newComment = await Comment.create({
     comment: comment,
-    postId: postId
+    PostId: PostId,
+    UserId: UserId
 });
 
 return newComment;

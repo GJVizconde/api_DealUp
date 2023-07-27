@@ -4,15 +4,18 @@ const createCommentHandler = async (req,res) => {
 
 try {
     
-const { comment, postId} = req.body;
+const { comment, PostId, UserId} = req.body;
 
 if(!comment) { return res.status(400).json('Comment is required');
 }
 
-if(!postId) { return res.status(400).json('Post id is required');
+if(!PostId) { return res.status(400).json('Post id is required');
+}
+if(!UserId) { return res.status(400).json('User id is required');
 }
 
-const newComment = await createComment( comment, postId);
+
+const newComment = await createComment( comment, PostId, UserId);
 
 res.status(201).json({ message: 'Comment created successfully', newComment });
 

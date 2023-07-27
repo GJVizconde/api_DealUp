@@ -8,21 +8,21 @@ try {
     const { 
         description,
         image_gellery,
-        video_gallery
-        //project_id
+        video_gallery,
+        ProjectId
     } = req.body;
     if(!description) {
         return res.status(400).json('Description is required');
-    // } else if(!project_id) {
-    //     return res.status(400).json('The project ID is required');
+     } else if(!ProjectId) {
+        return res.status(400).json('The project ID is required');
      }
 
 
     const newPost = await createPost(
         description,
         image_gellery,
-        video_gallery
-        //project_id
+        video_gallery,
+        ProjectId
     );
     
     res.status(201).json({ message:'Proyect created successfully', newPost });

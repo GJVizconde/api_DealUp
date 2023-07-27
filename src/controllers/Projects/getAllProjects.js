@@ -1,18 +1,41 @@
-//traigo me tabla de Project desde el db, pero tambien debo traer mas adelante la tabla de rating para relacionarlo
-const { Project, User } = require('../../db');
+
+const { Project, User, Gallery, Rating, Post, Comment } = require('../../db');
 
 
 const getAllProjects = async () => {
 
     return dataBaseProjects = await Project.findAll({
        
-        include: {
+        include: [
+            {
             model: User,
-            attributes: ['id', 'fullName'],
+            attributes: ['id', 'fullName', 'rol'],
             through: {
                 attributes: [],
             }
         },
+        {
+            model: Gallery,
+            attributes: ['image', 'comments'],
+        },
+        {
+            model: Rating,
+            attributes:['points', 'comments', 'UserId'],
+           
+        },
+        {
+            model: Post,
+            attributes:['description', 'image_gallery', 'video_gallery'],
+               
+            include: [
+                {
+                    model: Comment,
+                    attributes:['comment', 'UserId'],
+                }
+            ]
+        }
+    
+    ],
         attributes: {
             exclude: ['createdAt', 'updatedAt'],
         },

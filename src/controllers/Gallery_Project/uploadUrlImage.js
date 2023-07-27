@@ -6,7 +6,7 @@ const uploadUrlImage = async(req, res) => {
 
       const { url, comments  } = req.body;
 
-      console.log(url, comments);
+      console.log(url, comments, ProjectId);
 
       if (!url) {
         return res.status(400).json({ error: 'URL not valid' });
@@ -14,11 +14,9 @@ const uploadUrlImage = async(req, res) => {
 
       const cloudinaryResult = await cloudinaryService.handleUpload(url);
 
-      const imageUrl = await Gallery.create({
-        image: cloudinaryResult.secure_url, 
-        public_id: cloudinaryResult.public_id, 
-        comments
-      })
+
+      const imageUrl = await Gallery.create({image: cloudinaryResult.secure_url, comments, ProjectId})
+
 
       return res.status(201).json(imageUrl);
       }

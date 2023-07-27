@@ -11,7 +11,7 @@ const createProject = async (name,
      image_cover,
      category,
      status,
-     userId
+     UserId
       ) => {
 
 
@@ -29,7 +29,7 @@ const newProject = await Project.create({
     status
 })
 
-await newProject.addUser(userId);
+await newProject.addUser(UserId);
 
 
 return newProject;
