@@ -11,13 +11,13 @@ const createProjectHandler = async (req, res) => {
     goal_amount,
     initial_date,
     deadline,
-    gallery,
+    image_cover,
     category,
     status,
     userId,
   } = req.body;
 
-  console.log(category);
+  
   try {
     if (!name) {
       return res.status(400).json('Name is required');
@@ -46,7 +46,7 @@ const createProjectHandler = async (req, res) => {
       goal_amount,
       initial_date,
       deadline,
-      gallery,
+      image_cover,
       category,
       status,
       userId

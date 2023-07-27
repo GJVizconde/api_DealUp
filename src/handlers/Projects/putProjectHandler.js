@@ -13,7 +13,7 @@ const updateProjectHandler = async (req, res) => {
       goal_amount,
       initial_date,
       deadline,
-      gallery,
+      image_cover,
       category,
       status,
     } = req.body;
@@ -27,7 +27,7 @@ const updateProjectHandler = async (req, res) => {
       goal_amount,
       initial_date,
       deadline,
-      gallery,
+      image_cover,
       category,
       status
     );
