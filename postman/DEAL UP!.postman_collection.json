@@ -3,8 +3,8 @@
 		"_postman_id": "bc78c4c2-05ef-428f-aed3-a8631bac08e1",
 		"name": "DEAL UP!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "27477100",
-		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=27477100&source=collection_link"
+		"_exporter_id": "28634703",
+		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=28634703&source=collection_link"
 	},
 	"item": [
 		{
@@ -17,7 +17,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"sfdgsdgdfgs@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": \"true\",\r\n    \"thirdPartyCreated\": \"false\"\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shaki@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": \"true\",\r\n    \"thirdPartyCreated\": \"false\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -267,7 +267,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Veterinaria\",\r\n  \"description\": \"Local de veterinaria\",\r\n  \"min_amount\": 120,\r\n  \"max_amount\": 1600,\r\n  \"goal_amount\": 12000,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"gallery\": [],\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"userId\": \"966e434a-72a5-495d-ab79-1ab34317f725\"\r\n}",
+							"raw": "{\r\n  \"name\": \"Dinco\",\r\n  \"description\": \"Discoteca\",\r\n  \"min_amount\": 120,\r\n  \"max_amount\": 1800,\r\n  \"goal_amount\": 20000,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"image_cover\": [],\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"userId\": \"96f4d770-a4d4-4be0-a29b-77848815ba4c\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -295,7 +295,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Tienda de musica4\",\r\n  \"description\": \"Varias cosas\",\r\n  \"min_amount\": 12,\r\n  \"max_amount\": 16,\r\n  \"goal_amount\": 120,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"gallery\": [],\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\"\r\n}",
+							"raw": "{\r\n  \"name\": \"Tienda de musica4\",\r\n  \"description\": \"Varias cosas\",\r\n  \"min_amount\": 12,\r\n  \"max_amount\": 16,\r\n  \"goal_amount\": 120,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"image_cover\": [],\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -499,7 +499,366 @@
 					"name": "uploadUrlImage",
 					"request": {
 						"method": "POST",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"url\": \"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.fotor.com%2Fes%2Fia-generador-de-imagenes%2F&psig=AOvVaw2khfFyXCZ4INlbmlvFn2q8&ust=1690327061858000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKDU85G9qIADFQAAAAAdAAAAABAE\",\r\n  \"comments\": \"Que ondaa\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/gallery/url",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gallery",
+								"url"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uplloadFileImage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "me.jpg"
+								},
+								{
+									"key": "comments",
+									"value": "Helloo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/gallery/file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gallery",
+								"file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getImageById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/gallery/75ff6bd7-cbdd-463d-b291-860df97db460",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gallery",
+								"75ff6bd7-cbdd-463d-b291-860df97db460"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllImages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/gallery/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gallery",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteImage",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/gallery/bfa4cc0a-f771-4f6e-af42-44ceca7803ad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gallery",
+								"bfa4cc0a-f771-4f6e-af42-44ceca7803ad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateComments",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"comments\": \"Holaaaa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/gallery/75ff6bd7-cbdd-463d-b291-860df97db460",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gallery",
+								"75ff6bd7-cbdd-463d-b291-860df97db460"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST_PROJECT",
+			"item": [
+				{
+					"name": "allPostProject",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/projects/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPOSTProject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"posteo 3\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/projects/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePost",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"posteo modificacion\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/projects/post/05125217-141c-46d3-a571-4e3ff598e097",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"post",
+								"05125217-141c-46d3-a571-4e3ff598e097"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePost",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/projects/post/79fa32ee-3ccc-4756-a689-b0198b68c2f5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"post",
+								"79fa32ee-3ccc-4756-a689-b0198b68c2f5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "COMMENT_POST_PROJECT",
+			"item": [
+				{
+					"name": "allComent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/projects/post/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"post",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createComment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \" segundo comentario al segundo post\",\r\n    \"postId\": \"05125217-141c-46d3-a571-4e3ff598e097\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/projects/post/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"post",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateComment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"prueba tercer cambio comentario\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/projects/post/comment/f04efcdd-9ce1-4af6-8600-9209a9ca42af",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"post",
+								"comment",
+								"f04efcdd-9ce1-4af6-8600-9209a9ca42af"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteComment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/projects/post/comment/f04efcdd-9ce1-4af6-8600-9209a9ca42af",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"post",
+								"comment",
+								"f04efcdd-9ce1-4af6-8600-9209a9ca42af"
+							]
+						}
 					},
 					"response": []
 				}
