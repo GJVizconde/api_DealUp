@@ -1,3 +1,4 @@
+// const multer = require('multer');
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
@@ -12,9 +13,13 @@ app.use(
     methods: 'GET, POST, PUT, DELETE', // Especifica los métodos HTTP permitidos
     allowedHeaders: 'Content-Type, Authorization', // Especifica los encabezados permitidos
   })
-);
-// app.use(express.urlencoded({ extended: true }));
+  );
+  // app.use(express.urlencoded({ extended: true }));
+
 app.use(express.json());
+  
+// const upload = multer({ dest: 'uploads/' });
+// app.use(upload.any());
 
 app.use(cookieParser());
 app.use(morgan('dev'));
