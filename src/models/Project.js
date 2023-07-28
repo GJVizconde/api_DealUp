@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
         unique: true,
       },
       description: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       min_amount: {
@@ -41,6 +41,10 @@ module.exports = (sequelize) => {
       image_cover: {
         type: DataTypes.ARRAY(DataTypes.STRING),
         allowNull: true,
+      },
+      city: {
+        type:DataTypes.STRING,
+        allowNull: false
       },
       category: {
         type: DataTypes.JSONB, // Cambio a JSONB

@@ -9,6 +9,7 @@ const createProject = async (name,
      initial_date,
      deadline,
      image_cover,
+     city,
      category,
      status,
      UserId
@@ -25,6 +26,7 @@ const newProject = await Project.create({
     initial_date,
     deadline,
     image_cover,
+    city,
     category,
     status
 })

@@ -63,10 +63,8 @@ const searchProjectByName = async (name) => {
 const searchProjectById = async (id) => {
 
 
-  const project = await Project.findAll({
-    where: {
-      id,
-    },
+  const project = await Project.findByPk(id, {
+    
     
     include: [
       {
