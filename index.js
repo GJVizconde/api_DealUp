@@ -19,13 +19,13 @@
 // ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_______________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
 // ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶GJVL¶¶¶
 
-require('dotenv').config();
-const app = require('./src/app');
-const { conn } = require('./src/db');
+require("dotenv").config();
+const app = require("./src/app");
+const { conn } = require("./src/db");
 const port = process.env.PORT || 3001;
 
 conn.sync({ alter: true }).then(() => {
   app.listen(port, () => {
-    console.log(`%s listening at %s`, 'Server', port);
+    console.log(`%s listening at %s`, "Server", port);
   });
 });
