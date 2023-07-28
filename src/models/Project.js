@@ -30,6 +30,11 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      collected_amount: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        defaultValue: 0
+      },
       initial_date: {
         type: DataTypes.STRING,
         allowNull: false,
