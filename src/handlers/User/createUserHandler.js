@@ -64,6 +64,7 @@ const createUserHandler = async (req, res) => {
 
       res.status(201).json(newUser);
     }
+
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
