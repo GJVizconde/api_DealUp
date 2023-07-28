@@ -41,7 +41,7 @@ const createUserHandler = async (req, res) => {
       thirdPartyCreated
   );
 
-  fs.unlinkSync(file.path);
+  // fs.unlinkSync(file.path);
   
 
     res.status(201).json(newUser);
