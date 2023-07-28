@@ -10,7 +10,7 @@ const uploadFileImage = async(req, res) => {
       const { path  } = req.file;
       const { comments,ProjectId } = req.body;
 
-   //   console.log(path);
+     console.log(path);
 
       if (!path) {
         return res.status(400).json({ error: 'URL not valid' });

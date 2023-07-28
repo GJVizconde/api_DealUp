@@ -1,6 +1,13 @@
 const createNewUser = require('../../controllers/User/createNewUser');
+const { handleUpload } = require('../../cloudinary/cloudinaryService');
+const fs = require('fs');
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
 
 const createUserHandler = async (req, res) => {
+
+  const { path } = req.file;
+  console.log(path);
   const {
     fullName,
     email,
@@ -10,12 +17,16 @@ const createUserHandler = async (req, res) => {
     birthdate,
     phone,
     country,
-    avatar,
     status,
     thirdPartyCreated,
   } = req.body;
 
+  console.log(fullName, email, rol);
+
   try {
+
+    const image = await handleUpload(path);
+
     const newUser = await createNewUser(
       fullName,
       email,
@@ -25,10 +36,13 @@ const createUserHandler = async (req, res) => {
       birthdate,
       phone,
       country,
-      avatar,
+      image.secure_url,
       status,
       thirdPartyCreated
-    );
+  );
+
+  // fs.unlinkSync(file.path);
+  
 
     res.status(201).json(newUser);
   } catch (error) {
@@ -36,4 +50,4 @@ const createUserHandler = async (req, res) => {
   }
 };
 
-module.exports = createUserHandler;
+module.exports = { upload, createUserHandler};

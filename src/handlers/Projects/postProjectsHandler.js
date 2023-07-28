@@ -1,8 +1,13 @@
-const {
-  createProject,
-} = require('../../controllers/Projects/postProjectController');
+const { createProject } = require('../../controllers/Projects/postProjectController');
+// const { handleUpload } = require('../../cloudinary/cloudinaryService');
+// const multer = require('multer');
+// const fs = require('fs');
+// const { JSONB } = require('sequelize');
+// const upload = multer({ dest: 'uploads/' });
 
 const createProjectHandler = async (req, res) => {
+
+  //const { path } = req.file;
   const {
     name,
     description,
@@ -18,8 +23,16 @@ const createProjectHandler = async (req, res) => {
     UserId,
   } = req.body;
 
-  
+//   const arrayCategory = myCategory.split(',');
+//   console.log("my",arrayCategory);
+// console.log("cantidad", arrayCategory.length);
   try {
+    // let category = JSON.parse(myCategory);
+    // // const category = arrayCategory;
+    //  console.log(category);
+    //  console.log(typeof(category));
+    
+ 
     if (!name) {
       return res.status(400).json('Name is required');
     } else if (!description) {
@@ -34,13 +47,17 @@ const createProjectHandler = async (req, res) => {
       return res.status(400).json('Initial date is required');
     } else if (!deadline) {
       return res.status(400).json('Deadline is required');
-     }else if (!city) {
+     } else if (!city) {
       return res.status(400).json('City is required');
-     }
-      else if(!category || category.length === 0 ) { return res.status(400).json('At least one category is required')
-    } else if (!UserId) {
+     } else if(!category || category.length === 0 ) { return res.status(400).json('At least one category is required')
+    }
+     else if (!UserId) {
       return res.status(400).json('User id is required');
      }
+     
+    
+    
+    // const image = await handleUpload(path); 
 
     const newProject = await createProject(
       name,
@@ -56,6 +73,8 @@ const createProjectHandler = async (req, res) => {
       status,
       UserId
     );
+
+    // fs.unlinkSync(file.path);
 
     return res
       .status(201)
