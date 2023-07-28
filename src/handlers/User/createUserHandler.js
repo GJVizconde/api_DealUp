@@ -1,4 +1,4 @@
-const createNewUser = require('../../controllers/User/createNewUser');
+const createNewUser = require("../../controllers/User/createNewUser");
 
 const createUserHandler = async (req, res) => {
   const {
