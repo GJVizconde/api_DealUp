@@ -12,6 +12,7 @@ const createProjectHandler = async (req, res) => {
     initial_date,
     deadline,
     image_cover,
+    city,
     category,
     status,
     UserId,
@@ -33,7 +34,10 @@ const createProjectHandler = async (req, res) => {
       return res.status(400).json('Initial date is required');
     } else if (!deadline) {
       return res.status(400).json('Deadline is required');
-     } else if(!category || category.length === 0 ) { return res.status(400).json('At least one category is required')
+     }else if (!city) {
+      return res.status(400).json('City is required');
+     }
+      else if(!category || category.length === 0 ) { return res.status(400).json('At least one category is required')
     } else if (!UserId) {
       return res.status(400).json('User id is required');
      }
@@ -47,6 +51,7 @@ const createProjectHandler = async (req, res) => {
       initial_date,
       deadline,
       image_cover,
+      city,
       category,
       status,
       UserId
