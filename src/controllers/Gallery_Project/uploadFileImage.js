@@ -10,7 +10,7 @@ const uploadFileImage = async(req, res) => {
       const { path  } = req.file;
       const { comments,ProjectId } = req.body;
 
-   //   console.log(path);
+     console.log(path);
 
       if (!path) {
         return res.status(400).json({ error: 'URL not valid' });
@@ -22,7 +22,7 @@ const uploadFileImage = async(req, res) => {
       const gallery = await Gallery.create({image: cloudinaryResult.secure_url, public_id: cloudinaryResult.public_id, comments, ProjectId});
 
 
-      // fs.unlinkSync(file.path);
+      fs.unlinkSync(file.path);
 
       return res.status(201).json(gallery);
       }

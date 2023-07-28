@@ -1,8 +1,14 @@
 const {
   createProject,
 } = require('../../controllers/Projects/postProjectController');
+const { handleUpload } = require('../../cloudinary/cloudinaryService');
+const multer = require('multer');
+const fs = require('fs');
+const upload = multer({ dest: 'uploads/' });
 
 const createProjectHandler = async (req, res) => {
+
+  const { path } = req.file;
   const {
     name,
     description,
@@ -11,14 +17,16 @@ const createProjectHandler = async (req, res) => {
     goal_amount,
     initial_date,
     deadline,
-    image_cover,
     city,
     category,
     status,
     UserId,
   } = req.body;
+console.log("cat", typeof(category));
+  // let mycategory = category.split(',');
 
-  
+  // console.log(mycategory);
+  // category = mycategory
   try {
     if (!name) {
       return res.status(400).json('Name is required');
@@ -41,6 +49,8 @@ const createProjectHandler = async (req, res) => {
     } else if (!UserId) {
       return res.status(400).json('User id is required');
      }
+    
+    const image = await handleUpload(path); 
 
     const newProject = await createProject(
       name,
@@ -50,12 +60,14 @@ const createProjectHandler = async (req, res) => {
       goal_amount,
       initial_date,
       deadline,
-      image_cover,
+      image.secure_url,
       city,
       category,
       status,
       UserId
     );
+
+    fs.unlinkSync(file.path);
 
     return res
       .status(201)
@@ -65,4 +77,4 @@ const createProjectHandler = async (req, res) => {
   }
 };
 
-module.exports = { createProjectHandler };
+module.exports = { upload, createProjectHandler };
