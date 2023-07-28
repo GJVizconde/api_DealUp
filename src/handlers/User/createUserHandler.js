@@ -5,9 +5,11 @@ const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 
 const createUserHandler = async (req, res) => {
+  if (req.file) {
+    const { path } = req.file;
+    console.log(path);
+  }
 
-  const { path } = req.file;
-  console.log(path);
   const {
     fullName,
     email,
@@ -17,6 +19,7 @@ const createUserHandler = async (req, res) => {
     birthdate,
     phone,
     country,
+    avatar,
     status,
     thirdPartyCreated,
   } = req.body;
@@ -24,30 +27,46 @@ const createUserHandler = async (req, res) => {
   console.log(fullName, email, rol);
 
   try {
+    if (!req.file) {
+      const newUser = await createNewUser(
+        fullName,
+        email,
+        rol,
+        password,
+        gender,
+        birthdate,
+        phone,
+        country,
+        avatar,
+        status,
+        thirdPartyCreated
+      );
 
-    const image = await handleUpload(path);
+      res.status(201).json(newUser);
+    } else {
+      const image = await handleUpload(path);
 
-    const newUser = await createNewUser(
-      fullName,
-      email,
-      rol,
-      password,
-      gender,
-      birthdate,
-      phone,
-      country,
-      image.secure_url,
-      status,
-      thirdPartyCreated
-  );
+      const newUser = await createNewUser(
+        fullName,
+        email,
+        rol,
+        password,
+        gender,
+        birthdate,
+        phone,
+        country,
+        image.secure_url,
+        status,
+        thirdPartyCreated
+      );
 
-  fs.unlinkSync(file.path);
-  
+      // fs.unlinkSync(file.path);
 
-    res.status(201).json(newUser);
+      res.status(201).json(newUser);
+    }
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 };
 
-module.exports = { upload, createUserHandler};
+module.exports = { upload, createUserHandler };
