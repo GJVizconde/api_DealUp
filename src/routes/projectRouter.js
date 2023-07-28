@@ -37,6 +37,7 @@ projectRouter.delete('/post/:id', deletePostHandler);
 
 //continue rute project
 projectRouter.get('/:id', getIdProjectsHandler);
+// projectRouter.post('/', upload.single('image_cover'), createProjectHandler);
 projectRouter.post('/', createProjectHandler);
 projectRouter.put('/prueba/:id', updateProjectHandler); //ruta vieja carga todos los campos
 projectRouter.delete('/:id', deleteProjectHandler);

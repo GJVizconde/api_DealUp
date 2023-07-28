@@ -49,9 +49,9 @@ module.exports = (sequelize) => {
       },
       status: {
         type: DataTypes.BOOLEAN,
-        defaultValue: true,
+        defaultValue: false,
       },
-      thirdPartycreated: {
+      thirdPartyCreated: {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
       },

@@ -17,7 +17,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shaki@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": \"true\",\r\n    \"thirdPartyCreated\": \"false\"\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak4\",\r\n    \"email\": \"shaki4@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": true,\r\n    \"thirdPartycreated\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -267,7 +267,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Automotriz\",\r\n  \"description\": \"Compra y venta de autos de juguetes\",\r\n  \"min_amount\": 120,\r\n  \"max_amount\": 180,\r\n  \"goal_amount\": 10000,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"image_cover\": [],\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"96f4d770-a4d4-4be0-a29b-77848815ba4c\"\r\n}",
+							"raw": "{\r\n  \"name\": \"PizzasBurg\",\r\n  \"description\": \"Pizeria y hamburgueseria\",\r\n  \"min_amount\": 120,\r\n  \"max_amount\": 180,\r\n  \"goal_amount\": 10000,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"image_cover\": [],\r\n  \"city\":\"Buenos Aires\",\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"6d585346-33e5-4db2-8e16-500cb6991725\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -295,7 +295,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Tienda de musica4\",\r\n  \"description\": \"Varias cosas\",\r\n  \"min_amount\": 12,\r\n  \"max_amount\": 16,\r\n  \"goal_amount\": 120,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"image_cover\": [],\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\"\r\n}",
+							"raw": "{\r\n  \"name\": \"Tienda de musica4\",\r\n  \"description\": \"Varias cosas\",\r\n  \"min_amount\": 12,\r\n  \"max_amount\": 16,\r\n  \"goal_amount\": 120,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"image_cover\": [],\r\n  \"city\": \"Buenos Aires\",\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -368,7 +368,7 @@
 					"response": []
 				}
 			],
-			"description": "addProjects: Crea un proyecto;  \nallProject: Trae todos los proyecto;  \nnameProjects: Busca el proyecto por nombre por Query;  \nidProjects: Buscar por proyecto por Id.params  \nupdateForItem: Actualiza datos del proyecto con id params y por uno o varios campos.\n\nupdateProjectViejo: Actualiza datos del proyecto con id params enviando todos los campos (no conviene utilizar)  \ndeleteProject: Elimina un proyecto por id params"
+			"description": "addProjects: Crea un proyecto;  \nallProject: Trae todos los proyecto;  \nnameProjects: Busca el proyecto por nombre por Query;  \nidProjects: Buscar por proyecto por Id.params  \nupdateForItem: Actualiza datos del proyecto con id params y por uno o varios campos.(Solo agregar los campos que se desean actualizar).\n\nupdateProjectViejo: Actualiza datos del proyecto con id params enviando todos los campos (no conviene utilizar)  \ndeleteProject: Elimina un proyecto por id params"
 		},
 		{
 			"name": "RATING",
