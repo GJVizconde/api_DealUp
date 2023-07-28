@@ -18,24 +18,30 @@ const { createCommentHandler } = require('../handlers/Comment/createCommentHandl
 const { updateCommentHandler } = require('../handlers/Comment/updateCommentHandler');
 const { deleteCommentHandler } = require('../handlers/Comment/deleteCommentHandler');
 
+// FILTER PROJECT
+const { getFilterHandler } = require('../handlers/FilterProject/filterProjectHandler');
+
 
 const projectRouter = Router();
 
 projectRouter.get('/', getProjectsHandler);
 
-//rute comment_post_project
+//route filter project
+projectRouter.get('/filter', getFilterHandler);
+
+//route comment_post_project
 projectRouter.get('/post/comment', getAllComentHandler);
 projectRouter.post('/post/comment', createCommentHandler);
 projectRouter.put('/post/comment/:id', updateCommentHandler);
 projectRouter.delete('/post/comment/:id', deleteCommentHandler);
 
-//rute post_project
+//route post_project
 projectRouter.get('/post', getPostProjectHandler);
 projectRouter.post('/post', createPostProjectHandler);
 projectRouter.put('/post/:id', updatePostHandler);
 projectRouter.delete('/post/:id', deletePostHandler);
 
-//continue rute project
+//continue route project
 projectRouter.get('/:id', getIdProjectsHandler);
 projectRouter.post('/', createProjectHandler);
 projectRouter.put('/prueba/:id', updateProjectHandler); //ruta vieja carga todos los campos

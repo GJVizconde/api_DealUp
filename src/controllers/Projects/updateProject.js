@@ -40,6 +40,9 @@ const updateProject =  async (id,
             if(campoActualizar.status !== undefined) {
                 updatedProjectById.status = campoActualizar.status;
             }
+            if(campoActualizar.city !== undefined) {
+                updatedProjectById.city = campoActualizar.city;
+            }
 
         
             await updatedProjectById.save();
