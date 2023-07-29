@@ -3,8 +3,8 @@
 		"_postman_id": "bc78c4c2-05ef-428f-aed3-a8631bac08e1",
 		"name": "DEAL UP!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "27477100",
-		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=27477100&source=collection_link"
+		"_exporter_id": "28612822",
+		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=28612822&source=collection_link"
 	},
 	"item": [
 		{
@@ -325,7 +325,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects/86655960-cc53-4620-8a29-a9dcdd0b3ad4",
+							"raw": "http://localhost:3001/projects/fe98fd76-84c3-410d-9abb-0b4288ee7b26",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -333,7 +333,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"86655960-cc53-4620-8a29-a9dcdd0b3ad4"
+								"fe98fd76-84c3-410d-9abb-0b4288ee7b26"
 							]
 						}
 					},
@@ -345,69 +345,13 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "Pericles Deportes",
-									"type": "text"
-								},
-								{
-									"key": "description",
-									"value": "Venta de elementos para la practica de todos los deportes",
-									"type": "text"
-								},
-								{
-									"key": "min_amount",
-									"value": "80",
-									"type": "text"
-								},
-								{
-									"key": "max_amount",
-									"value": "2000",
-									"type": "text"
-								},
-								{
-									"key": "goal_amount",
-									"value": "180000",
-									"type": "text"
-								},
-								{
-									"key": "initial_date",
-									"value": "10/11/2023",
-									"type": "text"
-								},
-								{
-									"key": "deadline",
-									"value": "04/04/2024",
-									"type": "text"
-								},
-								{
-									"key": "path",
-									"type": "file",
-									"src": "/C:/Users/ESTEBAN/Desktop/deportes.jpg"
-								},
-								{
-									"key": "city",
-									"value": "Buenos Aires",
-									"type": "text"
-								},
-								{
-									"key": "myCategory",
-									"value": "[\"Art\", \"Sport\"]",
-									"type": "text"
-								},
-								{
-									"key": "status",
-									"value": "Pending",
-									"type": "text"
-								},
-								{
-									"key": "UserId",
-									"value": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c",
-									"type": "text"
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Casa de empeño\",\r\n  \"description\": \"Queremos colocar un local de empeño\",\r\n  \"min_amount\": 10,\r\n  \"max_amount\": 3500,\r\n  \"goal_amount\": 100000,\r\n  \"initial_date\": \"12/10/2024\",\r\n  \"deadline\": \"12/12/2024\",\r\n  \"image_cover\": \"\",\r\n  \"city\": \"Buenos Aires\",\r\n  \"category\": [\"Food\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"23b30400-709c-416f-bec3-e82605e2f712\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
 							"raw": "http://localhost:3001/projects",
@@ -459,7 +403,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects/3ddc5ed9-bdf5-41ca-ae01-22af6bb0e39d",
+							"raw": "http://localhost:3001/projects/ff09f53a-dcff-4467-8eea-268caa6904fe",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -467,7 +411,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"3ddc5ed9-bdf5-41ca-ae01-22af6bb0e39d"
+								"ff09f53a-dcff-4467-8eea-268caa6904fe"
 							]
 						}
 					},
