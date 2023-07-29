@@ -1,37 +1,21 @@
-const { Project, Rating, User } = require('../../db');
-// const { Op } = require('sequelize');
-
-const deleteRating = async (req, res) => {
+const { Rating } = require('../../db');
+const deleteRating = async (id) => {
   try {
-    // const { projectId } = req.params;
-    const { id } = req.params;
-    // const { userId } = req.user;
+    ratingFound = await Rating.findByPk(id);
 
-    // const project = await Project.findByPk(projectId, {
-    //   include: {
-    //     model: Rating,
-    //     where: { userId }
-    //   }
-    // });
-
-    // if (!project) {
-    //   return res.status(404).json({ error: 'El proyecto no fue encontrado' });
-    // }
-
-    // const rating = project.ratings[0];
-
-    const rating = await Rating.findByPk(id);
-
-
-    if (!rating) {
-      return res.status(404).json({ error: 'Rating not found' });
+    if (!ratingFound) {
+      throw new Error('User not found');
     }
 
-    await rating.destroy();
+    const deletedRating = await Rating.destroy({
+      where: {
+        id,
+      },
+    });
 
-    res.json({ message: 'Rating deleted correctly' });
+    return deletedRating;
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    throw new Error('Failed to delete rating: ' + error.message);
   }
 };
 
