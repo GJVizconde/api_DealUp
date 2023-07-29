@@ -3,8 +3,8 @@
 		"_postman_id": "bc78c4c2-05ef-428f-aed3-a8631bac08e1",
 		"name": "DEAL UP!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "28612822",
-		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=28612822&source=collection_link"
+		"_exporter_id": "27477100",
+		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=27477100&source=collection_link"
 	},
 	"item": [
 		{
@@ -17,12 +17,91 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak4\",\r\n    \"email\": \"shaki4@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": true,\r\n    \"thirdPartycreated\": true\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shaki@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": true,\r\n    \"thirdPartycreated\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser Cloudinary",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fullName",
+									"value": "Shakira Mebarak",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "shaki@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "rol",
+									"value": "entrepreneur",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Henry12345",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "birthdate",
+									"value": "02/02/1977",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "me.jpg"
+								},
+								{
+									"key": "status",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "thirdPartyCreated",
+									"value": "false",
+									"type": "text"
+								}
+							]
 						},
 						"url": {
 							"raw": "http://localhost:3001/user",
@@ -98,7 +177,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user/2bc72b31-a4b1-425e-ba32-22e0ab99ec2d",
+							"raw": "http://localhost:3001/user/e4582d55-3171-44e7-b815-10f22fbf2a2e",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -106,7 +185,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"2bc72b31-a4b1-425e-ba32-22e0ab99ec2d"
+								"e4582d55-3171-44e7-b815-10f22fbf2a2e"
 							]
 						}
 					},
@@ -119,7 +198,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Daianeta\",\r\n    \"email\": \"daineta25@gmail.com\",\r\n    \"rol\": \"user\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"24/03/2000\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": \"true\",\r\n    \"thirdPartyCreated\": \"false\"\r\n}",
+							"raw": "{\r\n\"country\":\"Venezuela\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -127,7 +206,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/user/b9d191a6-722d-42fa-8c91-f1e2381579f0",
+							"raw": "http://localhost:3001/user/f783398a-7ee6-4549-83f7-61d54c18af36",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -135,7 +214,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"b9d191a6-722d-42fa-8c91-f1e2381579f0"
+								"f783398a-7ee6-4549-83f7-61d54c18af36"
 							]
 						}
 					},
@@ -266,13 +345,69 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"PizzasBurg\",\r\n  \"description\": \"Pizeria y hamburgueseria\",\r\n  \"min_amount\": 120,\r\n  \"max_amount\": 180,\r\n  \"goal_amount\": 10000,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"image_cover\": [],\r\n  \"city\":\"Buenos Aires\",\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"6d585346-33e5-4db2-8e16-500cb6991725\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Pericles Deportes",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Venta de elementos para la practica de todos los deportes",
+									"type": "text"
+								},
+								{
+									"key": "min_amount",
+									"value": "80",
+									"type": "text"
+								},
+								{
+									"key": "max_amount",
+									"value": "2000",
+									"type": "text"
+								},
+								{
+									"key": "goal_amount",
+									"value": "180000",
+									"type": "text"
+								},
+								{
+									"key": "initial_date",
+									"value": "10/11/2023",
+									"type": "text"
+								},
+								{
+									"key": "deadline",
+									"value": "04/04/2024",
+									"type": "text"
+								},
+								{
+									"key": "path",
+									"type": "file",
+									"src": "/C:/Users/ESTEBAN/Desktop/deportes.jpg"
+								},
+								{
+									"key": "city",
+									"value": "Buenos Aires",
+									"type": "text"
+								},
+								{
+									"key": "myCategory",
+									"value": "[\"Art\", \"Sport\"]",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Pending",
+									"type": "text"
+								},
+								{
+									"key": "UserId",
+									"value": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c",
+									"type": "text"
 								}
-							}
+							]
 						},
 						"url": {
 							"raw": "http://localhost:3001/projects",
@@ -324,7 +459,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects/d984f2c8-abbc-41d7-adad-44159fbe33da",
+							"raw": "http://localhost:3001/projects/3ddc5ed9-bdf5-41ca-ae01-22af6bb0e39d",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -332,7 +467,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"d984f2c8-abbc-41d7-adad-44159fbe33da"
+								"3ddc5ed9-bdf5-41ca-ae01-22af6bb0e39d"
 							]
 						}
 					},
@@ -345,7 +480,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\r\n  \"category\": [\"Comics\", \"Dance\"]\r\n}",
+							"raw": "{\r\n\"min_amount\": 35\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -353,7 +488,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/projects/5f6fc547-1ed1-4177-aed4-7551041eb86a",
+							"raw": "http://localhost:3001/projects/ff09f53a-dcff-4467-8eea-268caa6904fe",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -361,7 +496,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"5f6fc547-1ed1-4177-aed4-7551041eb86a"
+								"ff09f53a-dcff-4467-8eea-268caa6904fe"
 							]
 						}
 					},
@@ -380,7 +515,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"points\": 4,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"86655960-cc53-4620-8a29-a9dcdd0b3ad4\",\r\n    \"UserId\": \"96f4d770-a4d4-4be0-a29b-77848815ba4c\"\r\n}",
+							"raw": "{\r\n    \"points\": 5,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"37e13634-b6b5-4ec6-bad1-b3a4820c7c10\",\r\n    \"UserId\": \"3d19be4f-c644-40ab-ae1e-33e2dea7cf2c\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -535,7 +670,7 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/ESTEBAN/Desktop/cards.jpeg"
+									"src": "me.jpg"
 								},
 								{
 									"key": "comments",
@@ -870,6 +1005,43 @@
 				}
 			],
 			"description": "allComment: Trae todos los COMENTARIOS creados;  \ncreateComment: Crea un COMENTARIO para un post determinado de un proyecto;\n\nupdateComment: Actualiza un COMENTARIO determinado;\n\ndeleteComment: Elimina un COMENTARIO determinado;"
+		},
+		{
+			"name": "FILTER_PROJECT",
+			"item": [
+				{
+					"name": "Filter",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"minAmount\": 20,\r\n \"maxAmount\": 5000,\r\n \"category\": [\"Art\"],\r\n \"order\": \"Desc\",\r\n \"attribute\":\"amount\"\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/projects/filter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"filter"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

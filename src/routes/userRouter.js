@@ -1,6 +1,9 @@
 const { Router } = require('express');
 const getUsersHandler = require('../handlers/User/getUsersHandler');
-const { upload, createUserHandler } = require('../handlers/User/createUserHandler');
+const {
+  upload,
+  createUserHandler,
+} = require('../handlers/User/createUserHandler');
 const getUserHandler = require('../handlers/User/getUserHandler');
 const updateUserHandler = require('../handlers/User/updateUserHandler');
 const deleteUserHandler = require('../handlers/User/deleteUserHandler');
@@ -11,7 +14,7 @@ const {
   validateUpdateUser,
   validateId,
   validateLogin,
-} = require('../middlewares/User/routesValidation');
+} = require('../middlewares/User/RoutesValidation');
 
 const userAccess = require('../middlewares/User/userAccess');
 
@@ -23,7 +26,12 @@ userRouter.get('/', getUsersHandler);
 
 userRouter.get('/:id', validateId, getUserHandler);
 
-userRouter.post('/', upload.single('avatar'), validateCreateUser,  createUserHandler);
+userRouter.post(
+  '/',
+  upload.single('avatar'),
+  validateCreateUser,
+  createUserHandler
+);
 
 userRouter.put('/:id', validateUpdateUser, updateUserHandler);
 

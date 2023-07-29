@@ -1,15 +1,14 @@
-const { createProject } = require('../../controllers/Projects/postProjectController');
-const { handleUpload } = require('../../cloudinary/cloudinaryService');
-const multer = require('multer');
-const fs = require('fs');
-const { JSONB } = require('sequelize');
-const upload = multer({ dest: 'uploads/' });
+const {
+  createProject,
+} = require('../../controllers/Projects/postProjectController');
+// const { handleUpload } = require('../../cloudinary/cloudinaryService');
+// const multer = require('multer');
+// const fs = require('fs');
+// const { JSONB } = require('sequelize');
+// const upload = multer({ dest: 'uploads/' });
 
 const createProjectHandler = async (req, res) => {
-// if(req.file){
-//   const { path } = req.file;
-//   console.log(path);
-// }
+  //const { path } = req.file;
   const {
     name,
     description,
@@ -26,23 +25,15 @@ const createProjectHandler = async (req, res) => {
     UserId,
   } = req.body;
 
-  
-    // console.log("img", image_cover);
-    // console.log("type img", typeof(image_cover));
-
+  //   const arrayCategory = myCategory.split(',');
+  //   console.log("my",arrayCategory);
+  // console.log("cantidad", arrayCategory.length);
   try {
-    // if(req.file) {
-      // let category = JSON.parse(myCategory);
-     
-      //  console.log(category);
-      //  console.log(typeof(category));
-    // } 
-    // if(!req.file) {
-    //   let category = myCategory;
-    // }
-    
-    
- 
+    // let category = JSON.parse(myCategory);
+    // // const category = arrayCategory;
+    //  console.log(category);
+    //  console.log(typeof(category));
+
     if (!name) {
       return res.status(400).json('Name is required');
     } else if (!description) {
@@ -57,58 +48,38 @@ const createProjectHandler = async (req, res) => {
       return res.status(400).json('Initial date is required');
     } else if (!deadline) {
       return res.status(400).json('Deadline is required');
-     } else if (!city) {
+    } else if (!city) {
       return res.status(400).json('City is required');
-     }
-      else if(!category || category.length === 0 ) { return res.status(400).json('At least one category is required')
-    }
-     else if (!UserId) {
+    } else if (!category || category.length === 0) {
+      return res.status(400).json('At least one category is required');
+    } else if (!UserId) {
       return res.status(400).json('User id is required');
-     }
-     
-    //  if (!req.file) {
-    //   const newProject = await createProject(
-    //     name,
-    //     description,
-    //     min_amount,
-    //     max_amount,
-    //     goal_amount,
-    //     initial_date,
-    //     deadline,
-    //     image_cover,
-    //     city,
-    //     category,
-    //     status,
-    //     UserId
-    //   );
-    //   res.status(201).json(newProject);
-    //  } else {
-    //   const image = await handleUpload(path); 
+    }
 
-      const newProject = await createProject(
-        name,
-        description,
-        min_amount,
-        max_amount,
-        goal_amount,
-        initial_date,
-        deadline,
-        image_cover,
-        city,
-        category,
-        status,
-        UserId
-      );
-  
-      //fs.unlinkSync(file.path);
-  
-      return res
-        .status(201)
-        .json({ message: 'Proyect created successfully', newProject });
-     //}
-    
-  
+    // const image = await handleUpload(path);
+
+    const newProject = await createProject(
+      name,
+      description,
+      min_amount,
+      max_amount,
+      goal_amount,
+      initial_date,
+      deadline,
+      image_cover,
+      city,
+      category,
+      status,
+      UserId
+    );
+
+    // fs.unlinkSync(file.path);
+
+    return res
+      .status(201)
+      .json({ message: 'Proyect created successfully', newProject });
   } catch (error) {
+    console.log('Error Handler');
     res.status(400).json({ error: error.message });
   }
 };

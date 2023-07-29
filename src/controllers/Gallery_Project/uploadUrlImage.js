@@ -1,30 +1,28 @@
 const cloudinaryService = require('../../cloudinary/cloudinaryService');
 const { Gallery } = require('../../db');
 
-const uploadUrlImage = async(req, res) => {
-    try {
+const uploadUrlImage = async (req, res) => {
+  try {
+    const { url, comments } = req.body;
 
-      const { url, comments  } = req.body;
+    // console.log(url, comments, ProjectId);
 
-      console.log(url, comments, ProjectId);
+    if (!url) {
+      return res.status(400).json({ error: 'URL not valid' });
+    }
 
-      if (!url) {
-        return res.status(400).json({ error: 'URL not valid' });
-      }
+    const cloudinaryResult = await cloudinaryService.handleUpload(url);
 
-      const cloudinaryResult = await cloudinaryService.handleUpload(url);
+    const imageUrl = await Gallery.create({
+      image: cloudinaryResult.secure_url,
+      comments,
+      ProjectId,
+    });
 
-
-      const imageUrl = await Gallery.create({image: cloudinaryResult.secure_url, comments, ProjectId})
-
-
-      return res.status(201).json(imageUrl);
-      }
-
-      catch (error) {
-
-        res.status(500).json({error: error.message});
-      }
-}
+    return res.status(201).json(imageUrl);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
 
 module.exports = uploadUrlImage;
