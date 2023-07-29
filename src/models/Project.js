@@ -44,7 +44,7 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       image_cover: {
-        type: DataTypes.ARRAY(DataTypes.STRING),
+        type: DataTypes.STRING,
         allowNull: true,
       },
       city: {
@@ -73,6 +73,7 @@ module.exports = (sequelize) => {
               'Publishing',
               'Technology',
               'Theater',
+              'Sport',
             ];
             const isValid =
               Array.isArray(value) &&

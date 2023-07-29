@@ -1,12 +1,13 @@
 
 const { filterController } = require('../../controllers/Filter_Project/filterProjectController');
+const { getAllProjects } = require('../../controllers/Projects/getAllProjects');
 
 const getFilterHandler = async (req, res) => {
  
     try {
-        const { category } = req.body;
+        const { category, search, minAmount, maxAmount, order, attribute} = req.body;
         
-        const filterResult = await filterController(category);
+        const filterResult = await filterController(category, search, minAmount, maxAmount, order,attribute);
 
     res.status(200).json(filterResult);
 
