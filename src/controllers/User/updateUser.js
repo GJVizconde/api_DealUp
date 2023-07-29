@@ -1,40 +1,50 @@
 const { User } = require('../../db');
 
-const updateUser = async (
-  id,
-  fullName,
-  email,
-  rol,
-  password,
-  gender,
-  birthdate,
-  phone,
-  country,
-  avatar,
-  status,
-  thirdPartyCreated
-) => {
+const updateUser = async (id, updateField) => {
   try {
-    const updatedUser = await User.findByPk(id);
+    const updateUser = await User.findByPk(id);
 
-    if (!updatedUser) {
+    if (!updateUser) {
       throw new Error('User not found');
     }
-    updatedUser.fullName = fullName;
-    updatedUser.email = email;
-    updatedUser.rol = rol;
-    updatedUser.password = password;
-    updatedUser.gender = gender;
-    updatedUser.birthdate = birthdate;
-    updatedUser.phone = phone;
-    updatedUser.country = country;
-    updatedUser.avatar = avatar;
-    updatedUser.status = status;
-    updatedUser.thirdPartyCreated = thirdPartyCreated;
 
-    await updatedUser.save();
+    if (updateField.name !== undefined) {
+      updateUser.name = updateField.name;
+    }
+    if (updateField.email !== undefined) {
+      updateUser.email = updateField.email;
+    }
+    if (updateField.rol !== undefined) {
+      updateUser.rol = updateField.rol;
+    }
+    if (updateField.password !== undefined) {
+      updateUser.password = updateField.password;
+    }
+    if (updateField.gender !== undefined) {
+      updateUser.gender = updateField.gender;
+    }
+    if (updateField.birthdate !== undefined) {
+      updateUser.birthdate = updateField.birthdate;
+    }
+    if (updateField.phone !== undefined) {
+      updateUser.phone = updateField.phone;
+    }
+    if (updateField.country !== undefined) {
+      updateUser.country = updateField.country;
+    }
+    if (updateField.avatar !== undefined) {
+      updateUser.avatar = updateField.avatar;
+    }
+    if (updateField.status !== undefined) {
+      updateUser.status = updateField.status;
+    }
+    if (updateField.thirdPartyCreated !== undefined) {
+      updateUser.thirdPartyCreated = updateField.thirdPartyCreated;
+    }
 
-    return updatedUser;
+    await updateUser.save();
+
+    return updateUser;
   } catch (error) {
     if (error.name === 'SequelizeValidationError') {
       throw new Error('Validation error: ' + error.message);
