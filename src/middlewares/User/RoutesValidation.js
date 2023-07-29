@@ -21,13 +21,13 @@ const validateCreateUser = async (req, res, next) => {
 
 const validateUpdateUser = (req, res, next) => {
   const { id } = req.params;
-  const { fullName, email, rol, birthdate } = req.body;
+  // const { fullName, email, rol, birthdate } = req.body;
 
   if (!id) return res.status(400).json({ error: 'Missing id' });
-  if (!fullName) return res.status(400).json({ error: 'Missing name' });
-  if (!email) return res.status(400).json({ error: 'Missing email' });
-  if (!rol) return res.status(400).json({ error: 'Missing rol' });
-  if (!birthdate) return res.status(400).json({ error: 'Missing birthdate' });
+  // if (!fullName) return res.status(400).json({ error: 'Missing name' });
+  // if (!email) return res.status(400).json({ error: 'Missing email' });
+  // if (!rol) return res.status(400).json({ error: 'Missing rol' });
+  // if (!birthdate) return res.status(400).json({ error: 'Missing birthdate' });
 
   next();
 };
