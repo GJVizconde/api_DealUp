@@ -10,7 +10,7 @@ const getAllRatings = async () => {
 
     return [...ratingList];
   } catch (error) {
-    throw new Error('Failed to delete user: ' + error.message);
+    throw new Error('Error: ' + error.message);
   }
 };
 

@@ -1,5 +1,7 @@
 const { Router } = require('express');
 const getRatingsHandler = require('../handlers/Rating/getRatingsHandler');
+const getRatingHandler = require('../handlers/Rating/getRatingHandler');
+
 const deleteRating = require('../controllers/Rating_Project/deleteRating');
 const updateRating = require('../controllers/Rating_Project/updateRating');
 const getAllRatings = require('../controllers/Rating_Project/getAllRatings');
@@ -15,12 +17,12 @@ const ratingRouter = Router();
 
 ratingRouter.get('/', getRatingsHandler);
 
-ratingRouter.delete('/:id', deleteRating);
+ratingRouter.get('/:id', getRatingHandler);
 
 ratingRouter.put('/:id', updateRating);
 
 ratingRouter.get('/', getAllRatings);
 
-ratingRouter.get('/:id', getRatingById);
+ratingRouter.delete('/:id', deleteRating);
 
 module.exports = ratingRouter;
