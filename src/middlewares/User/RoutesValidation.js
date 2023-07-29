@@ -3,7 +3,7 @@ const alreadyExistsUser = require('./alreadyExistsUser');
 const validateCreateUser = async (req, res, next) => {
   const { fullName, email, rol, birthdate } = req.body;
 
-  console.log(typeof(fullName), typeof(email));
+  // console.log(typeof(fullName), typeof(email));
 
   const validateAlreadyRegistered = await alreadyExistsUser(email);
 

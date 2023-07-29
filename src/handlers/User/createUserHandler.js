@@ -7,7 +7,7 @@ const upload = multer({ dest: "uploads/" });
 const createUserHandler = async (req, res) => {
   if (req.file) {
     const { path } = req.file;
-    console.log(path);
+    // console.log(path);
   }
 
   const {
@@ -24,7 +24,7 @@ const createUserHandler = async (req, res) => {
     thirdPartyCreated,
   } = req.body;
 
-  console.log(fullName, email, rol);
+  // console.log(fullName, email, rol);
 
   try {
     if (!req.file) {
