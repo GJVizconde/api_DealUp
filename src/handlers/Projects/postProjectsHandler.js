@@ -84,4 +84,4 @@ const createProjectHandler = async (req, res) => {
   }
 };
 
-module.exports = { upload, createProjectHandler };
+module.exports = { createProjectHandler };
