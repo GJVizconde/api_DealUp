@@ -20,6 +20,7 @@ const createProjectHandler = async (req, res) => {
     image_cover,
     city,
     category,
+    //myCategory,
     status,
     UserId,
   } = req.body;
@@ -83,4 +84,4 @@ const createProjectHandler = async (req, res) => {
   }
 };
 
-module.exports = { createProjectHandler };
+module.exports = { upload, createProjectHandler };
