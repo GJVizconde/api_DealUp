@@ -1,0 +1,453 @@
+[
+    {
+        "id": "0dee7a8a-cf83-41bf-b82d-efdfee62edb7",
+        "name": "Sport Shop",
+        "description": "Venta de indumentaria deportiva y accesorios",
+        "min_amount": 150,
+        "max_amount": 2500,
+        "goal_amount": 100000,
+        "collected_amount": 0,
+        "initial_date": "12/08/2023",
+        "deadline": "12/10/2023",
+        "image_cover": "{}",
+        "city": "Bogota",
+        "category": [
+            "Art",
+            "Fashion",
+            "Games",
+            "Publishing"
+        ],
+        "status": "Pending",
+        "Users": [
+            {
+                "id": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c",
+                "fullName": "Esteban Andr",
+                "rol": "entrepreneur"
+            }
+        ],
+        "Galleries": [
+            {
+                "image": "https://res.cloudinary.com/dgx2v3fnk/image/upload/v1690518290/qlchrscuwt6iy06yifg0.jpg",
+                "comments": "Foto"
+            }
+        ],
+        "Ratings": [
+            {
+                "points": 2,
+                "comments": "FIRE PROOF",
+                "UserId": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c"
+            },
+            {
+                "points": 5,
+                "comments": "FIRE PROOF",
+                "UserId": "6d585346-33e5-4db2-8e16-500cb6991725"
+            },
+            {
+                "points": 1,
+                "comments": "FIRE PROOF",
+                "UserId": "23b30400-709c-416f-bec3-e82605e2f712"
+            }
+        ],
+        "Posts": []
+    },
+    {
+        "id": "29325bf9-6a40-4a44-8d6a-4d734d18e1c0",
+        "name": "Restaurant Mi Cocicina",
+        "description": "Queremos colocar nuestra propuesta Culinaria, para esto necesitamos de tu apoyo",
+        "min_amount": 110,
+        "max_amount": 5000,
+        "goal_amount": 100000,
+        "collected_amount": 0,
+        "initial_date": "12/08/2024",
+        "deadline": "12/10/2024",
+        "image_cover": null,
+        "city": "Montevideo",
+        "category": [
+            "Food"
+        ],
+        "status": "Pending",
+        "Users": [
+            {
+                "id": "6d585346-33e5-4db2-8e16-500cb6991725",
+                "fullName": "Shakira Mebarak4",
+                "rol": "entrepreneur"
+            }
+        ],
+        "Galleries": [],
+        "Ratings": [],
+        "Posts": []
+    },
+    {
+        "id": "2c3060fd-9577-4904-9e1f-39427789ad80",
+        "name": "Casa de Musica",
+        "description": "Queremos colocar un local de venta de discografia y remeras de bandas musicales asi como tambien venta de instrumentos musicales",
+        "min_amount": 90,
+        "max_amount": 4750,
+        "goal_amount": 80000,
+        "collected_amount": 0,
+        "initial_date": "01/01/2024",
+        "deadline": "12/12/2024",
+        "image_cover": "",
+        "city": "Buenos Aires",
+        "category": [
+            "Music"
+        ],
+        "status": "Pending",
+        "Users": [
+            {
+                "id": "23b30400-709c-416f-bec3-e82605e2f712",
+                "fullName": "Gilmer Jose",
+                "rol": "entrepreneur"
+            }
+        ],
+        "Galleries": [],
+        "Ratings": [],
+        "Posts": []
+    },
+    {
+        "id": "2da2e9f1-be84-4db1-bee8-aed30a452a64",
+        "name": "PizzasBurg",
+        "description": "Pizeria y hamburgueseria",
+        "min_amount": 200,
+        "max_amount": 1235,
+        "goal_amount": 10000,
+        "collected_amount": 0,
+        "initial_date": "12/08/2023",
+        "deadline": "12/10/2023",
+        "image_cover": "{}",
+        "city": "Medellin",
+        "category": [
+            "Art",
+            "Music"
+        ],
+        "status": "Pending",
+        "Users": [
+            {
+                "id": "6d585346-33e5-4db2-8e16-500cb6991725",
+                "fullName": "Shakira Mebarak4",
+                "rol": "entrepreneur"
+            }
+        ],
+        "Galleries": [],
+        "Ratings": [],
+        "Posts": []
+    },
+    {
+        "id": "344e9f00-df7a-401b-b3dd-2ebeb807ef9a",
+        "name": "Peluqueria Maggie",
+        "description": "Queremos colocar un local peluqueria y arreglos de barbas",
+        "min_amount": 5,
+        "max_amount": 50000,
+        "goal_amount": 85490,
+        "collected_amount": 0,
+        "initial_date": "01/03/2024",
+        "deadline": "12/09/2024",
+        "image_cover": "",
+        "city": "Cordoba",
+        "category": [
+            "Music"
+        ],
+        "status": "Pending",
+        "Users": [
+            {
+                "id": "23b30400-709c-416f-bec3-e82605e2f712",
+                "fullName": "Gilmer Jose",
+                "rol": "entrepreneur"
+            }
+        ],
+        "Galleries": [],
+        "Ratings": [],
+        "Posts": []
+    },
+    {
+        "id": "37e13634-b6b5-4ec6-bad1-b3a4820c7c10",
+        "name": "Tienda de Ferreteria",
+        "description": "Venta de materiales para la contruccion, herramientas electricas, accesorios, pintureria, ferreteria",
+        "min_amount": 180,
+        "max_amount": 3900,
+        "goal_amount": 160000,
+        "collected_amount": 0,
+        "initial_date": "12/08/2023",
+        "deadline": "12/10/2023",
+        "image_cover": "{}",
+        "city": "Sao Pablo",
+        "category": [
+            "Technology",
+            "Fashion",
+            "Design",
+            "Publishing"
+        ],
+        "status": "Pending",
+        "Users": [
+            {
+                "id": "62cc7f91-3363-4130-ad78-f6b124a42ade",
+                "fullName": "Bruno Leon",
+                "rol": "entrepreneur"
+            }
+        ],
+        "Galleries": [],
+        "Ratings": [
+            {
+                "points": 5,
+                "comments": "FIRE PROOF",
+                "UserId": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c"
+            },
+            {
+                "points": 5,
+                "comments": "FIRE PROOF",
+                "UserId": "6d585346-33e5-4db2-8e16-500cb6991725"
+            }
+        ],
+        "Posts": []
+    },
+    {
+        "id": "39f690da-7529-408b-8a20-c639720ca2ec",
+        "name": "Restaurant Mi Favorita",
+        "description": "Queremos colocar nuestra propuesta Culinaria, para esto necesitamos de tu apoyo",
+        "min_amount": 110,
+        "max_amount": 5000,
+        "goal_amount": 100000,
+        "collected_amount": 0,
+        "initial_date": "12/08/2024",
+        "deadline": "12/10/2024",
+        "image_cover": "",
+        "city": "Bogota",
+        "category": [
+            "Food"
+        ],
+        "status": "Pending",
+        "Users": [
+            {
+                "id": "23b30400-709c-416f-bec3-e82605e2f712",
+                "fullName": "Gilmer Jose",
+                "rol": "entrepreneur"
+            }
+        ],
+        "Galleries": [],
+        "Ratings": [],
+        "Posts": []
+    },
+    {
+        "id": "3b885f0d-da76-4e38-8977-d2fec2da9a98",
+        "name": "Pintureria ColorShop",
+        "description": "Venta de pinturas, pinceles y demas elementos para la decoracion de su casa",
+        "min_amount": 70,
+        "max_amount": 1500,
+        "goal_amount": 18000,
+        "collected_amount": 0,
+        "initial_date": "10/11/2023",
+        "deadline": "04/04/2024",
+        "image_cover": null,
+        "city": "Buenos Aires",
+        "category": [
+            "Art"
+        ],
+        "status": "Pending",
+        "Users": [
+            {
+                "id": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c",
+                "fullName": "Esteban Andr",
+                "rol": "entrepreneur"
+            }
+        ],
+        "Galleries": [],
+        "Ratings": [],
+        "Posts": []
+    },
+    {
+        "id": "6a7fbea2-3add-4680-b572-be60d1f09890",
+        "name": "Restaurant Mi casa",
+        "description": "Queremos colocar nuestra propuesta Culinaria, para esto necesitamos de tu apoyo",
+        "min_amount": 20,
+        "max_amount": 5000,
+        "goal_amount": 100000,
+        "collected_amount": 0,
+        "initial_date": "12/08/2024",
+        "deadline": "12/10/2024",
+        "image_cover": "{}",
+        "city": "Buenos Aires",
+        "category": [
+            "Food"
+        ],
+        "status": "Pending",
+        "Users": [
+            {
+                "id": "23b30400-709c-416f-bec3-e82605e2f712",
+                "fullName": "Gilmer Jose",
+                "rol": "entrepreneur"
+            }
+        ],
+        "Galleries": [],
+        "Ratings": [],
+        "Posts": []
+    },
+    {
+        "id": "6e162daa-8ce0-4c57-9b03-5f6805e100e6",
+        "name": "Casa de empeño",
+        "description": "Queremos colocar un local de empeño",
+        "min_amount": 10,
+        "max_amount": 3500,
+        "goal_amount": 100000,
+        "collected_amount": 0,
+        "initial_date": "12/10/2024",
+        "deadline": "12/12/2024",
+        "image_cover": "",
+        "city": "Buenos Aires",
+        "category": [
+            "Food"
+        ],
+        "status": "Pending",
+        "Users": [
+            {
+                "id": "23b30400-709c-416f-bec3-e82605e2f712",
+                "fullName": "Gilmer Jose",
+                "rol": "entrepreneur"
+            }
+        ],
+        "Galleries": [],
+        "Ratings": [],
+        "Posts": []
+    },
+    {
+        "id": "a62a6ac6-9281-45f0-9bd3-6b7502f67071",
+        "name": "Dog Happy",
+        "description": "Veterinaria y venta de productos",
+        "min_amount": 200,
+        "max_amount": 2500,
+        "goal_amount": 75000,
+        "collected_amount": 0,
+        "initial_date": "12/08/2023",
+        "deadline": "12/10/2023",
+        "image_cover": "{}",
+        "city": "Buenos Aires",
+        "category": [
+            "Journalism",
+            "Fashion",
+            "Games",
+            "Publishing",
+            "Design"
+        ],
+        "status": "Pending",
+        "Users": [
+            {
+                "id": "23b30400-709c-416f-bec3-e82605e2f712",
+                "fullName": "Gilmer Jose",
+                "rol": "entrepreneur"
+            }
+        ],
+        "Galleries": [],
+        "Ratings": [
+            {
+                "points": 2,
+                "comments": "FIRE PROOF",
+                "UserId": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c"
+            },
+            {
+                "points": 1,
+                "comments": "FIRE PROOF",
+                "UserId": "23b30400-709c-416f-bec3-e82605e2f712"
+            },
+            {
+                "points": 3,
+                "comments": "FIRE PROOF",
+                "UserId": "6d585346-33e5-4db2-8e16-500cb6991725"
+            },
+            {
+                "points": 5,
+                "comments": "FIRE PROOF",
+                "UserId": "62cc7f91-3363-4130-ad78-f6b124a42ade"
+            }
+        ],
+        "Posts": []
+    },
+    {
+        "id": "fa857ac9-ab0d-45d2-af91-349d8d2fa83f",
+        "name": "Automatriz",
+        "description": "Compra y venta de autos de juguetes",
+        "min_amount": 12,
+        "max_amount": 1800,
+        "goal_amount": 10000,
+        "collected_amount": 0,
+        "initial_date": "12/08/2023",
+        "deadline": "12/10/2023",
+        "image_cover": "{}",
+        "city": "Buenos Aires",
+        "category": [
+            "Art",
+            "Comics",
+            "Games",
+            "Technology"
+        ],
+        "status": "Pending",
+        "Users": [
+            {
+                "id": "6d585346-33e5-4db2-8e16-500cb6991725",
+                "fullName": "Shakira Mebarak4",
+                "rol": "entrepreneur"
+            }
+        ],
+        "Galleries": [],
+        "Ratings": [
+            {
+                "points": 4,
+                "comments": "FIRE PROOF",
+                "UserId": "6d585346-33e5-4db2-8e16-500cb6991725"
+            },
+            {
+                "points": 2,
+                "comments": "FIRE PROOF",
+                "UserId": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c"
+            }
+        ],
+        "Posts": []
+    },
+    {
+        "id": "fe98fd76-84c3-410d-9abb-0b4288ee7b26",
+        "name": "CompuMonte",
+        "description": "Venta de computadoras y accesorios",
+        "min_amount": 250,
+        "max_amount": 3900,
+        "goal_amount": 160000,
+        "collected_amount": 0,
+        "initial_date": "12/08/2023",
+        "deadline": "12/10/2023",
+        "image_cover": "{}",
+        "city": "Montevideo",
+        "category": [
+            "Technology",
+            "Fashion",
+            "Games",
+            "Publishing",
+            "Design",
+            "Photography",
+            "Music"
+        ],
+        "status": "Pending",
+        "Users": [
+            {
+                "id": "62cc7f91-3363-4130-ad78-f6b124a42ade",
+                "fullName": "Bruno Leon",
+                "rol": "entrepreneur"
+            }
+        ],
+        "Galleries": [],
+        "Ratings": [
+            {
+                "points": 5,
+                "comments": "FIRE PROOF",
+                "UserId": "62cc7f91-3363-4130-ad78-f6b124a42ade"
+            },
+            {
+                "points": 5,
+                "comments": "FIRE PROOF",
+                "UserId": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c"
+            },
+            {
+                "points": 5,
+                "comments": "FIRE PROOF",
+                "UserId": "6d585346-33e5-4db2-8e16-500cb6991725"
+            }
+        ],
+        "Posts": []
+    }
+]
