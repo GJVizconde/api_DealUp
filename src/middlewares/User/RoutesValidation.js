@@ -5,18 +5,22 @@ const validateCreateUser = async (req, res, next) => {
 
   // console.log(typeof(fullName), typeof(email));
 
-  const validateAlreadyRegistered = await alreadyExistsUser(email);
+  try {
+    const validateAlreadyRegistered = await alreadyExistsUser(email);
 
-  if (validateAlreadyRegistered) {
-    return res.status(400).json({ error: validateAlreadyRegistered.message });
+    if (validateAlreadyRegistered) {
+      return res.status(400).json({ error: validateAlreadyRegistered.message });
+    }
+
+    if (!fullName) return res.status(400).json({ error: 'Missing name' });
+    if (!email) return res.status(400).json({ error: 'Missing email' });
+    if (!rol) return res.status(400).json({ error: 'Missing rol' });
+    if (!birthdate) return res.status(400).json({ error: 'Missing birthdate' });
+
+    next();
+  } catch (error) {
+    res.status(400).json({ error: error.message });
   }
-
-  if (!fullName) return res.status(400).json({ error: 'Missing name' });
-  if (!email) return res.status(400).json({ error: 'Missing email' });
-  if (!rol) return res.status(400).json({ error: 'Missing rol' });
-  if (!birthdate) return res.status(400).json({ error: 'Missing birthdate' });
-
-  next();
 };
 
 const validateUpdateUser = (req, res, next) => {
