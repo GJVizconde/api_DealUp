@@ -9,34 +9,37 @@ const PostModel = require('./models/Post');
 const CommentModel = require('./models/Comment');
 const InvesmentsModel = require('./models/Invesments');
 
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY, NODE_ENV } = process.env;
 
-// const sequelize = new Sequelize(
-//   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/dealupdb`,
-//   {
-//     logging: false,
-//     native: false,
-//     charset: 'utf8mb4',
-//     define: {
-//       validate: true,
-//     },
-//   }
-// );
-
-const sequelize = new Sequelize(DB_DEPLOY, {
-  dialect: 'postgres',
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false,
+let sequelize;
+if (NODE_ENV === 'development') {
+  sequelize = new Sequelize(
+    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/dealupdb`,
+    {
+      logging: false,
+      native: false,
+      charset: 'utf8mb4',
+      define: {
+        validate: true,
+      },
+    }
+  );
+} else {
+  sequelize = new Sequelize(DB_DEPLOY, {
+    dialect: 'postgres',
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+      keepAlive: true,
     },
-    keepAlive: true,
-  },
-  logging: false,
-  native: false,
-  charset: 'utf8mb4',
-  ssl: true,
-});
+    logging: false,
+    native: false,
+    charset: 'utf8mb4',
+    ssl: true,
+  });
+}
 
 UserModel(sequelize);
 ProjectModel(sequelize);
