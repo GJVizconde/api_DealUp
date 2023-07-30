@@ -24,12 +24,13 @@ const app = require('./src/app');
 const { conn } = require('./src/db');
 const port = process.env.PORT || 3001;
 
-try {
-  conn.sync({ alter: true }).then(() => {
+conn
+  .sync({ alter: true })
+  .then(() => {
     app.listen(port, () => {
       console.log(`%s listening at %s`, 'Server', port);
     });
+  })
+  .catch((error) => {
+    console.error('Error init:', error);
   });
-} catch (error) {
-  console.log(error);
-}
