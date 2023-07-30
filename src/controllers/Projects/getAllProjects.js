@@ -70,6 +70,8 @@ const getAllProjects = async () => {
 //     throw error;
 //   }
 
+
+
 };
 
 module.exports = { getAllProjects }
