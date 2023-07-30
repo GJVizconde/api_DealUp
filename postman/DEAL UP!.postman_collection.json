@@ -3,8 +3,8 @@
 		"_postman_id": "bc78c4c2-05ef-428f-aed3-a8631bac08e1",
 		"name": "DEAL UP!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "28612822",
-		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=28612822&source=collection_link"
+		"_exporter_id": "27477100",
+		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=27477100&source=collection_link"
 	},
 	"item": [
 		{
@@ -17,7 +17,35 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shaki@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": true,\r\n    \"thirdPartycreated\": true\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shaki@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"thirdPartycreated\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shaki@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"thirdPartycreated\": false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -424,7 +452,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"max_amount\": 1235\r\n}",
+							"raw": "{\r\n\"collected_amount\": 100\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -432,7 +460,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/projects/2da2e9f1-be84-4db1-bee8-aed30a452a64",
+							"raw": "http://localhost:3001/projects/6715bcf8-c333-454b-bb70-98abbdd8b1c5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -440,7 +468,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"2da2e9f1-be84-4db1-bee8-aed30a452a64"
+								"6715bcf8-c333-454b-bb70-98abbdd8b1c5"
 							]
 						}
 					},
@@ -478,7 +506,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/rating/b12e56ff-8623-44c8-af9f-004640491e46",
+							"raw": "http://localhost:3001/rating/be4ea10a-c92f-4ea6-b897-96acbfdfa6e0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -486,7 +514,7 @@
 							"port": "3001",
 							"path": [
 								"rating",
-								"b12e56ff-8623-44c8-af9f-004640491e46"
+								"be4ea10a-c92f-4ea6-b897-96acbfdfa6e0"
 							]
 						}
 					},
@@ -499,7 +527,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"points\": 5,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"37e13634-b6b5-4ec6-bad1-b3a4820c7c10\",\r\n    \"UserId\": \"3d19be4f-c644-40ab-ae1e-33e2dea7cf2c\"\r\n}",
+							"raw": "{\r\n    \"points\": 5,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"6715bcf8-c333-454b-bb70-98abbdd8b1c5\",\r\n    \"UserId\": \"8cd16cb3-6c8b-4562-b3d0-d71544ce7906\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -526,7 +554,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/rating/6f0d1bf1-f3c8-4885-930b-9299a64c623a",
+							"raw": "http://localhost:3001/rating/5fd022b3-6842-4688-a2ee-51ade1d1a2ce",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -534,7 +562,7 @@
 							"port": "3001",
 							"path": [
 								"rating",
-								"6f0d1bf1-f3c8-4885-930b-9299a64c623a"
+								"5fd022b3-6842-4688-a2ee-51ade1d1a2ce"
 							]
 						}
 					},
@@ -547,7 +575,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"points\": 7,\r\n    \"comments\": \"FIRE PROOF\"\r\n}",
+							"raw": "{\r\n    \"points\": 8,\r\n    \"comments\": \"FIRE PROOF2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -555,7 +583,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/rating/756c8445-fd87-49e7-aacc-eb32d037f428",
+							"raw": "http://localhost:3001/rating/118b3a0b-3ff3-42dc-97c6-826a8041fc51",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -563,7 +591,7 @@
 							"port": "3001",
 							"path": [
 								"rating",
-								"756c8445-fd87-49e7-aacc-eb32d037f428"
+								"118b3a0b-3ff3-42dc-97c6-826a8041fc51"
 							]
 						}
 					},
