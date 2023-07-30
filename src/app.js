@@ -5,6 +5,9 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const mainRouter = require('./routes/index');
 
+require('dotenv').config();
+const { NODE_ENV } = process.env;
+
 const app = express();
 
 app.use(cors({}));
@@ -26,6 +29,9 @@ app.use(express.json());
 
 app.use(cookieParser());
 app.use(morgan('dev'));
+
+// Motor de plantillas EJS para renderizar la página
+app.set('view engine', 'ejs');
 
 app.use(mainRouter);
 
