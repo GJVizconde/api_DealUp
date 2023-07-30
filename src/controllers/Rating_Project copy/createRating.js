@@ -1,7 +1,11 @@
+const { log } = require('console');
 const { User, Project, Rating } = require('../../db');
+const { Op } = require('sequelize');
 
-const rateProject = async (points, comments, ProjectId, UserId) => {
+const rateProject = async (req, res) => {
   try {
+    const { points, comments, ProjectId, UserId } = req.body;
+
     const existingRating = await Rating.findOne({
       where: {
         UserId,
@@ -10,7 +14,9 @@ const rateProject = async (points, comments, ProjectId, UserId) => {
     });
 
     if (existingRating) {
-      throw new Error('The user has already created a rating for this project');
+      return res.status(400).json({
+        error: 'The user has already created a rating for this project',
+      });
     }
 
     const rate = await Rating.create({
@@ -30,9 +36,9 @@ const rateProject = async (points, comments, ProjectId, UserId) => {
 
     // console.log('newRating', newRating);
 
-    return newRating;
+    return res.status(201).json(newRating);
   } catch (error) {
-    throw new Error('Failed creating new Rating:' + error.message);
+    res.status(500).json({ error: error.message });
   }
 };
 

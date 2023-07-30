@@ -20,6 +20,7 @@ const createProjectHandler = async (req, res) => {
     image_cover,
     city,
     category,
+    //myCategory,
     status,
     UserId,
   } = req.body;
