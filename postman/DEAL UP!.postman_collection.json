@@ -346,7 +346,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Casa de empeño\",\r\n  \"description\": \"Queremos colocar un local de empeño\",\r\n  \"min_amount\": 10,\r\n  \"max_amount\": 3500,\r\n  \"goal_amount\": 100000,\r\n  \"initial_date\": \"12/10/2024\",\r\n  \"deadline\": \"12/12/2024\",\r\n  \"image_cover\": \"\",\r\n  \"city\": \"Buenos Aires\",\r\n  \"category\": [\"Food\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"23b30400-709c-416f-bec3-e82605e2f712\"\r\n}",
+							"raw": "{\r\n  \"name\": \"Peluqueria Maggie\",\r\n  \"description\": \"Queremos colocar un local peluqueria y arreglos de barbas\",\r\n  \"min_amount\": 5,\r\n  \"max_amount\": 50000,\r\n  \"goal_amount\": 85490,\r\n  \"initial_date\": \"01/03/2024\",\r\n  \"deadline\": \"12/09/2024\",\r\n  \"image_cover\": \"\",\r\n  \"city\": \"Cordoba\",\r\n  \"category\": [\"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"23b30400-709c-416f-bec3-e82605e2f712\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -424,7 +424,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"min_amount\": 35\r\n}",
+							"raw": "{\r\n\"max_amount\": 1235\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -432,7 +432,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/projects/ff09f53a-dcff-4467-8eea-268caa6904fe",
+							"raw": "http://localhost:3001/projects/2da2e9f1-be84-4db1-bee8-aed30a452a64",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -440,7 +440,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"ff09f53a-dcff-4467-8eea-268caa6904fe"
+								"2da2e9f1-be84-4db1-bee8-aed30a452a64"
 							]
 						}
 					},
@@ -452,6 +452,46 @@
 		{
 			"name": "RATING",
 			"item": [
+				{
+					"name": "getAllRatings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/rating/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"rating",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRatingById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/rating/b12e56ff-8623-44c8-af9f-004640491e46",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"rating",
+								"b12e56ff-8623-44c8-af9f-004640491e46"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "createRating",
 					"request": {
@@ -495,46 +535,6 @@
 							"path": [
 								"rating",
 								"6f0d1bf1-f3c8-4885-930b-9299a64c623a"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getAllRatings",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3001/rating/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"rating",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getRatingById",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3001/rating/b12e56ff-8623-44c8-af9f-004640491e46",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"rating",
-								"b12e56ff-8623-44c8-af9f-004640491e46"
 							]
 						}
 					},
@@ -963,7 +963,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n \"minAmount\": 20,\r\n \"maxAmount\": 5000,\r\n \"category\": [\"Art\"],\r\n \"order\": \"Desc\",\r\n \"attribute\":\"amount\"\r\n \r\n}",
+							"raw": "{\r\n \"minAmount1\": null,\r\n \"minAmount2\": null,\r\n \"maxAmount1\":null,\r\n  \"maxAmount2\":null,\r\n \"category\": [],\r\n \"order\": \"Desc\",\r\n \"attribute\":\"amount\",\r\n \"typeAmount\": \"min\"\r\n \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
