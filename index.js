@@ -20,15 +20,18 @@
 // ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶GJVL¶¶¶
 
 require('dotenv').config();
+const { PORT, USERNAME, NODE_ENV: env } = process.env;
 const app = require('./src/app');
 const { conn } = require('./src/db');
-const port = process.env.PORT || 3001;
+const user = USERNAME || 'dev';
+const port = PORT || 3001;
 
 conn
   .sync({ alter: true })
   .then(() => {
     app.listen(port, () => {
-      console.log(`%s listening at %s`, 'Server', port);
+      console.log('Welcome Back %s!', user);
+      console.log(`%s listening at %s, %s mode on`, 'Server', port, env);
     });
   })
   .catch((error) => {
