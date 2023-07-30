@@ -2,6 +2,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const path = require('path');
 const cookieParser = require('cookie-parser');
 const mainRouter = require('./routes/index');
 
@@ -30,7 +31,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(morgan('dev'));
 
-// Motor de plantillas EJS para renderizar la página
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(mainRouter);
