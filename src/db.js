@@ -48,9 +48,10 @@ RatingModel(sequelize);
 PostModel(sequelize);
 CommentModel(sequelize);
 GalleryModel(sequelize);
-InvesmentsModel(sequelize);
+InvestmentModel(sequelize);
+ImageModel(sequelize);
 
-const { User, Project, Rating, Gallery, Comment, Post } = sequelize.models;
+const { User, Project, Rating, Gallery, Comment, Post, Image, Investment } = sequelize.models;
 
 //relacion de tablas
 
