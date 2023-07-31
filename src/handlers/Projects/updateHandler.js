@@ -5,7 +5,6 @@ const updateHandler = async (req, res) => {
     const { id } = req.params;
     const campoActualizar = req.body;
 
-    console.log(campoActualizar);
     const resultUpdateProject = await updateProject(id, campoActualizar);
 
     res.status(200).json(resultUpdateProject);

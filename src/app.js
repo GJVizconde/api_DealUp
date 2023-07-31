@@ -6,9 +6,6 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const mainRouter = require('./routes/index');
 
-require('dotenv').config();
-const { NODE_ENV } = process.env;
-
 const app = express();
 
 app.use(cors({}));
