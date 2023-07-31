@@ -7,7 +7,7 @@ const RatingModel = require('./models/Rating');
 const GalleryModel = require('./models/Gallery');
 const PostModel = require('./models/Post');
 const CommentModel = require('./models/Comment');
-const InvesmentsModel = require('./models/Invesments');
+const InvestmentModel = require('./models/Investment');
 
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY, NODE_ENV } = process.env;
 
@@ -47,9 +47,9 @@ RatingModel(sequelize);
 PostModel(sequelize);
 CommentModel(sequelize);
 GalleryModel(sequelize);
-InvesmentsModel(sequelize);
+InvestmentModel(sequelize);
 
-const { User, Project, Rating, Gallery, Comment, Post } = sequelize.models;
+const { User, Project, Rating, Gallery, Comment, Post, Investment } = sequelize.models;
 
 //relacion de tablas
 
@@ -82,6 +82,17 @@ Rating.belongsTo(Project);
 Project.hasMany(Gallery, { onDelete: 'CASCADE', onUpdate: 'CASCADE' });
 Gallery.belongsTo(Project);
 
+//PROJECT-INVESTMENT
+
+Project.hasMany(Investment, { onDelete: 'CASCADE', onUpdate: 'CASCADE' });
+Investment.belongsTo(Project);
+
+
+//INVESTMENT-USER
+Investment.belongsToMany(User, { through: 'investment_user' });
+User.belongsToMany(Investment, { through: 'investment_user' });
+
+
 //PROJECT-POST
 Project.hasMany(Post, { onDelete: 'CASCADE', onUpdate: 'CASCADE' }),
   Post.belongsTo(Project);
@@ -90,6 +101,8 @@ Project.hasMany(Post, { onDelete: 'CASCADE', onUpdate: 'CASCADE' }),
 
 Post.hasMany(Comment, { onDelete: 'CASCADE', onUpdate: 'CASCADE' });
 Comment.belongsTo(Post);
+
+
 
 module.exports = {
   ...sequelize.models,

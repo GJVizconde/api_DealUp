@@ -9,10 +9,10 @@ const updateUserHandler = require("../handlers/User/updateUserHandler");
 const deleteUserHandler = require("../handlers/User/deleteUserHandler");
 const loginUserHandler = require("../handlers/User/loginUserHandler");
 //invesments
-const {getAllInvesmentHandler } = require('../handlers/Invesments/getAllInvesmentsHandler');
-const {createInvesmentHandler } = require('../handlers/Invesments/createInvesmentHandler');
-const {updateInvesmentsHandler } = require('../handlers/Invesments/updateInvesmentHandler');
-const {deleteInvesmentHandler } = require('../handlers/Invesments/deleteInvesmentHandler');
+const {getAllInvestmentHandler } = require('../handlers/Investments/getAllInvestmentsHandler');
+const {createInvestmentHandler } = require('../handlers/Investments/createInvestmentHandler');
+const {updateInvestmentsHandler } = require('../handlers/Investments/updateInvestmentHandler');
+const {deleteInvestmentHandler } = require('../handlers/Investments/deleteInvestmentHandler');
 
 const {
   validateCreateUser,
@@ -31,10 +31,10 @@ userRouter.get("/", getUsersHandler);
 
 //route invesments
 
-userRouter.get("/invesments", getAllInvesmentHandler);
-userRouter.post("/invesments", createInvesmentHandler);
-userRouter.put("/invesments/:id", updateInvesmentsHandler);
-userRouter.delete("/invesments/:id", deleteInvesmentHandler);
+userRouter.get("/investments", getAllInvestmentHandler);
+userRouter.post("/investments", createInvestmentHandler);
+userRouter.put("/investments/:id", updateInvestmentsHandler);
+userRouter.delete("/investments/:id", deleteInvestmentHandler);
 
 userRouter.get("/:id", validateId, getUserHandler);
 

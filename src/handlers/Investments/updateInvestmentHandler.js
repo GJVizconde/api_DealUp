@@ -1,6 +1,6 @@
-const { updateInvesment } = require('../../controllers/Invesment/updateInvesmentsController');
+const { updateInvestment } = require('../../controllers/Investment/updateInvestmentsController');
 
-const updateInvesmentsHandler = async (req, res) => {
+const updateInvestmentsHandler = async (req, res) => {
 
     try {
         const { id } = req.params;
@@ -15,7 +15,7 @@ const updateInvesmentsHandler = async (req, res) => {
         if(!UserId) { res.status(400).json('User ID is required')};
         if(!ProjectId) { res.status(400).json('Project ID is required')};
         
-        const updateResult = await updateInvesment( id,contribution, comment, UserId, ProjectId);
+        const updateResult = await updateInvestment( id,contribution, comment, UserId, ProjectId);
         res.status(200).json(updateResult);
 
     } catch (error) {
@@ -23,4 +23,4 @@ const updateInvesmentsHandler = async (req, res) => {
     }
 };
 
-module.exports = { updateInvesmentsHandler }
+module.exports = { updateInvestmentsHandler }
