@@ -8,6 +8,11 @@ const getUserHandler = require("../handlers/User/getUserHandler");
 const updateUserHandler = require("../handlers/User/updateUserHandler");
 const deleteUserHandler = require("../handlers/User/deleteUserHandler");
 const loginUserHandler = require("../handlers/User/loginUserHandler");
+//invesments
+const {getAllInvesmentHandler } = require('../handlers/Invesments/getAllInvesmentsHandler');
+const {createInvesmentHandler } = require('../handlers/Invesments/createInvesmentHandler');
+const {updateInvesmentsHandler } = require('../handlers/Invesments/updateInvesmentHandler');
+const {deleteInvesmentHandler } = require('../handlers/Invesments/deleteInvesmentHandler');
 
 const {
   validateCreateUser,
@@ -23,6 +28,13 @@ const userRouter = Router();
 // userAccess(['entrepreneur', 'admin'])
 
 userRouter.get("/", getUsersHandler);
+
+//route invesments
+
+userRouter.get("/invesments", getAllInvesmentHandler);
+userRouter.post("/invesments", createInvesmentHandler);
+userRouter.put("/invesments/:id", updateInvesmentsHandler);
+userRouter.delete("/invesments/:id", deleteInvesmentHandler);
 
 userRouter.get("/:id", validateId, getUserHandler);
 

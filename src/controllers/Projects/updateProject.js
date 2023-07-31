@@ -51,8 +51,6 @@ const updateProject = async (id, campoActualizar) => {
       updatedProjectById.collected_amount = campoActualizar.collected_amount;
     }
 
-    console.log(updatedProjectById);
-
     await updatedProjectById.save();
     return updatedProjectById;
   } catch (error) {}
