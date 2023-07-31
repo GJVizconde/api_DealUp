@@ -1,20 +1,16 @@
 const { Rating } = require('../../db');
 
-const getRatingById = async (req, res) => {
+const getRatingById = async (id) => {
   try {
-
-    const { id } = req.params;
-
     const rating = await Rating.findByPk(id);
 
-
     if (!rating) {
-      return res.status(404).json({ error: 'Rating not found' });
+      throw new Error({ error: 'There is no rating with that id' });
     }
 
-    res.json({message: 'Rating founded', rating});
+    return rating;
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    throw new Error('Error: ' + error.message);
   }
 };
 

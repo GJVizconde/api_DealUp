@@ -29,6 +29,8 @@ const createNewUser = async (
     });
 
     return newUser;
+
+    // console.log('Prueba');
   } catch (error) {
     if (error.name === 'SequelizeValidationError') {
       throw new Error('Validation error ' + error.message);

@@ -1,39 +1,28 @@
-const { Project, Rating } = require('../../db');
+const { Rating } = require('../../db');
 
-const updateRating = async (req, res) => {
-    try {
+const updateRating = async (id, updateField) => {
+  try {
+    const updateRating = await Rating.findByPk(id);
 
-      const { id } = req.params;
-      // const { projectId } = req.params;
-      const { points, comments } = req.body;
-  
-      // if (!points || !comments) {
-      //   return res.status(400).json({ error: 'Faltan Datos' });
-      // }
-
-      // const project = await Project.findByPk(projectId, {
-      //   include: Rating
-      // });
-  
-      // if (!project) {
-      //   return res.status(404).json({ error: 'El proyecto no fue encontrado' });
-      // }
-
-      const rating = await Rating.findByPk(id);
-  
-      if (!rating) {
-        return res.status(404).json({ error: 'The rating was not found' });
-      }
-
-      rating.points = points;
-      rating.comments = comments;
-      await rating.save();
-  
-      res.json({ message: 'Rating actualizado correctamente' });
-    } catch (error) {
-      res.status(500).json({ error: error.message });
+    if (!updateRating) {
+      throw new Error('Rating not found');
     }
-  };
-  
-  module.exports = updateRating;
-  
+
+    if (updateRating.points !== undefined) {
+      updateRating.points = updateField.points;
+    }
+    if (updateRating.comments !== undefined) {
+      updateRating.comments = updateField.comments;
+    }
+
+    console.log(updateRating);
+
+    await updateRating.save();
+
+    return updateRating;
+  } catch (error) {
+    throw new Error('UpdateRatingError: ' + error.message);
+  }
+};
+
+module.exports = updateRating;

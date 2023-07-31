@@ -2,34 +2,9 @@ const updateUser = require('../../controllers/User/updateUser');
 
 const updateUserHandler = async (req, res) => {
   const { id } = req.params;
-  const {
-    fullName,
-    email,
-    rol,
-    password,
-    gender,
-    birthdate,
-    phone,
-    country,
-    avatar,
-    status,
-    thirdPartyCreated,
-  } = req.body;
+  const updateField = req.body;
   try {
-    const result = await updateUser(
-      id,
-      fullName,
-      email,
-      rol,
-      password,
-      gender,
-      birthdate,
-      phone,
-      country,
-      avatar,
-      status,
-      thirdPartyCreated
-    );
+    const result = await updateUser(id, updateField);
 
     res.status(200).json({ message: 'Changes have been saved', result });
   } catch (error) {

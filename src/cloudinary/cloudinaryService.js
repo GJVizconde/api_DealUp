@@ -3,13 +3,13 @@ const cloudinary = require('cloudinary').v2;
 cloudinary.config({
   cloud_name: 'dgx2v3fnk',
   api_key: '852753386513374',
-  api_secret: 'APa-UKXfdLf-WK5K0WBbMHZsJtU'
+  api_secret: 'APa-UKXfdLf-WK5K0WBbMHZsJtU',
 });
 
 const handleUpload = async (file) => {
   try {
     const result = await cloudinary.uploader.upload(file, {
-      resource_type: 'auto'
+      resource_type: 'auto',
     });
 
     return result;
@@ -18,15 +18,22 @@ const handleUpload = async (file) => {
   }
 };
 
+const updateUpload = async (file) => {
+    
+    await cloudinary.uploader.upload(file, {
+      public_id: image.public_id,
+      overwrite: true
+    });
+};
+
 const deleteImageFromCloudinary = async (id) => {
   try {
-    
     const result = await cloudinary.uploader.destroy(id);
 
     if (result.result === 'ok') {
-      console.log('Imagen eliminada de Cloudinary correctamente');
+      // console.log('Imagen eliminada de Cloudinary correctamente');
     } else {
-      console.log('Error al eliminar la imagen de Cloudinary');
+      // console.log('Error al eliminar la imagen de Cloudinary');
     }
   } catch (error) {
     console.error('Error al eliminar la imagen de Cloudinary:', error.message);
@@ -35,7 +42,6 @@ const deleteImageFromCloudinary = async (id) => {
 
 const getAllImagesFromCloudinary = async () => {
   try {
-   
     const result = await cloudinary.search
       .expression('resource_type:image')
       .execute();
@@ -53,11 +59,17 @@ const getAllImagesFromCloudinary = async () => {
     console.log('Imágenes encontradas en Cloudinary:', images);
     return images;
   } catch (error) {
-    console.error('Error al obtener las imágenes de Cloudinary:', error.message);
+    console.error(
+      'Error al obtener las imágenes de Cloudinary:',
+      error.message
+    );
     return [];
   }
 };
 
-
-
-module.exports = { getAllImagesFromCloudinary, deleteImageFromCloudinary, handleUpload };
+module.exports = {
+  getAllImagesFromCloudinary,
+  deleteImageFromCloudinary,
+  handleUpload,
+  updateUpload
+};

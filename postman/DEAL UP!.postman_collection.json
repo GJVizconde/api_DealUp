@@ -3,8 +3,8 @@
 		"_postman_id": "bc78c4c2-05ef-428f-aed3-a8631bac08e1",
 		"name": "DEAL UP!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "28612822",
-		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=28612822&source=collection_link"
+		"_exporter_id": "27477100",
+		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=27477100&source=collection_link"
 	},
 	"item": [
 		{
@@ -17,12 +17,119 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak4\",\r\n    \"email\": \"shaki4@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": true,\r\n    \"thirdPartycreated\": true\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shaki@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"thirdPartycreated\": false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shaki@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"thirdPartycreated\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser Cloudinary",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fullName",
+									"value": "Shakira Mebarak",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "shaki@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "rol",
+									"value": "entrepreneur",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Henry12345",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "birthdate",
+									"value": "02/02/1977",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "me.jpg"
+								},
+								{
+									"key": "status",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "thirdPartyCreated",
+									"value": "false",
+									"type": "text"
+								}
+							]
 						},
 						"url": {
 							"raw": "http://localhost:3001/user",
@@ -98,7 +205,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user/2bc72b31-a4b1-425e-ba32-22e0ab99ec2d",
+							"raw": "http://localhost:3001/user/e4582d55-3171-44e7-b815-10f22fbf2a2e",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -106,7 +213,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"2bc72b31-a4b1-425e-ba32-22e0ab99ec2d"
+								"e4582d55-3171-44e7-b815-10f22fbf2a2e"
 							]
 						}
 					},
@@ -119,7 +226,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Daianeta\",\r\n    \"email\": \"daineta25@gmail.com\",\r\n    \"rol\": \"user\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"24/03/2000\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": \"true\",\r\n    \"thirdPartyCreated\": \"false\"\r\n}",
+							"raw": "{\r\n\"country\":\"Venezuela\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -127,7 +234,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/user/b9d191a6-722d-42fa-8c91-f1e2381579f0",
+							"raw": "http://localhost:3001/user/f783398a-7ee6-4549-83f7-61d54c18af36",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -135,7 +242,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"b9d191a6-722d-42fa-8c91-f1e2381579f0"
+								"f783398a-7ee6-4549-83f7-61d54c18af36"
 							]
 						}
 					},
@@ -246,7 +353,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects/86655960-cc53-4620-8a29-a9dcdd0b3ad4",
+							"raw": "http://localhost:3001/projects/fe98fd76-84c3-410d-9abb-0b4288ee7b26",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -254,7 +361,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"86655960-cc53-4620-8a29-a9dcdd0b3ad4"
+								"fe98fd76-84c3-410d-9abb-0b4288ee7b26"
 							]
 						}
 					},
@@ -267,7 +374,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"PizzasBurg\",\r\n  \"description\": \"Pizeria y hamburgueseria\",\r\n  \"min_amount\": 120,\r\n  \"max_amount\": 180,\r\n  \"goal_amount\": 10000,\r\n  \"initial_date\": \"12/08/2023\",\r\n  \"deadline\": \"12/10/2023\",\r\n  \"image_cover\": [],\r\n  \"city\":\"Buenos Aires\",\r\n  \"category\": [\"Art\", \"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"6d585346-33e5-4db2-8e16-500cb6991725\"\r\n}",
+							"raw": "{\r\n  \"name\": \"Peluqueria Maggie\",\r\n  \"description\": \"Queremos colocar un local peluqueria y arreglos de barbas\",\r\n  \"min_amount\": 5,\r\n  \"max_amount\": 50000,\r\n  \"goal_amount\": 85490,\r\n  \"initial_date\": \"01/03/2024\",\r\n  \"deadline\": \"12/09/2024\",\r\n  \"image_cover\": \"\",\r\n  \"city\": \"Cordoba\",\r\n  \"category\": [\"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"23b30400-709c-416f-bec3-e82605e2f712\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -324,7 +431,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects/d984f2c8-abbc-41d7-adad-44159fbe33da",
+							"raw": "http://localhost:3001/projects/ff09f53a-dcff-4467-8eea-268caa6904fe",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -332,7 +439,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"d984f2c8-abbc-41d7-adad-44159fbe33da"
+								"ff09f53a-dcff-4467-8eea-268caa6904fe"
 							]
 						}
 					},
@@ -345,7 +452,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\r\n  \"category\": [\"Comics\", \"Dance\"]\r\n}",
+							"raw": "{\r\n\"collected_amount\": 100\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -353,7 +460,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/projects/5f6fc547-1ed1-4177-aed4-7551041eb86a",
+							"raw": "http://localhost:3001/projects/6715bcf8-c333-454b-bb70-98abbdd8b1c5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -361,7 +468,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"5f6fc547-1ed1-4177-aed4-7551041eb86a"
+								"6715bcf8-c333-454b-bb70-98abbdd8b1c5"
 							]
 						}
 					},
@@ -373,54 +480,6 @@
 		{
 			"name": "RATING",
 			"item": [
-				{
-					"name": "createRating",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"points\": 4,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"86655960-cc53-4620-8a29-a9dcdd0b3ad4\",\r\n    \"UserId\": \"96f4d770-a4d4-4be0-a29b-77848815ba4c\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/rating",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"rating"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "deleteRating",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3001/rating/6f0d1bf1-f3c8-4885-930b-9299a64c623a",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"rating",
-								"6f0d1bf1-f3c8-4885-930b-9299a64c623a"
-							]
-						}
-					},
-					"response": []
-				},
 				{
 					"name": "getAllRatings",
 					"request": {
@@ -447,7 +506,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/rating/b12e56ff-8623-44c8-af9f-004640491e46",
+							"raw": "http://localhost:3001/rating/be4ea10a-c92f-4ea6-b897-96acbfdfa6e0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -455,7 +514,55 @@
 							"port": "3001",
 							"path": [
 								"rating",
-								"b12e56ff-8623-44c8-af9f-004640491e46"
+								"be4ea10a-c92f-4ea6-b897-96acbfdfa6e0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createRating",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"points\": 5,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"6715bcf8-c333-454b-bb70-98abbdd8b1c5\",\r\n    \"UserId\": \"8cd16cb3-6c8b-4562-b3d0-d71544ce7906\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/rating",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"rating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRating",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/rating/5fd022b3-6842-4688-a2ee-51ade1d1a2ce",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"rating",
+								"5fd022b3-6842-4688-a2ee-51ade1d1a2ce"
 							]
 						}
 					},
@@ -468,7 +575,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"points\": 7,\r\n    \"comments\": \"FIRE PROOF\"\r\n}",
+							"raw": "{\r\n    \"points\": 8,\r\n    \"comments\": \"FIRE PROOF2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -476,7 +583,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/rating/756c8445-fd87-49e7-aacc-eb32d037f428",
+							"raw": "http://localhost:3001/rating/118b3a0b-3ff3-42dc-97c6-826a8041fc51",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -484,7 +591,7 @@
 							"port": "3001",
 							"path": [
 								"rating",
-								"756c8445-fd87-49e7-aacc-eb32d037f428"
+								"118b3a0b-3ff3-42dc-97c6-826a8041fc51"
 							]
 						}
 					},
@@ -535,7 +642,7 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/ESTEBAN/Desktop/cards.jpeg"
+									"src": "me.jpg"
 								},
 								{
 									"key": "comments",
@@ -870,6 +977,43 @@
 				}
 			],
 			"description": "allComment: Trae todos los COMENTARIOS creados;  \ncreateComment: Crea un COMENTARIO para un post determinado de un proyecto;\n\nupdateComment: Actualiza un COMENTARIO determinado;\n\ndeleteComment: Elimina un COMENTARIO determinado;"
+		},
+		{
+			"name": "FILTER_PROJECT",
+			"item": [
+				{
+					"name": "Filter",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"minAmount1\": null,\r\n \"minAmount2\": null,\r\n \"maxAmount1\":null,\r\n  \"maxAmount2\":null,\r\n \"category\": [],\r\n \"order\": \"Desc\",\r\n \"attribute\":\"amount\",\r\n \"typeAmount\": \"min\"\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/projects/filter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"filter"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

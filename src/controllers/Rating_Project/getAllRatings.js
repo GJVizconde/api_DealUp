@@ -1,18 +1,16 @@
 const { Rating } = require('../../db');
 
-const getAllRatings = async (req, res) => {
+const getAllRatings = async () => {
   try {
+    const ratingList = await Rating.findAll();
 
-    const ratings = await Rating.findAll();
-
-
-    if (!ratings) {
-      return res.status(404).json({ error: 'Ratings not found' });
+    if (!ratingList) {
+      throw new Error('There is no ratings');
     }
 
-    res.json({message: 'Ratings founded', ratings});
+    return [...ratingList];
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    throw new Error('Error: ' + error.message);
   }
 };
 
