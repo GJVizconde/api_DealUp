@@ -3,8 +3,8 @@
 		"_postman_id": "bc78c4c2-05ef-428f-aed3-a8631bac08e1",
 		"name": "DEAL UP!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "27477100",
-		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=27477100&source=collection_link"
+		"_exporter_id": "28612822",
+		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=28612822&source=collection_link"
 	},
 	"item": [
 		{
@@ -353,7 +353,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects/fe98fd76-84c3-410d-9abb-0b4288ee7b26",
+							"raw": "http://localhost:3001/projects/2c3060fd-9577-4904-9e1f-39427789ad80",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -361,7 +361,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"fe98fd76-84c3-410d-9abb-0b4288ee7b26"
+								"2c3060fd-9577-4904-9e1f-39427789ad80"
 							]
 						}
 					},
@@ -792,7 +792,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"description\": \"Compro autos de juguetes\",\r\n    \"image_gallery\":[\"\"],\r\n    \"video_galley\":[\"\"],\r\n    \"ProjectId\": \"86655960-cc53-4620-8a29-a9dcdd0b3ad4\"\r\n}",
+							"raw": "{\r\n    \"description\": \"Nuevo ingreso de instrumentos\",\r\n    \"image_gallery\":[\"\"],\r\n    \"video_galley\":[\"\"],\r\n    \"ProjectId\": \"2c3060fd-9577-4904-9e1f-39427789ad80\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -899,7 +899,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"comment\": \"Motos compras?\",\r\n    \"PostId\": \"0300d2d2-7452-487c-a279-e1587dbbcedc\",\r\n    \"UserId\": \"8c1fc291-05b8-4eb6-b615-8fbfc9a74de4\"\r\n\r\n}",
+							"raw": "{\r\n    \"comment\": \"Que intrumentos compraste?\",\r\n    \"PostId\": \"2c1aed5a-5512-48fc-888f-32f08f3229a6\",\r\n    \"UserId\": \"6d585346-33e5-4db2-8e16-500cb6991725\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -983,15 +983,12 @@
 			"item": [
 				{
 					"name": "Filter",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n \"minAmount1\": null,\r\n \"minAmount2\": null,\r\n \"maxAmount1\":null,\r\n  \"maxAmount2\":null,\r\n \"category\": [],\r\n \"order\": \"Desc\",\r\n \"attribute\":\"amount\",\r\n \"typeAmount\": \"min\"\r\n \r\n}",
+							"raw": "{\r\n \"minAmountMin\": 70,\r\n \"maxAmountMin\": 200,\r\n \"minAmountMax\":500,\r\n  \"maxAmountMax\":2000,\r\n \"category\": [],\r\n \"order\": \"Art\",\r\n \"attribute\":\"amount\",\r\n \"typeAmount\": \"min\"\r\n \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1008,6 +1005,31 @@
 							"path": [
 								"projects",
 								"filter"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "INVESMENTS",
+			"item": [
+				{
+					"name": "getAll_Invesments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/user/invesments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user",
+								"invesments"
 							]
 						}
 					},
