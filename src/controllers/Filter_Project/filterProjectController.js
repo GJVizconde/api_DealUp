@@ -1,25 +1,25 @@
 const { getAllProjects } = require("../Projects/getAllProjects");
-const { minAmountAll, maxAmountAll } = require('../../helpers/rangeAmount');
+//const { minAmountAll, maxAmountAll } = require('../../helpers/rangeAmount');
 
 const filterController = async (
   category,
   search,
-  minAmount1,
-  minAmount2,
-  maxAmount1,
-  maxAmount2,
+  minAmountMin,
+  maxAmountMin,
+  minAmounMax,
+  maxAmountMax,
   order,
   attribute,
   typeAmount
 ) => {
   const allProject = await getAllProjects();
 
-  const amountMin = await minAmountAll();
-  const amountMax = await maxAmountAll();
-  const minAmountMin = amountMin.minAmountMin;
-  const maxAmountMin = amountMin.maxAmountMin;
-  const minAmountMax = amountMax.minAmountMax;
-  const maxAmountMax = amountMax.maxAmountMax;
+  // const amountMin = await minAmountAll();
+  // const amountMax = await maxAmountAll();
+  // const minAmountMinAll = amountMin.minAmountMin;
+  // const maxAmountMinAll = amountMin.maxAmountMin;
+  // const minAmountMaxAll = amountMax.minAmountMax;
+  // const maxAmountMaxAll = amountMax.maxAmountMax;
 
   let filterAll = allProject;
 
@@ -29,28 +29,28 @@ const filterController = async (
     });
   }
 
-  if (maxAmount1) {
+  if (minAmounMax) {
     filterAll = filterAll.filter((project) => {
-      return project.max_amount >= maxAmount1;
+      return project.max_amount >= minAmounMax;
     });
   }
-  if (maxAmount2) {
+  if (maxAmountMax) {
     filterAll = filterAll.filter((project) => {
-      return project.max_amount <= maxAmount2;
+      return project.max_amount <= maxAmountMax;
     });
   }
 
-  if (minAmount1) {
-    console.log(filterAll);
+  if (minAmountMin) {
+   
     filterAll = filterAll.filter((project) => {
-      console.log("result", project.minAmount1 >= minAmount1);
-        return project.min_amount >= minAmount1;
+     
+        return project.min_amount >= minAmountMin;
 
     });
   }
-  if (minAmount2) {
+  if (maxAmountMin) {
     filterAll = filterAll.filter((project) => {
-      return project.min_amount <= minAmount2;
+      return project.min_amount <= maxAmountMin;
     });
   }
 
@@ -81,7 +81,8 @@ const filterController = async (
   //     filterAll.sort((a,b) => a.Rating -b.Rating);
   // }
 
-  return {filterAll, minAmountMin,maxAmountMin, minAmountMax, maxAmountMax}
+ // return {filterAll, minAmountMinAll, maxAmountMinAll, minAmountMaxAll, maxAmountMaxAll};
+ return filterAll;
 };
 
 module.exports = { filterController };
