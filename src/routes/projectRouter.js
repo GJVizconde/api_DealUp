@@ -54,7 +54,7 @@ const projectRouter = Router();
 projectRouter.get('/', getProjectsHandler);
 
 //route filter project
-projectRouter.get('/filter', getFilterHandler);
+projectRouter.put('/filter', getFilterHandler);
 
 //route comment_post_project
 projectRouter.get('/post/comment', getAllComentHandler);
