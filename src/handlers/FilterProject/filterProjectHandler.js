@@ -1,29 +1,35 @@
 const {
   filterController,
 } = require("../../controllers/Filter_Project/filterProjectController");
-const { getAllProjects } = require("../../controllers/Projects/getAllProjects");
+//const { getAllProjects } = require("../../controllers/Projects/getAllProjects");
 
 const getFilterHandler = async (req, res) => {
   try {
     const {
       category,
       search,
-      minAmount1,
-      minAmount2,
-      maxAmount1,
-      maxAmount2,
+      minAmountMin,
+      maxAmountMin,
+      minAmountMax,
+      maxAmountMax,
       order,
       attribute,
       typeAmount,
     } = req.body;
 
+console.log("estoy en handler filter");
+console.log("min",minAmountMin);
+console.log("min2",maxAmountMin);
+console.log("max1", minAmountMax);
+console.log("max2", maxAmountMax);
+
     const filterResult = await filterController(
       category,
       search,
-      minAmount1,
-      minAmount2,
-      maxAmount1,
-      maxAmount2,
+      minAmountMin,
+      maxAmountMin,
+      minAmountMax,
+      maxAmountMax,
       order,
       attribute,
       typeAmount

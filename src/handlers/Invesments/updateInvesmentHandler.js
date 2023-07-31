@@ -15,8 +15,8 @@ const updateInvesmentsHandler = async (req, res) => {
         if(!UserId) { res.status(400).json('User ID is required')};
         if(!ProjectId) { res.status(400).json('Project ID is required')};
         
-        const updateInvesment = await updateInvesment( id,contribution, comment, UserId, ProjectId);
-        res.status(200).json(updateInvesment);
+        const updateResult = await updateInvesment( id,contribution, comment, UserId, ProjectId);
+        res.status(200).json(updateResult);
 
     } catch (error) {
         res.status(400).json({ error: error.message });
