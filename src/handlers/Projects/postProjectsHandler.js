@@ -8,7 +8,8 @@ const {
 // const upload = multer({ dest: 'uploads/' });
 
 const createProjectHandler = async (req, res) => {
-  //const { path } = req.file;
+
+  const { path } = req.file;
   const {
     name,
     description,
@@ -24,10 +25,11 @@ const createProjectHandler = async (req, res) => {
     status,
     UserId,
   } = req.body;
+console.log("cat", typeof(category));
+  // let mycategory = category.split(',');
 
-  //   const arrayCategory = myCategory.split(',');
-  //   console.log("my",arrayCategory);
-  // console.log("cantidad", arrayCategory.length);
+  // console.log(mycategory);
+  // category = mycategory
   try {
     // let category = JSON.parse(myCategory);
     // // const category = arrayCategory;
@@ -50,13 +52,13 @@ const createProjectHandler = async (req, res) => {
       return res.status(400).json('Deadline is required');
     } else if (!city) {
       return res.status(400).json('City is required');
-    } else if (!category || category.length === 0) {
-      return res.status(400).json('At least one category is required');
+     }
+      else if(!category || category.length === 0 ) { return res.status(400).json('At least one category is required')
     } else if (!UserId) {
       return res.status(400).json('User id is required');
-    }
-
-    // const image = await handleUpload(path);
+     }
+    
+    const image = await handleUpload(path); 
 
     const newProject = await createProject(
       name,
@@ -66,12 +68,12 @@ const createProjectHandler = async (req, res) => {
       goal_amount,
       initial_date,
       deadline,
-      image_cover,
+      image.secure_url,
       city,
       category,
       status,
       UserId
-    );
+  );
 
     // fs.unlinkSync(file.path);
 

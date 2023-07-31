@@ -18,6 +18,14 @@ const handleUpload = async (file) => {
   }
 };
 
+const updateUpload = async (file) => {
+    
+    await cloudinary.uploader.upload(file, {
+      public_id: image.public_id,
+      overwrite: true
+    });
+};
+
 const deleteImageFromCloudinary = async (id) => {
   try {
     const result = await cloudinary.uploader.destroy(id);
@@ -63,4 +71,5 @@ module.exports = {
   getAllImagesFromCloudinary,
   deleteImageFromCloudinary,
   handleUpload,
+  updateUpload
 };

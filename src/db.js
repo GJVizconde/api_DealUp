@@ -8,6 +8,7 @@ const GalleryModel = require('./models/Gallery');
 const PostModel = require('./models/Post');
 const CommentModel = require('./models/Comment');
 const InvesmentsModel = require('./models/Invesments');
+const ImageModel = require('./models/Image');
 
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY, NODE_ENV } = process.env;
 
@@ -48,8 +49,9 @@ PostModel(sequelize);
 CommentModel(sequelize);
 GalleryModel(sequelize);
 InvesmentsModel(sequelize);
+ImageModel(sequelize);
 
-const { User, Project, Rating, Gallery, Comment, Post } = sequelize.models;
+const { User, Project, Rating, Gallery, Comment, Post, Image } = sequelize.models;
 
 //relacion de tablas
 
