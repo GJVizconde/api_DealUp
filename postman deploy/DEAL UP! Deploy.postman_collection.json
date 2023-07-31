@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "bc78c4c2-05ef-428f-aed3-a8631bac08e1",
-		"name": "DEAL UP!",
+		"_postman_id": "ba12cf92-9f97-4f0f-8910-00ab3c11d2db",
+		"name": "DEAL UP! Deploy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "27477100",
-		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=27477100&source=collection_link"
+		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-ba12cf92-9f97-4f0f-8910-00ab3c11d2db?action=share&creator=27477100&source=collection_link"
 	},
 	"item": [
 		{
@@ -25,12 +25,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/user",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/user",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"user"
 							]
@@ -53,12 +54,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/user",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/user",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"user"
 							]
@@ -132,12 +134,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3001/user",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/user",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"user"
 							]
@@ -161,12 +164,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/user",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"user"
 							]
@@ -180,12 +184,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user?fullName=shak",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/user?fullName=shak",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"user"
 							],
@@ -205,12 +210,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user/3d19be4f-c644-40ab-ae1e-33e2dea7cf2c",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/user/3d19be4f-c644-40ab-ae1e-33e2dea7cf2c",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"user",
 								"3d19be4f-c644-40ab-ae1e-33e2dea7cf2c"
@@ -234,12 +240,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/user/f783398a-7ee6-4549-83f7-61d54c18af36",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/user/f783398a-7ee6-4549-83f7-61d54c18af36",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"user",
 								"f783398a-7ee6-4549-83f7-61d54c18af36"
@@ -254,12 +261,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user/b9d191a6-722d-42fa-8c91-f1e2381579f0",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/user/b9d191a6-722d-42fa-8c91-f1e2381579f0",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"user",
 								"b9d191a6-722d-42fa-8c91-f1e2381579f0"
@@ -283,12 +291,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/user/login",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/user/login",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"user",
 								"login"
@@ -309,12 +318,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/projects",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"projects"
 							]
@@ -328,12 +338,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects?name=auto",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/projects?name=auto",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"projects"
 							],
@@ -353,12 +364,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects/29325bf9-6a40-4a44-8d6a-4d734d18e1c0",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/projects/29325bf9-6a40-4a44-8d6a-4d734d18e1c0",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"projects",
 								"29325bf9-6a40-4a44-8d6a-4d734d18e1c0"
@@ -382,12 +394,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/projects",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/projects",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"projects"
 							]
@@ -410,12 +423,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/projects/prueba/d984f2c8-abbc-41d7-adad-44159fbe33da",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/projects/prueba/d984f2c8-abbc-41d7-adad-44159fbe33da",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"projects",
 								"prueba",
@@ -431,12 +445,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects/ff09f53a-dcff-4467-8eea-268caa6904fe",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/projects/ff09f53a-dcff-4467-8eea-268caa6904fe",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"projects",
 								"ff09f53a-dcff-4467-8eea-268caa6904fe"
@@ -460,12 +475,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/projects/6715bcf8-c333-454b-bb70-98abbdd8b1c5",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/projects/6715bcf8-c333-454b-bb70-98abbdd8b1c5",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"projects",
 								"6715bcf8-c333-454b-bb70-98abbdd8b1c5"
@@ -486,12 +502,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/rating/",
-							"protocol": "http",
+							"raw": "https://deal-up-api.onrender.com/rating/",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"deal-up-api",
+								"onrender",
+								"com"
 							],
-							"port": "3001",
 							"path": [
 								"rating",
 								""
