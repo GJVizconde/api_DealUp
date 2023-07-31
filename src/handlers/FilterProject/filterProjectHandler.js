@@ -17,11 +17,6 @@ const getFilterHandler = async (req, res) => {
       typeAmount,
     } = req.body;
 
-console.log("estoy en handler filter");
-console.log("min",minAmountMin);
-console.log("min2",maxAmountMin);
-console.log("max1", minAmountMax);
-console.log("max2", maxAmountMax);
 
     const filterResult = await filterController(
       category,
