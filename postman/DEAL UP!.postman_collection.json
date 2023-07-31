@@ -180,7 +180,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user?name=shak",
+							"raw": "http://localhost:3001/user?fullName=shak",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -191,7 +191,7 @@
 							],
 							"query": [
 								{
-									"key": "name",
+									"key": "fullName",
 									"value": "shak"
 								}
 							]
@@ -205,7 +205,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user/e4582d55-3171-44e7-b815-10f22fbf2a2e",
+							"raw": "http://localhost:3001/user/3d19be4f-c644-40ab-ae1e-33e2dea7cf2c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -213,7 +213,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"e4582d55-3171-44e7-b815-10f22fbf2a2e"
+								"3d19be4f-c644-40ab-ae1e-33e2dea7cf2c"
 							]
 						}
 					},
@@ -353,7 +353,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects/2c3060fd-9577-4904-9e1f-39427789ad80",
+							"raw": "http://localhost:3001/projects/29325bf9-6a40-4a44-8d6a-4d734d18e1c0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -361,7 +361,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"2c3060fd-9577-4904-9e1f-39427789ad80"
+								"29325bf9-6a40-4a44-8d6a-4d734d18e1c0"
 							]
 						}
 					},
@@ -792,7 +792,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"description\": \"Nuevo ingreso de instrumentos\",\r\n    \"image_gallery\":[\"\"],\r\n    \"video_galley\":[\"\"],\r\n    \"ProjectId\": \"2c3060fd-9577-4904-9e1f-39427789ad80\"\r\n}",
+							"raw": "{\r\n    \"description\": \"Nuevo ingreso de guitarras\",\r\n    \"image_gallery\":[\"\"],\r\n    \"video_galley\":[\"\"],\r\n    \"ProjectId\": \"2c3060fd-9577-4904-9e1f-39427789ad80\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -976,7 +976,7 @@
 					"response": []
 				}
 			],
-			"description": "allComment: Trae todos los COMENTARIOS creados;  \ncreateComment: Crea un COMENTARIO para un post determinado de un proyecto;\n\nupdateComment: Actualiza un COMENTARIO determinado;\n\ndeleteComment: Elimina un COMENTARIO determinado;"
+			"description": "allComment: Trae todos los COMENTARIOS creados;  \ncreateComment: Crea un COMENTARIO para un post determinado de un proyecto;\n\nupdateComment: Actualiza un COMENTARIO determinado por ID params;\n\ndeleteComment: Elimina un COMENTARIO determinado por ID params;"
 		},
 		{
 			"name": "FILTER_PROJECT",
@@ -988,7 +988,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n \"minAmountMin\": 70,\r\n \"maxAmountMin\": 200,\r\n \"minAmountMax\":500,\r\n  \"maxAmountMax\":2000,\r\n \"category\": [],\r\n \"order\": \"Art\",\r\n \"attribute\":\"amount\",\r\n \"typeAmount\": \"min\"\r\n \r\n}",
+							"raw": "{\r\n \"minAmountMin\": 50,\r\n \"maxAmountMin\": 100,\r\n \"minAmountMax\":null,\r\n  \"maxAmountMax\":2000,\r\n \"category\": [],\r\n \"order\": \"Desc\",\r\n \"attribute\":\"amount\",\r\n \"typeAmount\": \"min\"\r\n \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1010,18 +1010,19 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "StartFragment\n\n\"minAmountMin\": null, ( minimo valor de todos los amountMinimos agregar el numer o null)\n\n\"maxAmountMin\": null, ( maximovalor de todos los amountMinimos agregar el numer o null)\n\n\"minAmountMax\":null, ( minimo valor de todos los amountMaximos agregar el numer o null)\n\n\"maxAmountMax\":null, ( maxim valor todos de los amountMaximos agregar el numer o null)\n\n \"category\": \\[\\], (array de string de las categorias)\n\n \"order\": \"Desc\", (elegir el orden \"Asc\" o \"Desc\")\n\n\"attribute\":\"amount\", (\"amount\" para ordenar por amount)\n\n \"typeAmount\": \"min\" ( Agregar: \"min\" ordenar por minimos; \"max\" ordenar por maximos)\n\nEndFragment"
 		},
 		{
-			"name": "INVESMENTS",
+			"name": "INVESTMENTS",
 			"item": [
 				{
-					"name": "getAll_Invesments",
+					"name": "getAll_Investments",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user/invesments",
+							"raw": "http://localhost:3001/user/investments",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1029,7 +1030,279 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"invesments"
+								"investments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_Investments",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"contribution\": 150,\r\n\"comment\":\"Excelente proyecto\",\r\n\"ProjectId\":\"29325bf9-6a40-4a44-8d6a-4d734d18e1c0\",\r\n\"UserId\":\"62cc7f91-3363-4130-ad78-f6b124a42ade\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/user/investments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user",
+								"investments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_Investments",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"contribution\": 210,\r\n\"comment\":\"Me encanta\",\r\n\"UserId\":\"62cc7f91-3363-4130-ad78-f6b124a42ade\",\r\n\"ProjectId\":\"3b885f0d-da76-4e38-8977-d2fec2da9a98\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/user/investments/192a12fa-adfd-44ee-90be-63305e53c362",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user",
+								"investments",
+								"192a12fa-adfd-44ee-90be-63305e53c362"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_Investment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/user/investments/10f7a5d6-728e-4bf7-9d59-6edc355634f9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user",
+								"investments",
+								"10f7a5d6-728e-4bf7-9d59-6edc355634f9"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "getAll_Investments: Trae todos los INVESTMENTS creados;  \ncreate_Investments: Crea un INVESTMENTS para un proyecto determinado por body;\n\nupdate_Investments: Actualiza un INVESTMENTS pasado por id params y los datos a actualizar van en body;\n\ndelete_Investments: Elimina un INVESTMENTS pasado por ID;"
+		},
+		{
+			"name": "IMAGE",
+			"item": [
+				{
+					"name": "postImage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "me.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/image/file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"image",
+								"file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postImageByUrl",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"https://www.fundacionaquae.org/wp-content/uploads/2020/04/Qu%C3%A9-es-el-agua-3.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/image/url",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"image",
+								"url"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteImage",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/image/224223db-19de-4155-8e56-ae5ef5237864",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"image",
+								"224223db-19de-4155-8e56-ae5ef5237864"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateImage",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"https://www.fundacionaquae.org/wp-content/uploads/2020/04/Qu%C3%A9-es-el-agua-3.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/image/25fe2397-eb29-4762-804e-81f2c6fb8a6c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"image",
+								"25fe2397-eb29-4762-804e-81f2c6fb8a6c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateImageFile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "me.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/image/file/25fe2397-eb29-4762-804e-81f2c6fb8a6c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"image",
+								"file",
+								"25fe2397-eb29-4762-804e-81f2c6fb8a6c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllImages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/image/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"image",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getImageById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/image/ecb01238-4811-469e-928b-7e68d30b2649",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"image",
+								"ecb01238-4811-469e-928b-7e68d30b2649"
 							]
 						}
 					},
