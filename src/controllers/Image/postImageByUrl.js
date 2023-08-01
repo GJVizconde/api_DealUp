@@ -1,5 +1,5 @@
 const { Image } = require('../../db');
-const { handleUpload } = require('../../cloudinary/cloudinaryService');
+const { handleUpload } = require('../../services/cloudinaryService');
 
 const postImageByUrl = async (req, res) => {
   try {
@@ -13,7 +13,7 @@ const postImageByUrl = async (req, res) => {
 
     const imageUrl = await Image.create({
       image: result.secure_url,
-      public_id: result.public_id
+      public_id: result.public_id,
     });
 
     return res.status(201).json(imageUrl);

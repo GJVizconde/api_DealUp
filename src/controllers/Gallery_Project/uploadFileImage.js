@@ -1,5 +1,5 @@
 const { Gallery } = require('../../db');
-const cloudinaryService = require('../../cloudinary/cloudinaryService');
+const cloudinaryService = require('../../services/cloudinaryService');
 const multer = require('multer');
 const fs = require('fs');
 const upload = multer({ dest: 'uploads/' });

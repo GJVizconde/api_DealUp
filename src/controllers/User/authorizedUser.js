@@ -1,5 +1,5 @@
 const { User } = require('../../db');
-const verifyToken = require('../../helpers/verifyToken');
+const { verifyToken } = require('../../config/JWT');
 
 const authorizedUser = async (rol, token) => {
   try {

@@ -44,7 +44,7 @@ userRouter.post('/investments', createInvestmentHandler);
 userRouter.put('/investments/:id', updateInvestmentsHandler);
 userRouter.delete('/investments/:id', deleteInvestmentHandler);
 
-//? /REGISTER
+//? /REGISTER CONFIRM EMAIL
 userRouter.post('/register', createRegisterHandler);
 
 //? /USER ORIGINAL CRUD

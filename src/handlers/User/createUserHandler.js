@@ -1,5 +1,5 @@
 const createNewUser = require('../../controllers/User/createNewUser');
-const { handleUpload } = require('../../cloudinary/cloudinaryService');
+const { handleUpload } = require('../../services/cloudinaryService');
 const fs = require('fs');
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });

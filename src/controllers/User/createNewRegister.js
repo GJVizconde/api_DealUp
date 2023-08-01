@@ -16,10 +16,14 @@ const createNewRegister = async (
   thirdPartyCreated
 ) => {
   try {
-    let registered = (await User.findOne({ where: { email } })) || null;
+    let registeredUser = await User.findOne({ where: { email } });
 
-    if (registered) {
-      throw new Error('Email already registered');
+    if (registeredUser) {
+      if (registeredUser.confirmEmail === false) {
+        await registeredUser.destroy();
+      } else {
+        throw new Error('Email already registered');
+      }
     }
 
     const newRegister = await User.create({
@@ -40,7 +44,7 @@ const createNewRegister = async (
 
     return newRegister;
   } catch (error) {
-    throw new Error('Creating a new register error: ' + error.message);
+    throw new Error('Error creating a new register: ' + error.message);
   }
 };
 
