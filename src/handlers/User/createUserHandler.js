@@ -1,8 +1,8 @@
-const createNewUser = require("../../controllers/User/createNewUser");
-const { handleUpload } = require("../../cloudinary/cloudinaryService");
-const fs = require("fs");
-const multer = require("multer");
-const upload = multer({ dest: "uploads/" });
+const createNewUser = require('../../controllers/User/createNewUser');
+const { handleUpload } = require('../../cloudinary/cloudinaryService');
+const fs = require('fs');
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
 
 const createUserHandler = async (req, res) => {
   if (req.file) {
@@ -13,14 +13,16 @@ const createUserHandler = async (req, res) => {
   const {
     fullName,
     email,
-    rol,
+    role,
     password,
+    dni,
     gender,
     birthdate,
     phone,
     country,
     avatar,
     status,
+    confirmEmail,
     thirdPartyCreated,
   } = req.body;
 
@@ -31,14 +33,16 @@ const createUserHandler = async (req, res) => {
       const newUser = await createNewUser(
         fullName,
         email,
-        rol,
+        role,
         password,
+        dni,
         gender,
         birthdate,
         phone,
         country,
         avatar,
         status,
+        confirmEmail,
         thirdPartyCreated
       );
 
@@ -49,14 +53,16 @@ const createUserHandler = async (req, res) => {
       const newUser = await createNewUser(
         fullName,
         email,
-        rol,
+        role,
         password,
+        dni,
         gender,
         birthdate,
         phone,
         country,
-        image.secure_url,
+        avatar,
         status,
+        confirmEmail,
         thirdPartyCreated
       );
 

@@ -22,6 +22,9 @@ const {
   deleteInvestmentHandler,
 } = require('../handlers/Investments/deleteInvestmentHandler');
 
+//register
+const createRegisterHandler = require('../handlers/User/createRegisterHandler');
+
 const {
   validateCreateUser,
   validateUpdateUser,
@@ -35,13 +38,16 @@ const userRouter = Router();
 
 // userAccess(['entrepreneur', 'admin'])
 
-//? ROUTE /INVESTMENTS
+//? /INVESTMENTS
 userRouter.get('/investments', getAllInvestmentHandler);
 userRouter.post('/investments', createInvestmentHandler);
 userRouter.put('/investments/:id', updateInvestmentsHandler);
 userRouter.delete('/investments/:id', deleteInvestmentHandler);
 
-//? ORIGINAL CRUD /USER
+//? /REGISTER
+userRouter.post('/register', createRegisterHandler);
+
+//? /USER ORIGINAL CRUD
 userRouter.get('/', getUsersHandler);
 userRouter.get('/:id', validateId, getUserHandler);
 userRouter.post(
@@ -50,7 +56,7 @@ userRouter.post(
   validateCreateUser,
   createUserHandler
 );
-userRouter.put('/:id', validateUpdateUser, updateUserHandler);
+userRouter.patch('/:id', validateUpdateUser, updateUserHandler);
 userRouter.delete('/:id', validateId, deleteUserHandler);
 userRouter.post('/login', validateLogin, loginUserHandler);
 

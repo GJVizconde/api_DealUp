@@ -1,6 +1,6 @@
 const { User } = require('../../db');
 
-const createNewUser = async (
+const createNewRegister = async (
   fullName,
   email,
   role,
@@ -16,13 +16,19 @@ const createNewUser = async (
   thirdPartyCreated
 ) => {
   try {
-    const newUser = await User.create({
+    let registered = (await User.findOne({ where: { email } })) || null;
+
+    if (registered) {
+      throw new Error('Email already registered');
+    }
+
+    const newRegister = await User.create({
       fullName,
       email,
       role,
       password,
-      dni,
       gender,
+      dni,
       birthdate,
       phone,
       country,
@@ -32,16 +38,10 @@ const createNewUser = async (
       thirdPartyCreated,
     });
 
-    return newUser;
-
-    // console.log('Prueba');
+    return newRegister;
   } catch (error) {
-    if (error.name === 'SequelizeValidationError') {
-      throw new Error('Validation error ' + error.message);
-    }
-
-    throw new Error('Failed to created a new user:' + error.message);
+    throw new Error('Creating a new register error: ' + error.message);
   }
 };
 
-module.exports = createNewUser;
+module.exports = createNewRegister;
