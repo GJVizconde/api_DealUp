@@ -5,7 +5,10 @@ const multer = require('multer');
 const upload = multer({ dest: 'src/uploads/' });
 
 const createUserHandler = async (req, res) => {
-  const { path } = req.file;
+
+
+    const { path } = req.file;
+
   const {
     fullName,
     email,
@@ -15,18 +18,19 @@ const createUserHandler = async (req, res) => {
     birthdate,
     phone,
     country,
-    avatar,
     status,
     thirdPartyCreated,
   } = req.body;
-
-  // console.log(fullName, email, rol);
 
   try {
     if (req.file) {
       // console.log(path);
 
-      const uploadedAvatar = await handleUpload(path);
+
+      res.status(201).json(newUser);
+    } else {
+      const avatar = await handleUpload(path);
+
 
       const newUser = await createNewUser(
         fullName,
@@ -37,7 +41,7 @@ const createUserHandler = async (req, res) => {
         birthdate,
         phone,
         country,
-        uploadedAvatar.secure_url,
+        avatar.secure_url,
         status,
         thirdPartyCreated
       );

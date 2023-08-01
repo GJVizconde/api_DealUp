@@ -1,9 +1,9 @@
 const { Image } = require('../../db');
 const { handleUpload } = require('../../cloudinary/cloudinaryService');
 
-const postImageByUrl = async (req, res) => {
+const postImageByUrl = async (url, req, res) => {
   try {
-    const { url } = req.body;
+    // const {  } = req.body;
 
     if (!url) {
       return res.status(400).json({ error: 'URL not valid' });
@@ -18,7 +18,7 @@ const postImageByUrl = async (req, res) => {
 
     return res.status(201).json(imageUrl);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    // return res.status(500).json({ error: error.message });
   }
 };
 

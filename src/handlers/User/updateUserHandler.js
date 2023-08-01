@@ -5,6 +5,7 @@ const upload = multer({ dest: 'uploads/' });
 const updateUserHandler = async (req, res) => {
   const { path } = req.file;
   const { id } = req.params;
+  const { path } = req.file;
   const updateField = req.body;
   try {
     const result = await updateUser(id, updateField, path);
