@@ -1,12 +1,12 @@
 const { getAllProjects } = require("../Projects/getAllProjects");
-//const { minAmountAll, maxAmountAll } = require('../../helpers/rangeAmount');
+//const { rangeAmountAll } = require('../Filter_Project/rangeAmountAll');
 
 const filterController = async (
   category,
   search,
   minAmountMin,
   maxAmountMin,
-  minAmounMax,
+  minAmountMax,
   maxAmountMax,
   order,
   attribute,
@@ -14,32 +14,18 @@ const filterController = async (
 ) => {
   const allProject = await getAllProjects();
 
-  // const amountMin = await minAmountAll();
-  // const amountMax = await maxAmountAll();
-  // const minAmountMinAll = amountMin.minAmountMin;
-  // const maxAmountMinAll = amountMin.maxAmountMin;
-  // const minAmountMaxAll = amountMax.minAmountMax;
-  // const maxAmountMaxAll = amountMax.maxAmountMax;
+ 
 
   let filterAll = allProject;
 
+  //FILTER BY CATEGORY
   if (category) {
     filterAll = filterAll.filter((project) => {
       return category.every((categ) => project.category.includes(categ));
     });
   }
 
-  if (minAmounMax) {
-    filterAll = filterAll.filter((project) => {
-      return project.max_amount >= minAmounMax;
-    });
-  }
-  if (maxAmountMax) {
-    filterAll = filterAll.filter((project) => {
-      return project.max_amount <= maxAmountMax;
-    });
-  }
-
+  //FILTER BY RANGE MINIMUM
   if (minAmountMin) {
    
     filterAll = filterAll.filter((project) => {
@@ -53,6 +39,19 @@ const filterController = async (
       return project.min_amount <= maxAmountMin;
     });
   }
+
+    //FILTER BY RANGE MAXIMUM
+  if (minAmountMax) {
+    filterAll = filterAll.filter((project) => {
+      return project.max_amount >= minAmountMax;
+    });
+  }
+  if (maxAmountMax) {
+    filterAll = filterAll.filter((project) => {
+      return project.max_amount <= maxAmountMax;
+    });
+  }
+
 
   //ORDENAMIENTO POR AMOUNT MINIMUM
   if (typeAmount === "min") {
@@ -72,17 +71,22 @@ const filterController = async (
       filterAll.sort((a, b) => b.max_amount - a.max_amount);
     }
   }
+  //console.log("average", filterAll);
+  //console.log("average", Project.dataValues.averageRating);
 
   //ORDENAMIENTO POR RATING
   // if(order === "Asc" && attribute === "rating") {
-  //     filterAll.sort((a,b) => a.Rating -b.Rating);
+  //     filterAll.sort((a,b) => a.averageRating - b.averageRating);
+      
   // }
-  // if(order === "Desc") {
-  //     filterAll.sort((a,b) => a.Rating -b.Rating);
-  // }
+  // if(order === "Desc" && attribute === "rating") {
+  //     filterAll.sort((a,b) => b.averageRating - a.averageRating);
+ // }
 
- // return {filterAll, minAmountMinAll, maxAmountMinAll, minAmountMaxAll, maxAmountMaxAll};
- return filterAll;
+//  const range = await rangeAmountAll();
+
+//  return {filterAll, range};
+return filterAll;
 };
 
 module.exports = { filterController };
