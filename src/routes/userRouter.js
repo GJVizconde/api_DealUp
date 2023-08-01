@@ -45,7 +45,7 @@ userRouter.post(
   createUserHandler
 );
 
-userRouter.put("/:id", validateUpdateUser, updateUserHandler);
+userRouter.put("/:id", upload.single('avatar'), validateUpdateUser, updateUserHandler);
 
 userRouter.delete("/:id", validateId, deleteUserHandler);
 
