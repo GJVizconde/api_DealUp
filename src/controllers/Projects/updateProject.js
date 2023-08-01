@@ -13,7 +13,8 @@ const updateProject = async (id, campoActualizar, path) => {
 
     const updatedProjectById = await Project.findByPk(id);
 
-    const publicId = updatedProjectById.image_cover.split('/').pop();
+    const public = updatedProjectById.image_cover.split('/').pop();
+    const publicId = public.replace('.jpg', '');
     console.log('public_id:', publicId);
 
     if (!updatedProjectById) {
@@ -42,10 +43,11 @@ const updateProject = async (id, campoActualizar, path) => {
     }
     if(path !== undefined){
 
-      await cloudinary.uploader.upload(path, {
+      const newImage = await cloudinary.uploader.upload(path, {
       public_id: publicId,
       overwrite: true
       });
+      updatedProjectById.image_cover = newImage.secure_url
     }
     if (campoActualizar.category !== undefined) {
       updatedProjectById.category = campoActualizar.category;
