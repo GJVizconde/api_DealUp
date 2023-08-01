@@ -11,19 +11,20 @@
 			"name": "USER",
 			"item": [
 				{
-					"name": "createUser",
+					"name": "getAllUsers",
 					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shaki@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"thirdPartycreated\": false\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
 								}
-							}
+							]
 						},
+						"method": "GET",
+						"header": [],
 						"url": {
 							"raw": "http://localhost:3001/user",
 							"protocol": "http",
@@ -39,13 +40,13 @@
 					"response": []
 				},
 				{
-					"name": "createUser Copy",
+					"name": "createUser",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shaki@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"thirdPartycreated\": false\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shaqoneil@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -81,7 +82,7 @@
 								},
 								{
 									"key": "email",
-									"value": "shaki@gmail.com",
+									"value": "shaki2@gmail.com",
 									"type": "text"
 								},
 								{
@@ -92,6 +93,11 @@
 								{
 									"key": "password",
 									"value": "Henry12345",
+									"type": "text"
+								},
+								{
+									"key": "dni",
+									"value": "null",
 									"type": "text"
 								},
 								{
@@ -115,12 +121,12 @@
 									"type": "text"
 								},
 								{
-									"key": "avatar",
-									"type": "file",
-									"src": "me.jpg"
+									"key": "status",
+									"value": "false",
+									"type": "text"
 								},
 								{
-									"key": "status",
+									"key": "confirmEmail",
 									"value": "false",
 									"type": "text"
 								},
@@ -128,38 +134,14 @@
 									"key": "thirdPartyCreated",
 									"value": "false",
 									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:3001/user",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"user"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getAllUsers",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
+								},
 								{
-									"key": "token",
-									"value": "",
-									"type": "string"
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/soygi/Desktop/PF LastDance/Resources/Logo/DealUp.png"
 								}
 							]
 						},
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3001/user",
 							"protocol": "http",
@@ -226,7 +208,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"country\":\"Venezuela\"\r\n}",
+							"raw": "{\r\n\"country\": \"Venezuela\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -234,7 +216,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/user/f783398a-7ee6-4549-83f7-61d54c18af36",
+							"raw": "http://localhost:3001/user/b37ed6bf-2440-44f3-bee7-322ead947665",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -242,7 +224,37 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"f783398a-7ee6-4549-83f7-61d54c18af36"
+								"b37ed6bf-2440-44f3-bee7-322ead947665"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAvatar Cloudnary",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/soygi/Desktop/PF LastDance/Resources/Logo/Logo1.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/user/9692a4a1-77fd-42fa-afa7-082471e18389",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user",
+								"9692a4a1-77fd-42fa-afa7-082471e18389"
 							]
 						}
 					},
@@ -254,7 +266,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user/b9d191a6-722d-42fa-8c91-f1e2381579f0",
+							"raw": "http://localhost:3001/user/1aaf0d6f-0903-4379-ad15-d978be29b667",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -262,7 +274,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"b9d191a6-722d-42fa-8c91-f1e2381579f0"
+								"1aaf0d6f-0903-4379-ad15-d978be29b667"
 							]
 						}
 					},
@@ -292,6 +304,35 @@
 							"path": [
 								"user",
 								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createNewRegister",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Rosalia\",\r\n    \"email\": \"rosalia2@gmail.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user",
+								"register"
 							]
 						}
 					},
@@ -374,7 +415,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Peluqueria Maggie\",\r\n  \"description\": \"Queremos colocar un local peluqueria y arreglos de barbas\",\r\n  \"min_amount\": 5,\r\n  \"max_amount\": 50000,\r\n  \"goal_amount\": 85490,\r\n  \"initial_date\": \"01/03/2024\",\r\n  \"deadline\": \"12/09/2024\",\r\n  \"image_cover\": \"\",\r\n  \"city\": \"Cordoba\",\r\n  \"category\": [\"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"23b30400-709c-416f-bec3-e82605e2f712\"\r\n}",
+							"raw": "{\r\n  \"name\": \"Germancios Yyyyyy Pablos\",\r\n  \"description\": \"Queremos colocar un local peluqueria y arreglos de barbas\",\r\n  \"min_amount\": 5,\r\n  \"max_amount\": 50000,\r\n  \"goal_amount\": 85490,\r\n  \"initial_date\": \"01/03/2024\",\r\n  \"deadline\": \"12/09/2024\",\r\n  \"url\": \"https://www.fundacionaquae.org/wp-content/uploads/2020/04/Qu%C3%A9-es-el-agua-3.jpg\",\r\n  \"city\": \"Cordoba\",\r\n  \"category\": [\"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"c732a06c-afaf-4eb0-9416-d7fd120e967a\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -382,14 +423,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/projects",
+							"raw": "http://localhost:3001/projects/url",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3001",
 							"path": [
-								"projects"
+								"projects",
+								"url"
 							]
 						}
 					},
@@ -473,6 +515,91 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "addProjectsWFile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Germancios Yyyyyy Pablosgnfg",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Queremos colocar un local peluqueria y arreglos de barbas",
+									"type": "text"
+								},
+								{
+									"key": "min_amount",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "max_amount",
+									"value": "50000",
+									"type": "text"
+								},
+								{
+									"key": "goal_amount",
+									"value": "85490",
+									"type": "text"
+								},
+								{
+									"key": "initial_date",
+									"value": "01/03/2024",
+									"type": "text"
+								},
+								{
+									"key": "deadline",
+									"value": "12/09/2024",
+									"type": "text"
+								},
+								{
+									"key": "image_cover",
+									"type": "file",
+									"src": "me.jpg"
+								},
+								{
+									"key": "city",
+									"value": "Cordoba",
+									"type": "text"
+								},
+								{
+									"key": "category[]",
+									"value": "Music",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Pending",
+									"type": "text"
+								},
+								{
+									"key": "UserId",
+									"value": "c732a06c-afaf-4eb0-9416-d7fd120e967a",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/projects/file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"file"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"description": "addProjects: Crea un proyecto;  \nallProject: Trae todos los proyecto;  \nnameProjects: Busca el proyecto por nombre por Query;  \nidProjects: Buscar por proyecto por Id.params  \nupdateForItem: Actualiza datos del proyecto con id params y por uno o varios campos.(Solo agregar los campos que se desean actualizar).\n\nupdateProjectViejo: Actualiza datos del proyecto con id params enviando todos los campos (no conviene utilizar)  \ndeleteProject: Elimina un proyecto por id params"
@@ -527,7 +654,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"points\": 5,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"6715bcf8-c333-454b-bb70-98abbdd8b1c5\",\r\n    \"UserId\": \"8cd16cb3-6c8b-4562-b3d0-d71544ce7906\"\r\n}",
+							"raw": "{\r\n    \"points\": 5,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"fa857ac9-ab0d-45d2-af91-349d8d2fa83f\",\r\n    \"UserId\": \"62cc7f91-3363-4130-ad78-f6b124a42ade\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

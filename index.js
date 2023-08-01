@@ -21,7 +21,7 @@
 
 require('dotenv').config();
 const { PORT, USERNAME, NODE_ENV: env } = process.env;
-const app = require('./src/app');
+const { app } = require('./src/app');
 const { conn } = require('./src/db');
 const user = USERNAME || 'dev';
 const port = PORT || 3001;
