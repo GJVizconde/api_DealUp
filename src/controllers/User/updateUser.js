@@ -50,10 +50,11 @@ const updateUser = async (id, updateField, path) => {
     }
     if(path !== undefined){
 
-      await cloudinary.uploader.upload(path, {
+      const newImage = await cloudinary.uploader.upload(path, {
       public_id: publicId,
       overwrite: true
       });
+      updateUser.avatar = newImage.secure_url
     }
     if (updateField.status !== undefined) {
       updateUser.status = updateField.status;
