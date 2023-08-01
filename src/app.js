@@ -33,4 +33,4 @@ app.set('view engine', 'ejs');
 
 app.use(mainRouter);
 
-module.exports = app;
+module.exports = { app };
