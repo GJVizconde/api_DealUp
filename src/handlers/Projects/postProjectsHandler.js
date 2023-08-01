@@ -12,7 +12,6 @@ const { handleUpload } = require('../../cloudinary/cloudinaryService');
 const createProjectHandler = async (req, res) => {
 
   // const { path } = req.file;
-
   const {
     name,
     description,
@@ -27,8 +26,8 @@ const createProjectHandler = async (req, res) => {
     status,
     UserId,
   } = req.body;
-  console.log(url);
 
+  console.log(url);
   try {
 
     if (!name) {
@@ -47,10 +46,11 @@ const createProjectHandler = async (req, res) => {
       return res.status(400).json('Deadline is required');
     } else if (!city) {
       return res.status(400).json('City is required');
-     }
-      else if(!category || category.length === 0 ) { return res.status(400).json('At least one category is required')
+    } else if (!category || category.length === 0) {
+      return res.status(400).json('At least one category is required');
     } else if (!UserId) {
       return res.status(400).json('User id is required');
+
      }
     
     const image_cover = await handleUpload(url);

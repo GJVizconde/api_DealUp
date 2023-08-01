@@ -34,6 +34,12 @@ const getAllProjects = async () => {
                 {
                     model: Comment,
                     attributes:['comment', 'UserId'],
+                    include: [
+                        {
+                          model: User,
+                          attributes: ['id', 'fullName'],
+                        },
+                      ],
                 }
             ]
         }
@@ -44,7 +50,7 @@ const getAllProjects = async () => {
         },
        
     });
-
+  
  
 } catch (error) {
    

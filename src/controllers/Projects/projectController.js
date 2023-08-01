@@ -1,4 +1,4 @@
-const { Project, User, Gallery, Rating, Post, Comment } = require('../../db');
+const { Project, User, Gallery, Rating, Post, Comment, Investment } = require('../../db');
 
 const { Op } = require('sequelize');
 
@@ -94,6 +94,19 @@ const searchProjectById = async (id) => {
           },
         ],
       },
+      {
+        model: Investment,
+        attributes: ['contribution','comment'],
+        include: [
+          {
+            model: User,
+            attributes: ['fullName'],
+            through: {
+              attributes: [],
+          }
+          }
+        ]
+      }
     ],
     attributes: {
       exclude: ['createdAt', 'updatedAt'],
