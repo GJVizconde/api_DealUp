@@ -1,7 +1,6 @@
-const { User } = require('../../db');
 const { generateJWT } = require('../../config/JWT');
-
 const { JWT_SECRET: jwtSecret } = process.env;
+const { User } = require('../../db');
 
 const loginUser = async (email, password) => {
   const userRegistered = await User.findOne({

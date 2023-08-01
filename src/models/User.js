@@ -28,8 +28,11 @@ module.exports = (sequelize) => {
       },
       dni: {
         type: DataTypes.STRING,
-        allownull: true,
-        unique: true,
+        allowNull: true,
+        unique: {
+          name: 'unique_dni',
+          msg: 'DNI already registered',
+        },
       },
       gender: {
         type: DataTypes.STRING,
