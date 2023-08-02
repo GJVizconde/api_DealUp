@@ -26,6 +26,12 @@ const searchProjectByName = async (name) => {
       {
         model: Rating,
         attributes: ['points', 'comments', 'UserId'],
+        include: [
+          {
+            model: User,
+            attributes: ['id', 'fullName'],
+          },
+        ],
       },
       {
         model: Post,

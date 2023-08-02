@@ -1,12 +1,8 @@
-const { Rating, Project } = require('../../db');
+const { Rating, Project } = require('../db');
 
 const calculatedAssingAverageRating = async () => {
-    try {
-      const ratingList = await Rating.findAll();
-     
-    //   if (!ratingList) {
-    //     throw new Error('There is no ratings');
-    //   }
+     try {
+      const ratingList = await Rating.findAll();   
       
       //calculo del promedio para cada proyecto
       const ratingsByProject = {};
@@ -34,8 +30,7 @@ const calculatedAssingAverageRating = async () => {
         if(projectToUpdate) {
             projectToUpdate.average_rating = averageRating;
             await projectToUpdate.save();
-        }
-        
+        }  
       }
      
       return ({message: 'Average ratings calculated and assigned'});
