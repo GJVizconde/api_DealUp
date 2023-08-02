@@ -1,21 +1,9 @@
 const { User } = require('../../db');
 const { handleUpload } = require('../../cloudinary/cloudinaryService');
 
-const cloudinary = require('cloudinary').v2;
-
-cloudinary.config({
-  cloud_name: 'dgx2v3fnk',
-  api_key: '852753386513374',
-  api_secret: 'APa-UKXfdLf-WK5K0WBbMHZsJtU',
-});
-
 const updateUser = async (id, updateField, path) => {
   try {
     const updateUser = await User.findByPk(id);
-
-    const public = updateUser.avatar.split('/').pop();
-    const publicId = public.replace('.jpg', '');
-    console.log('public_id:', publicId);
 
     if (!updateUser) {
       throw new Error('User not found');
@@ -48,14 +36,7 @@ const updateUser = async (id, updateField, path) => {
     if (updateField.avatar !== undefined) {
       updateUser.avatar = updateField.avatar;
     }
-    if(path !== undefined){
 
-      const newImage = await cloudinary.uploader.upload(path, {
-      public_id: publicId,
-      overwrite: true
-      });
-      updateUser.avatar = newImage.secure_url
-    }
     if (updateField.status !== undefined) {
       updateUser.status = updateField.status;
     }
