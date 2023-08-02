@@ -1,7 +1,7 @@
+//  const getAllRatings = require('../controllers/Rating_Project/getAllRatings');
 
-
-  //obtengo el promedio de rating de todos los proyectos
-//     const ratings = await getAllRatings(null,res);
+//   //obtengo el promedio de rating de todos los proyectos
+//     const ratings = await getAllRatings();
 
 //     //creo un obj para acceder a los promedios por projecId
 
