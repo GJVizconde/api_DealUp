@@ -4,7 +4,7 @@ const generateJWT = (user, secret) => {
   const accessToken = jwt.sign(
     {
       id: user.id,
-      rol: user.rol,
+      role: user.role,
     },
     secret,
     {

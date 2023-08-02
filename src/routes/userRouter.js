@@ -24,6 +24,7 @@ const {
 
 //register
 const createRegisterHandler = require('../handlers/User/createRegisterHandler');
+const confirmRegisterHandler = require('../handlers/User/confirmRegisterHandler');
 
 const {
   validateCreateUser,
@@ -46,6 +47,7 @@ userRouter.delete('/investments/:id', deleteInvestmentHandler);
 
 //? /REGISTER CONFIRM EMAIL
 userRouter.post('/register', createRegisterHandler);
+userRouter.get('/register/confirm/:token', confirmRegisterHandler);
 
 //? /USER ORIGINAL CRUD
 userRouter.get('/', getUsersHandler);

@@ -55,7 +55,7 @@ const createNewRegister = async (
 
     const template = getTemplate(newRegister.fullName, token);
 
-    await sendEmail(newRegister.email, 'Este es un mail de prueba', template);
+    await sendEmail(newRegister.email, 'Confirm your password', template);
 
     return data;
   } catch (error) {
