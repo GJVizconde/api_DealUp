@@ -49,7 +49,6 @@ const updateUser = async (id, updateField, path) => {
 
     if (path) {
       const uploadedAvatar = await handleUpload(path);
-      console.log(uploadedAvatar);
       updateUser.avatar = uploadedAvatar.secure_url;
     }
 
