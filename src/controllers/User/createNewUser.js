@@ -1,36 +1,61 @@
 const { User } = require('../../db');
+const { handleUpload } = require('../../services/cloudinaryService');
 
 const createNewUser = async (
   fullName,
   email,
-  rol,
+  role,
   password,
+  dni,
   gender,
   birthdate,
   phone,
   country,
   avatar,
   status,
-  thirdPartyCreated
+  confirmEmail,
+  thirdPartyCreated,
+  path
 ) => {
   try {
+    if (path) {
+      const avatarUpload = await handleUpload(path);
+
+      const newUser = await User.create({
+        fullName,
+        email,
+        role,
+        password,
+        gender,
+        birthdate,
+        phone,
+        country,
+        avatar: avatarUpload.secure_url,
+        status,
+        confirmEmail,
+        thirdPartyCreated,
+      });
+
+      return newUser;
+    }
+
     const newUser = await User.create({
       fullName,
       email,
-      rol,
+      role,
       password,
+      dni,
       gender,
       birthdate,
       phone,
       country,
       avatar,
       status,
+      confirmEmail,
       thirdPartyCreated,
     });
 
     return newUser;
-
-    // console.log('Prueba');
   } catch (error) {
     if (error.name === 'SequelizeValidationError') {
       throw new Error('Validation error ' + error.message);

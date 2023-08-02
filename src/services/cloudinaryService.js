@@ -14,16 +14,15 @@ const handleUpload = async (file) => {
 
     return result;
   } catch (error) {
-    throw new Error('Error al cargar la imagen a Cloudinary');
+    throw new Error('Error al cargar la imagen a Cloudinary' + error);
   }
 };
 
 const updateUpload = async (file) => {
-    
-    await cloudinary.uploader.upload(file, {
-      public_id: image.public_id,
-      overwrite: true
-    });
+  await cloudinary.uploader.upload(file, {
+    public_id: image.public_id,
+    overwrite: true,
+  });
 };
 
 const deleteImageFromCloudinary = async (id) => {
@@ -71,5 +70,5 @@ module.exports = {
   getAllImagesFromCloudinary,
   deleteImageFromCloudinary,
   handleUpload,
-  updateUpload
+  updateUpload,
 };

@@ -1,6 +1,7 @@
 const { User } = require('../../db');
+const { handleUpload } = require('../../services/cloudinaryService');
 
-const updateUser = async (id, updateField) => {
+const updateUser = async (id, updateField, path) => {
   try {
     const updateUser = await User.findByPk(id);
 
@@ -8,17 +9,20 @@ const updateUser = async (id, updateField) => {
       throw new Error('User not found');
     }
 
-    if (updateField.name !== undefined) {
-      updateUser.name = updateField.name;
+    if (updateField.fullName !== undefined) {
+      updateUser.fullName = updateField.fullName;
     }
     if (updateField.email !== undefined) {
       updateUser.email = updateField.email;
     }
-    if (updateField.rol !== undefined) {
-      updateUser.rol = updateField.rol;
+    if (updateField.role !== undefined) {
+      updateUser.role = updateField.role;
     }
     if (updateField.password !== undefined) {
       updateUser.password = updateField.password;
+    }
+    if (updateField.dni !== undefined) {
+      updateUser.dni = updateField.dni;
     }
     if (updateField.gender !== undefined) {
       updateUser.gender = updateField.gender;
@@ -32,14 +36,23 @@ const updateUser = async (id, updateField) => {
     if (updateField.country !== undefined) {
       updateUser.country = updateField.country;
     }
-    if (updateField.avatar !== undefined) {
-      updateUser.avatar = updateField.avatar;
-    }
+
     if (updateField.status !== undefined) {
       updateUser.status = updateField.status;
     }
+    if (updateField.confirmEmail !== undefined) {
+      updateUser.confirmEmail = updateField.confirmEmail;
+    }
     if (updateField.thirdPartyCreated !== undefined) {
       updateUser.thirdPartyCreated = updateField.thirdPartyCreated;
+    }
+    if (updateField.avatar !== undefined) {
+      updateUser.avatar = updateField.avatar;
+    }
+
+    if (path) {
+      const uploadedAvatar = await handleUpload(path);
+      updateUser.avatar = uploadedAvatar.secure_url;
     }
 
     await updateUser.save();

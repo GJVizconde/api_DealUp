@@ -1,12 +1,12 @@
 const { getAllProjects } = require("../Projects/getAllProjects");
-//const { minAmountAll, maxAmountAll } = require('../../helpers/rangeAmount');
+//const { rangeAmountAll } = require('../Filter_Project/rangeAmountAll');
 
 const filterController = async (
   category,
   search,
   minAmountMin,
   maxAmountMin,
-  minAmounMax,
+  minAmountMax,
   maxAmountMax,
   order,
   attribute,
@@ -14,47 +14,32 @@ const filterController = async (
 ) => {
   const allProject = await getAllProjects();
 
-  // const amountMin = await minAmountAll();
-  // const amountMax = await maxAmountAll();
-  // const minAmountMinAll = amountMin.minAmountMin;
-  // const maxAmountMinAll = amountMin.maxAmountMin;
-  // const minAmountMaxAll = amountMax.minAmountMax;
-  // const maxAmountMaxAll = amountMax.maxAmountMax;
-
   let filterAll = allProject;
 
+  //FILTER BY CATEGORY
   if (category) {
-    filterAll = filterAll.filter((project) => {
-      return category.every((categ) => project.category.includes(categ));
-    });
+    filterAll = filterAll.filter((project) => category.every((categ) => project.category.includes(categ)));
   }
 
-  if (minAmounMax) {
-    filterAll = filterAll.filter((project) => {
-      return project.max_amount >= minAmounMax;
-    });
-  }
-  if (maxAmountMax) {
-    filterAll = filterAll.filter((project) => {
-      return project.max_amount <= maxAmountMax;
-    });
-  }
-
+  //FILTER BY RANGE MINIMUM
   if (minAmountMin) {
    
-    filterAll = filterAll.filter((project) => {
-     
-        return project.min_amount >= minAmountMin;
-
-    });
+    filterAll = filterAll.filter((project) => project.min_amount >= minAmountMin );
   }
   if (maxAmountMin) {
-    filterAll = filterAll.filter((project) => {
-      return project.min_amount <= maxAmountMin;
-    });
+    filterAll = filterAll.filter((project) => project.min_amount <= maxAmountMin );
   }
 
-  //ORDENAMIENTO POR AMOUNT MINIMUM
+    //FILTER BY RANGE MAXIMUM
+  if (minAmountMax) {
+    filterAll = filterAll.filter((project) => project.max_amount >= minAmountMax );
+  }
+  if (maxAmountMax) {
+    filterAll = filterAll.filter((project) => project.max_amount <= maxAmountMax );
+  }
+
+
+  //ORDER BY AMOUNT MINIMUM
   if (typeAmount === "min") {
     if (order === "Asc" && attribute === "amount") {
       filterAll.sort((a, b) => a.min_amount - b.min_amount);
@@ -63,7 +48,7 @@ const filterController = async (
       filterAll.sort((a, b) => b.min_amount - a.min_amount);
     }
   }
-  //ORDENAMIENTO POR AMOUNT MAXIMUM
+  //ORDER BY AMOUNT MAXIMUM
   if (typeAmount === "max") {
     if (order === "Asc" && attribute === "amount") {
       filterAll.sort((a, b) => a.max_amount - b.max_amount);
@@ -73,16 +58,18 @@ const filterController = async (
     }
   }
 
-  //ORDENAMIENTO POR RATING
-  // if(order === "Asc" && attribute === "rating") {
-  //     filterAll.sort((a,b) => a.Rating -b.Rating);
-  // }
-  // if(order === "Desc") {
-  //     filterAll.sort((a,b) => a.Rating -b.Rating);
-  // }
+  //ORDER BY RATING
+  if(order === "Asc" && attribute === "rating") {
+      filterAll.sort((a,b) => a.dataValues.averageRating - b.dataValues.averageRating);
+        }
+  if(order === "Desc" && attribute === "rating") {
+      filterAll.sort((a,b) =>  b.dataValues.averageRating - a.dataValues.averageRating);
+ }
 
- // return {filterAll, minAmountMinAll, maxAmountMinAll, minAmountMaxAll, maxAmountMaxAll};
- return filterAll;
+ //const range = await rangeAmountAll();
+
+ // return {filterAll, range};
+return filterAll;
 };
 
 module.exports = { filterController };

@@ -1,5 +1,6 @@
+const { generateJWT } = require('../../config/JWT');
+const { JWT_SECRET: jwtSecret } = process.env;
 const { User } = require('../../db');
-const { generateJWT } = require('../../helpers/JWT');
 
 const loginUser = async (email, password) => {
   const userRegistered = await User.findOne({
@@ -13,7 +14,7 @@ const loginUser = async (email, password) => {
 
   const data = {
     data: userRegistered,
-    accessToken: generateJWT(userRegistered),
+    accessToken: generateJWT(userRegistered, jwtSecret),
   };
 
   return data;
