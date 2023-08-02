@@ -3,8 +3,8 @@
 		"_postman_id": "bc78c4c2-05ef-428f-aed3-a8631bac08e1",
 		"name": "DEAL UP!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "27477100",
-		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=27477100&source=collection_link"
+		"_exporter_id": "28612822",
+		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=28612822&source=collection_link"
 	},
 	"item": [
 		{
@@ -138,7 +138,7 @@
 								{
 									"key": "avatar",
 									"type": "file",
-									"src": "/C:/Users/soygi/Desktop/PF LastDance/Resources/Last_Dance.jpg"
+									"src": "/C:/Users/soygi/Desktop/PF LastDance/Resources/Logo/DealUp.png"
 								}
 							]
 						},
@@ -204,7 +204,7 @@
 				{
 					"name": "updateUser",
 					"request": {
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -216,7 +216,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/user/d0b21b9f-6c41-4e38-abe6-dd135080365b",
+							"raw": "http://localhost:3001/user/b0287c25-1944-4daa-898d-215fa7b65893",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -224,7 +224,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"d0b21b9f-6c41-4e38-abe6-dd135080365b"
+								"b0287c25-1944-4daa-898d-215fa7b65893"
 							]
 						}
 					},
@@ -233,7 +233,7 @@
 				{
 					"name": "updateAvatar Cloudinary",
 					"request": {
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "formdata",
@@ -251,7 +251,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3001/user/d0b21b9f-6c41-4e38-abe6-dd135080365b",
+							"raw": "http://localhost:3001/user/b0287c25-1944-4daa-898d-215fa7b65893",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -259,7 +259,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"d0b21b9f-6c41-4e38-abe6-dd135080365b"
+								"b0287c25-1944-4daa-898d-215fa7b65893"
 							]
 						}
 					},
@@ -271,7 +271,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user/1aaf0d6f-0903-4379-ad15-d978be29b667",
+							"raw": "http://localhost:3001/user/9af1d7e7-9f89-4611-be58-9380d63aadb3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -279,7 +279,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"1aaf0d6f-0903-4379-ad15-d978be29b667"
+								"9af1d7e7-9f89-4611-be58-9380d63aadb3"
 							]
 						}
 					},
@@ -321,7 +321,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shakira@yopmail.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"wigik99215@inkiny.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -342,9 +342,31 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "confirmRegister",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/user/register/confirm/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIwMjg3YzI1LTE5NDQtNGRhYS04OThkLTIxNWZhN2I2NTg5MyIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE2OTA5ODU4NDgsImV4cCI6MTY5MDk5MzA0OH0.R1v2YMHYDF8iUrAysy0quUjtEanBAvjxIlqJsuL1YJI",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user",
+								"register",
+								"confirm",
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIwMjg3YzI1LTE5NDQtNGRhYS04OThkLTIxNWZhN2I2NTg5MyIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE2OTA5ODU4NDgsImV4cCI6MTY5MDk5MzA0OH0.R1v2YMHYDF8iUrAysy0quUjtEanBAvjxIlqJsuL1YJI"
+							]
+						}
+					},
+					"response": []
 				}
 			],
-			"description": "createUser: Crea un usuario;  \ngetAllUsers: Trae todos los usuarios;  \ngetUserByName: Busca el usuario por nombre por Query;  \ngetUserById: Buscar por usuario por Id.params  \nupdateUser: Actualiza datos del usuario con id params  \ndeleteUser: Elimina un usuario por id params"
+			"description": "createUser: Crea un usuario;  \ngetAllUsers: Trae todos los usuarios;  \ngetUserByName: Busca el usuario por nombre por Query;  \ngetUserById: Buscar por usuario por Id.params  \nupdateUser: Actualiza datos del usuario con id params  \ndeleteUser: Elimina un usuario por id params  \n\n  \n\nCorreo recomendado para correos temporales:  \n[Temp Mail]()"
 		},
 		{
 			"name": "PROJECT",
@@ -443,6 +465,91 @@
 					"response": []
 				},
 				{
+					"name": "addProjectsWFile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "LosFilesUp",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Queremos colocar un local peluqueria y arreglos de barbas",
+									"type": "text"
+								},
+								{
+									"key": "min_amount",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "max_amount",
+									"value": "50000",
+									"type": "text"
+								},
+								{
+									"key": "goal_amount",
+									"value": "85490",
+									"type": "text"
+								},
+								{
+									"key": "initial_date",
+									"value": "01/03/2024",
+									"type": "text"
+								},
+								{
+									"key": "deadline",
+									"value": "12/09/2024",
+									"type": "text"
+								},
+								{
+									"key": "image_cover",
+									"type": "file",
+									"src": "me.jpg"
+								},
+								{
+									"key": "city",
+									"value": "Cordoba",
+									"type": "text"
+								},
+								{
+									"key": "category[]",
+									"value": "Music",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Pending",
+									"type": "text"
+								},
+								{
+									"key": "UserId",
+									"value": "c732a06c-afaf-4eb0-9416-d7fd120e967a",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/projects/file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "updateProjectViejo",
 					"request": {
 						"method": "PUT",
@@ -529,91 +636,6 @@
 									"value": null,
 									"disabled": true
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "addProjectsWFile",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "LosFilesUp",
-									"type": "text"
-								},
-								{
-									"key": "description",
-									"value": "Queremos colocar un local peluqueria y arreglos de barbas",
-									"type": "text"
-								},
-								{
-									"key": "min_amount",
-									"value": "5",
-									"type": "text"
-								},
-								{
-									"key": "max_amount",
-									"value": "50000",
-									"type": "text"
-								},
-								{
-									"key": "goal_amount",
-									"value": "85490",
-									"type": "text"
-								},
-								{
-									"key": "initial_date",
-									"value": "01/03/2024",
-									"type": "text"
-								},
-								{
-									"key": "deadline",
-									"value": "12/09/2024",
-									"type": "text"
-								},
-								{
-									"key": "image_cover",
-									"type": "file",
-									"src": "me.jpg"
-								},
-								{
-									"key": "city",
-									"value": "Cordoba",
-									"type": "text"
-								},
-								{
-									"key": "category[]",
-									"value": "Music",
-									"type": "text"
-								},
-								{
-									"key": "status",
-									"value": "Pending",
-									"type": "text"
-								},
-								{
-									"key": "UserId",
-									"value": "c732a06c-afaf-4eb0-9416-d7fd120e967a",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:3001/projects/file",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"projects",
-								"file"
 							]
 						}
 					},
@@ -1133,7 +1155,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n \"minAmountMin\":null ,\r\n \"maxAmountMin\": null,\r\n \"minAmountMax\":null,\r\n  \"maxAmountMax\":null,\r\n \"category\": [],\r\n \"order\": \"Desc\",\r\n \"attribute\":\"rating\",\r\n \"typeAmount\": \"\"\r\n \r\n}",
+							"raw": "{\r\n \"minAmountMin\":null ,\r\n \"maxAmountMin\": null,\r\n \"minAmountMax\":null,\r\n  \"maxAmountMax\":null,\r\n \"category\": [],\r\n \"order\": \"Asc\",\r\n \"attribute\":\"rating\",\r\n \"typeAmount\": \"min\"\r\n \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1156,7 +1178,7 @@
 					"response": []
 				}
 			],
-			"description": "StartFragment\n\n\"minAmountMin\": null, ( minimo valor de todos los amountMinimos agregar el numer o null)\n\n\"maxAmountMin\": null, ( maximovalor de todos los amountMinimos agregar el numer o null)\n\n\"minAmountMax\":null, ( minimo valor de todos los amountMaximos agregar el numer o null)\n\n\"maxAmountMax\":null, ( maxim valor todos de los amountMaximos agregar el numer o null)\n\n \"category\": \\[\\], (array de string de las categorias)\n\n \"order\": \"Desc\", (elegir el orden \"Asc\" o \"Desc\")\n\n\"attribute\":\"amount\", (\"amount\" para ordenar por amount)\n\n \"typeAmount\": \"min\" ( Agregar: \"min\" ordenar por minimos; \"max\" ordenar por maximos)\n\nEndFragment"
+			"description": "StartFragment\n\n\"minAmountMin\": null, ( minimo valor de todos los amountMinimos agregar el number o null)\n\n\"maxAmountMin\": null, ( maximovalor de todos los amountMinimos agregar el number o null)\n\n\"minAmountMax\":null, ( minimo valor de todos los amountMaximos agregar el number o null)\n\n\"maxAmountMax\":null, ( maxim valor todos de los amountMaximos agregar el number o null)\n\n\"category\": \\[\\], (array de string de las categorias)\n\n\"order\": \"Desc\", (elegir el orden \"Asc\" o \"Desc\")\n\n\"attribute\":\"amount\", (\"amount\" para ordenar por amount; \"rating\" para ordenar por rating)\n\n\"typeAmount\": \"min\" ( Agregar: \"min\" ordenar por minimos; \"max\" ordenar por maximos)(INCLUIR EL VALOR UNICAMENTE CUANDO SE ORDENA POR AMOUNT)\n\nEndFragment"
 		},
 		{
 			"name": "INVESTMENTS",
