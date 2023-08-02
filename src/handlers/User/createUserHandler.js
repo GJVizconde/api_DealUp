@@ -1,15 +1,9 @@
-const createNewUser = require("../../controllers/User/createNewUser");
-const { handleUpload } = require("../../cloudinary/cloudinaryService");
-const fs = require("fs");
-const multer = require("multer");
-const upload = multer({ dest: "uploads/" });
+const createNewUser = require('../../controllers/User/createNewUser');
+const multer = require('multer');
+const upload = multer({ dest: 'src/uploads/' });
 
 const createUserHandler = async (req, res) => {
-  if (req.file) {
-    const { path } = req.file;
-    // console.log(path);
-  }
-
+  const { path } = req.file || { path: null };
   const {
     fullName,
     email,
@@ -24,47 +18,28 @@ const createUserHandler = async (req, res) => {
     thirdPartyCreated,
   } = req.body;
 
-  // console.log(fullName, email, rol);
+  console.log('Handler', fullName);
 
   try {
-    if (!req.file) {
-      const newUser = await createNewUser(
-        fullName,
-        email,
-        rol,
-        password,
-        gender,
-        birthdate,
-        phone,
-        country,
-        avatar,
-        status,
-        thirdPartyCreated
-      );
+    const newUser = await createNewUser(
+      fullName,
+      email,
+      rol,
+      password,
+      gender,
+      birthdate,
+      phone,
+      country,
+      avatar,
+      status,
+      thirdPartyCreated,
+      path
+    );
 
-      res.status(201).json(newUser);
-    } else {
-      const image = await handleUpload(path);
-
-      const newUser = await createNewUser(
-        fullName,
-        email,
-        rol,
-        password,
-        gender,
-        birthdate,
-        phone,
-        country,
-        image.secure_url,
-        status,
-        thirdPartyCreated
-      );
-
-      res.status(201).json(newUser);
-    }
+    res.status(201).json(newUser);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 };
 
-module.exports = { upload, createUserHandler };
+module.exports = { createUserHandler, upload };

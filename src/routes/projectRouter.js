@@ -5,9 +5,12 @@ const {
   getIdProjectsHandler,
 } = require('../handlers/Projects/getProjectsHandler');
 const {
-  upload,
   createProjectHandler,
 } = require('../handlers/Projects/postProjectsHandler');
+const {
+  upload,
+  createProjectHandlerFile,
+} = require('../handlers/Projects/postProjectsHandlerFile');
 const {
   updateProjectHandler,
 } = require('../handlers/Projects/putProjectHandler');
@@ -70,10 +73,10 @@ projectRouter.delete('/post/:id', deletePostHandler);
 
 //continue route project
 projectRouter.get('/:id', getIdProjectsHandler);
-//projectRouter.post('/', upload.single('image_cover'), createProjectHandler);
-projectRouter.post('/', createProjectHandler);
+projectRouter.post('/file', upload.single('image_cover'), createProjectHandlerFile);
+projectRouter.post('/url', createProjectHandler);
 projectRouter.put('/prueba/:id', updateProjectHandler); //ruta vieja carga todos los campos
 projectRouter.delete('/:id', deleteProjectHandler);
-projectRouter.put('/:id', updateHandler);
+projectRouter.put('/:id', upload.single('image_cover'), updateHandler);
 
 module.exports = projectRouter;

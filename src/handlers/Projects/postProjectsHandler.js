@@ -1,14 +1,17 @@
 const {
   createProject,
 } = require('../../controllers/Projects/postProjectController');
-// const { handleUpload } = require('../../cloudinary/cloudinaryService');
+const { handleUpload } = require('../../cloudinary/cloudinaryService');
 // const multer = require('multer');
 // const fs = require('fs');
 // const { JSONB } = require('sequelize');
 // const upload = multer({ dest: 'uploads/' });
+// const postImageByUrl = require('../../controllers/Image/postImageByUrl');
+// const { uploadImage } = require('../../controllers/Image/postImage');
 
 const createProjectHandler = async (req, res) => {
-  //const { path } = req.file;
+
+  // const { path } = req.file;
   const {
     name,
     description,
@@ -17,22 +20,15 @@ const createProjectHandler = async (req, res) => {
     goal_amount,
     initial_date,
     deadline,
-    image_cover,
+    url,
     city,
     category,
-    //myCategory,
     status,
     UserId,
   } = req.body;
 
-  //   const arrayCategory = myCategory.split(',');
-  //   console.log("my",arrayCategory);
-  // console.log("cantidad", arrayCategory.length);
+  console.log(url);
   try {
-    // let category = JSON.parse(myCategory);
-    // // const category = arrayCategory;
-    //  console.log(category);
-    //  console.log(typeof(category));
 
     if (!name) {
       return res.status(400).json('Name is required');
@@ -54,9 +50,10 @@ const createProjectHandler = async (req, res) => {
       return res.status(400).json('At least one category is required');
     } else if (!UserId) {
       return res.status(400).json('User id is required');
-    }
 
-    // const image = await handleUpload(path);
+     }
+    
+    const image_cover = await handleUpload(url);
 
     const newProject = await createProject(
       name,
@@ -66,7 +63,7 @@ const createProjectHandler = async (req, res) => {
       goal_amount,
       initial_date,
       deadline,
-      image_cover,
+      image_cover.secure_url,
       city,
       category,
       status,
