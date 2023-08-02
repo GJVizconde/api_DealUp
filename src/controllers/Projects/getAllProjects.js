@@ -11,7 +11,7 @@ const getAllProjects = async () => {
         include: [
             {
             model: User,
-            attributes: ['id', 'fullName', 'rol'],
+            attributes: ['id', 'fullName', 'role'],
             through: {
                 attributes: [],
             }
