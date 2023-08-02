@@ -46,7 +46,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shaki@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"thirdPartycreated\": false\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shak@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"thirdPartycreated\": false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -82,7 +82,7 @@
 								},
 								{
 									"key": "email",
-									"value": "shak@gmail.com",
+									"value": "shakira@gmail.com",
 									"type": "text"
 								},
 								{
@@ -138,7 +138,7 @@
 								{
 									"key": "avatar",
 									"type": "file",
-									"src": "/C:/Users/soygi/Desktop/PF LastDance/Resources/Logo/Logo2.png"
+									"src": "/C:/Users/soygi/Desktop/PF LastDance/Resources/Last_Dance.jpg"
 								}
 							]
 						},
@@ -216,7 +216,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/user/378c52c2-446e-4088-a4eb-2d655f067e3c",
+							"raw": "http://localhost:3001/user/d0b21b9f-6c41-4e38-abe6-dd135080365b",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -224,7 +224,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"378c52c2-446e-4088-a4eb-2d655f067e3c"
+								"d0b21b9f-6c41-4e38-abe6-dd135080365b"
 							]
 						}
 					},
@@ -241,12 +241,17 @@
 								{
 									"key": "avatar",
 									"type": "file",
-									"src": "/C:/Users/soygi/Desktop/PF LastDance/Resources/Last_Dance.jpg"
+									"src": "/C:/Users/soygi/Desktop/PF LastDance/Resources/Logo/DealUp.png"
+								},
+								{
+									"key": "country",
+									"value": "Venezuela",
+									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3001/user/9692a4a1-77fd-42fa-afa7-082471e18389",
+							"raw": "http://localhost:3001/user/d0b21b9f-6c41-4e38-abe6-dd135080365b",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -254,7 +259,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"9692a4a1-77fd-42fa-afa7-082471e18389"
+								"d0b21b9f-6c41-4e38-abe6-dd135080365b"
 							]
 						}
 					},
