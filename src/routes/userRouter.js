@@ -58,7 +58,12 @@ userRouter.post(
   validateCreateUser,
   createUserHandler
 );
-userRouter.patch('/:id', validateUpdateUser, updateUserHandler);
+userRouter.patch(
+  '/:id',
+  upload.single('avatar'),
+  validateUpdateUser,
+  updateUserHandler
+);
 userRouter.delete('/:id', validateId, deleteUserHandler);
 userRouter.post('/login', validateLogin, loginUserHandler);
 

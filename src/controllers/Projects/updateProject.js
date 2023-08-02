@@ -1,8 +1,21 @@
 const { Project } = require('../../db');
 
-const updateProject = async (id, campoActualizar) => {
+const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+  cloud_name: 'dgx2v3fnk',
+  api_key: '852753386513374',
+  api_secret: 'APa-UKXfdLf-WK5K0WBbMHZsJtU',
+});
+
+const updateProject = async (id, campoActualizar, path) => {
   try {
-    const updatedProjectById = await Project.findOne({ where: { id } });
+
+    const updatedProjectById = await Project.findByPk(id);
+
+    const public = updatedProjectById.image_cover.split('/').pop();
+    const publicId = public.replace('.jpg', '');
+    console.log('public_id:', publicId);
 
     if (!updatedProjectById) {
       throw new Error('Project not found');
@@ -28,8 +41,13 @@ const updateProject = async (id, campoActualizar) => {
     if (campoActualizar.deadline !== undefined) {
       updatedProjectById.deadline = campoActualizar.deadline;
     }
-    if (campoActualizar.image_cover !== undefined) {
-      updatedProjectById.image_cover = campoActualizar.image_cover;
+    if(path !== undefined){
+
+      const newImage = await cloudinary.uploader.upload(path, {
+      public_id: publicId,
+      overwrite: true
+      });
+      updatedProjectById.image_cover = newImage.secure_url
     }
     if (campoActualizar.category !== undefined) {
       updatedProjectById.category = campoActualizar.category;

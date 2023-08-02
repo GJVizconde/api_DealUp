@@ -1,6 +1,7 @@
 const { User } = require('../../db');
+const { handleUpload } = require('../../services/cloudinaryService');
 
-const updateUser = async (id, updateField) => {
+const updateUser = async (id, updateField, path) => {
   try {
     const updateUser = await User.findByPk(id);
 
@@ -35,9 +36,7 @@ const updateUser = async (id, updateField) => {
     if (updateField.country !== undefined) {
       updateUser.country = updateField.country;
     }
-    if (updateField.avatar !== undefined) {
-      updateUser.avatar = updateField.avatar;
-    }
+
     if (updateField.status !== undefined) {
       updateUser.status = updateField.status;
     }
@@ -46,6 +45,14 @@ const updateUser = async (id, updateField) => {
     }
     if (updateField.thirdPartyCreated !== undefined) {
       updateUser.thirdPartyCreated = updateField.thirdPartyCreated;
+    }
+    if (updateField.avatar !== undefined) {
+      updateUser.avatar = updateField.avatar;
+    }
+
+    if (path) {
+      const uploadedAvatar = await handleUpload(path);
+      updateUser.avatar = uploadedAvatar.secure_url;
     }
 
     await updateUser.save();

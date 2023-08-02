@@ -1,16 +1,15 @@
 const {
   createProject,
 } = require('../../controllers/Projects/postProjectController');
-const { handleUpload } = require('../../services/cloudinaryService');
-// const multer = require('multer');
-// const fs = require('fs');
-// const { JSONB } = require('sequelize');
-// const upload = multer({ dest: 'uploads/' });
-// const postImageByUrl = require('../../controllers/Image/postImageByUrl');
-// const { uploadImage } = require('../../controllers/Image/postImage');
 
-const createProjectHandler = async (req, res) => {
-  // const { path } = req.file;
+const { handleUpload } = require('../../services/cloudinaryService');
+const multer = require('multer');
+const fs = require('fs');
+const upload = multer({ dest: 'uploads/' });
+
+const createProjectHandlerFile = async (req, res) => {
+  const { path } = req.file;
+
   const {
     name,
     description,
@@ -19,14 +18,14 @@ const createProjectHandler = async (req, res) => {
     goal_amount,
     initial_date,
     deadline,
-    url,
     city,
     category,
     status,
     UserId,
   } = req.body;
 
-  console.log(url);
+  console.log(path);
+
   try {
     if (!name) {
       return res.status(400).json('Name is required');
@@ -50,7 +49,7 @@ const createProjectHandler = async (req, res) => {
       return res.status(400).json('User id is required');
     }
 
-    const image_cover = await handleUpload(url);
+    const image_cover = await handleUpload(path);
 
     const newProject = await createProject(
       name,
@@ -78,4 +77,4 @@ const createProjectHandler = async (req, res) => {
   }
 };
 
-module.exports = { createProjectHandler };
+module.exports = { upload, createProjectHandlerFile };
