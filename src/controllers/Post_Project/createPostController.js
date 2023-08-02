@@ -1,7 +1,6 @@
-const { Project, Post } = require('../../db');
+const { Post } = require('../../db');
 
 const createPost = async (description, image_gellery, video_gallery, ProjectId) => {
-
 
 const newPost = await Post.create({
     description,
