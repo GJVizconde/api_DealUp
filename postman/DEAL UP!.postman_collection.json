@@ -3,8 +3,8 @@
 		"_postman_id": "bc78c4c2-05ef-428f-aed3-a8631bac08e1",
 		"name": "DEAL UP!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "28612822",
-		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=28612822&source=collection_link"
+		"_exporter_id": "27477100",
+		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=27477100&source=collection_link"
 	},
 	"item": [
 		{
@@ -46,7 +46,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shak@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"thirdPartycreated\": false\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shak@gmail.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -241,17 +241,17 @@
 								{
 									"key": "avatar",
 									"type": "file",
-									"src": "/C:/Users/soygi/Desktop/PF LastDance/Resources/Logo/DealUp.png"
+									"src": "/C:/Users/soygi/Desktop/PF LastDance/Resources/Last_Dance.jpg"
 								},
 								{
 									"key": "country",
-									"value": "Venezuela",
+									"value": "Argentina",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3001/user/b0287c25-1944-4daa-898d-215fa7b65893",
+							"raw": "http://localhost:3001/user/e6060001-1cd1-4a1e-8728-c3a41154c306",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -259,7 +259,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"b0287c25-1944-4daa-898d-215fa7b65893"
+								"e6060001-1cd1-4a1e-8728-c3a41154c306"
 							]
 						}
 					},
