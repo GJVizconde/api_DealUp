@@ -21,6 +21,8 @@ const createNewRegister = async (
   try {
     let registeredUser = await User.findOne({ where: { email } });
 
+    console.log('Before conditional', registeredUser);
+
     if (registeredUser) {
       if (registeredUser.confirmEmail === false) {
         await registeredUser.destroy();
@@ -48,7 +50,7 @@ const createNewRegister = async (
     const token = generateJWT(newRegister, jwtRegister);
 
     const data = {
-      msg: 'Register succesful',
+      msg: 'Register succesfuly, an email was sent',
       newRegister,
       token,
     };

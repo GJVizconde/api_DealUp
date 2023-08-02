@@ -18,7 +18,7 @@ const createRegisterHandler = async (req, res) => {
   } = req.body;
 
   try {
-    const newRegister = await createNewRegister(
+    const registered = await createNewRegister(
       fullName,
       email,
       role,
@@ -34,7 +34,7 @@ const createRegisterHandler = async (req, res) => {
       thirdPartyCreated
     );
 
-    res.status(201).json(newRegister);
+    res.status(201).json(registered);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

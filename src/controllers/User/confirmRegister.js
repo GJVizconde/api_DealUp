@@ -1,6 +1,6 @@
-const { verifyToken } = require('../../config/JWT');
 const { JWT_REGISTER: jwtRegister } = process.env;
-const updateUser = require('../../controllers/User/updateUser');
+const { verifyToken } = require('../../config/JWT');
+const { User } = require('../../db');
 
 const confirmRegister = async (token) => {
   const data = verifyToken(token, jwtRegister);
@@ -9,11 +9,22 @@ const confirmRegister = async (token) => {
 
   try {
     if (!data) {
-      throw new Error('An error occurred, try again');
+      throw new Error('Something was wrong, try again');
     }
 
-    updateUser(data.id, data.role);
-    console.log('updateUser');
+    const updateUser = await User.findByPk(data.id);
+
+    if (!updateUser) {
+      throw new Error('Something was wrong, try again');
+    }
+
+    updateUser.confirmEmail = true;
+    await updateUser.save();
+
+    return {
+      message: 'Confirm email was successful.',
+      updateUser,
+    };
   } catch (error) {
     throw new Error(
       'Error: Unable to confirm your registration. Please try again later'
