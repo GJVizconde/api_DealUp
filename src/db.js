@@ -62,12 +62,10 @@ Project.belongsToMany(User, { through: 'user_project' });
 //USER-RATING
 
 User.hasOne(Rating, {
-  foreignKey: 'UserId',
   onDelete: 'CASCADE',
   onUpdate: 'CASCADE',
 });
 Rating.belongsTo(User, {
-  foreignKey: 'UserId',
   onDelete: 'CASCADE',
   onUpdate: 'CASCADE',
 });
