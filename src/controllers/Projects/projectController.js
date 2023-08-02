@@ -14,7 +14,7 @@ const searchProjectByName = async (name) => {
     include: [
       {
         model: User,
-        attributes: ['id', 'fullName', 'rol'],
+        attributes: ['id', 'fullName', 'role'],
         through: {
           attributes: [],
         },
@@ -35,6 +35,12 @@ const searchProjectByName = async (name) => {
           {
             model: Comment,
             attributes: ['comment', 'UserId'],
+            include: [
+              {
+                model: User,
+                attributes: ['id', 'fullName'],
+              },
+            ],
           },
         ],
       },
@@ -58,7 +64,7 @@ const searchProjectById = async (id) => {
     include: [
       {
         model: User,
-        attributes: ['id', 'fullName', 'rol'],
+        attributes: ['id', 'fullName', 'role'],
         through: {
           attributes: [],
         },
