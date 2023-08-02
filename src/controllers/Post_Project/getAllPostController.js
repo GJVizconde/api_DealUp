@@ -6,8 +6,7 @@ const getAllPostProjects = async () => {
         include: {
             model: Comment,
             attributes: ['comment'],
-        },
-        
+        },       
     });
 
     return dbPost;

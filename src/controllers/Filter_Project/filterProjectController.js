@@ -60,10 +60,10 @@ const filterController = async (
 
   //ORDER BY RATING
   if(order === "Asc" && attribute === "rating") {
-      filterAll.sort((a,b) => a.dataValues.averageRating - b.dataValues.averageRating);
+      filterAll.sort((a,b) => a.average_rating - b.average_rating);
         }
   if(order === "Desc" && attribute === "rating") {
-      filterAll.sort((a,b) =>  b.dataValues.averageRating - a.dataValues.averageRating);
+      filterAll.sort((a,b) =>  b.average_rating - a.average_rating);
  }
 
  //const range = await rangeAmountAll();
