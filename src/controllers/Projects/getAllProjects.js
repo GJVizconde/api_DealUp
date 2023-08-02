@@ -6,8 +6,8 @@ const getAllRatings = require('../../controllers/Rating_Project/getAllRatings');
 const getAllProjects = async () => {
 
      try {
-    //return dataBaseProjects = await Project.findAll({
-      const dataBaseProjects = await Project.findAll({ 
+    return dataBaseProjects = await Project.findAll({
+    //   const dataBaseProjects = await Project.findAll({ 
         include: [
             {
             model: User,
@@ -51,23 +51,23 @@ const getAllProjects = async () => {
        
     });
   
-const ratingsWithProjects = await getAllRatings();
+// const ratingsWithProjects = await getAllRatings();
 
-//combino info de rating con lista de proyecto
-const projectsWithRatings = dataBaseProjects.map((project) => {
-    //busco el rating prom para el project actual
-    const rating = ratingsWithProjects.projectWithRatings.find( (rating) => rating.ProjectId === project.id);
+// //combino info de rating con lista de proyecto
+// const projectsWithRatings = dataBaseProjects.map((project) => {
+//     //busco el rating prom para el project actual
+//     const rating = ratingsWithProjects.projectWithRatings.find( (rating) => rating.ProjectId === project.id);
 
-    if(rating) {
-        project.dataValues.averageRating = rating.averageRating;
-    } else {
-        project.dataValues.averageRating = 0;
-    }
+//     if(rating) {
+//         project.dataValues.averageRating = rating.averageRating;
+//     } else {
+//         project.dataValues.averageRating = 0;
+//     }
    
-    return project;
-})
+//     return project;
+// })
 
-return projectsWithRatings;
+// return projectsWithRatings;
 } catch (error) {
    
     throw error;
