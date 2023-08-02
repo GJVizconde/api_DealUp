@@ -1,7 +1,7 @@
 const {
   createProject,
 } = require('../../controllers/Projects/postProjectController');
-const { handleUpload } = require('../../cloudinary/cloudinaryService');
+const { handleUpload } = require('../../services/cloudinaryService');
 // const multer = require('multer');
 // const fs = require('fs');
 // const { JSONB } = require('sequelize');
@@ -10,7 +10,6 @@ const { handleUpload } = require('../../cloudinary/cloudinaryService');
 // const { uploadImage } = require('../../controllers/Image/postImage');
 
 const createProjectHandler = async (req, res) => {
-
   // const { path } = req.file;
   const {
     name,
@@ -29,7 +28,6 @@ const createProjectHandler = async (req, res) => {
 
   console.log(url);
   try {
-
     if (!name) {
       return res.status(400).json('Name is required');
     } else if (!description) {
@@ -50,9 +48,8 @@ const createProjectHandler = async (req, res) => {
       return res.status(400).json('At least one category is required');
     } else if (!UserId) {
       return res.status(400).json('User id is required');
+    }
 
-     }
-    
     const image_cover = await handleUpload(url);
 
     const newProject = await createProject(

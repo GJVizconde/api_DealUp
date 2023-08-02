@@ -1,5 +1,5 @@
 const { Image } = require('../../db');
-const { handleUpload } = require('../../cloudinary/cloudinaryService');
+const { handleUpload } = require('../../services/cloudinaryService');
 const multer = require('multer');
 const fs = require('fs');
 const upload = multer({ dest: 'uploads/' });
@@ -9,8 +9,8 @@ const uploadImage = async (req, res) => {
     const { path } = req.file;
     // const { comments, ProjectId } = req.body;
 
-     console.log(path);
-     console.log('lol');
+    console.log(path);
+    console.log('lol');
 
     if (!path) {
       return res.status(400).json({ error: 'URL not valid' });
@@ -20,7 +20,7 @@ const uploadImage = async (req, res) => {
 
     const image = await Image.create({
       image: result.secure_url,
-      public_id: result.public_id
+      public_id: result.public_id,
     });
 
     // fs.unlinkSync(file.path);

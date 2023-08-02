@@ -4,6 +4,8 @@ const updateUserHandler = async (req, res) => {
   const { path } = req.file || { path: null };
   const { id } = req.params;
   const updateField = req.body;
+
+  console.log(path);
   try {
     const result = await updateUser(id, updateField, path);
 

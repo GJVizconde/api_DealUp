@@ -1,4 +1,4 @@
-const cloudinaryService = require('../../cloudinary/cloudinaryService');
+const cloudinaryService = require('../../services/cloudinaryService');
 const { Gallery } = require('../../db');
 
 const uploadUrlImage = async (req, res) => {

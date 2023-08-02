@@ -1,17 +1,19 @@
 const { User } = require('../../db');
-const { handleUpload } = require('../../cloudinary/cloudinaryService');
+const { handleUpload } = require('../../services/cloudinaryService');
 
 const createNewUser = async (
   fullName,
   email,
-  rol,
+  role,
   password,
+  dni,
   gender,
   birthdate,
   phone,
   country,
   avatar,
   status,
+  confirmEmail,
   thirdPartyCreated,
   path
 ) => {
@@ -22,7 +24,7 @@ const createNewUser = async (
       const newUser = await User.create({
         fullName,
         email,
-        rol,
+        role,
         password,
         gender,
         birthdate,
@@ -30,6 +32,7 @@ const createNewUser = async (
         country,
         avatar: avatarUpload.secure_url,
         status,
+        confirmEmail,
         thirdPartyCreated,
       });
 
@@ -39,14 +42,16 @@ const createNewUser = async (
     const newUser = await User.create({
       fullName,
       email,
-      rol,
+      role,
       password,
+      dni,
       gender,
       birthdate,
       phone,
       country,
       avatar,
       status,
+      confirmEmail,
       thirdPartyCreated,
     });
 

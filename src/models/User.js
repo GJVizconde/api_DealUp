@@ -18,14 +18,21 @@ module.exports = (sequelize) => {
         allowNull: false,
         unique: true,
       },
-      rol: {
+      role: {
         type: DataTypes.ENUM('entrepreneur', 'investor', 'moderator', 'admin'),
         defaultValue: 'entrepreneur',
-        allowNull: false,
       },
       password: {
         type: DataTypes.STRING,
         allowNull: true,
+      },
+      dni: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        unique: {
+          name: 'unique_dni',
+          msg: 'DNI already registered',
+        },
       },
       gender: {
         type: DataTypes.STRING,
@@ -48,6 +55,10 @@ module.exports = (sequelize) => {
         allowNull: true,
       },
       status: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
+      },
+      confirmEmail: {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
       },

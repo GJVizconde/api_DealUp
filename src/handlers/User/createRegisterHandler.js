@@ -1,9 +1,6 @@
-const createNewUser = require('../../controllers/User/createNewUser');
-const multer = require('multer');
-const upload = multer({ dest: 'src/uploads/' });
+const createNewRegister = require('../../controllers/User/createNewRegister');
 
-const createUserHandler = async (req, res) => {
-  const { path } = req.file || { path: null };
+const createRegisterHandler = async (req, res) => {
   const {
     fullName,
     email,
@@ -21,7 +18,7 @@ const createUserHandler = async (req, res) => {
   } = req.body;
 
   try {
-    const newUser = await createNewUser(
+    const registered = await createNewRegister(
       fullName,
       email,
       role,
@@ -34,14 +31,13 @@ const createUserHandler = async (req, res) => {
       avatar,
       status,
       confirmEmail,
-      thirdPartyCreated,
-      path
+      thirdPartyCreated
     );
 
-    res.status(201).json(newUser);
+    res.status(201).json(registered);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 };
 
-module.exports = { createUserHandler, upload };
+module.exports = createRegisterHandler;

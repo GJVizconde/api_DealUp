@@ -4,7 +4,7 @@ const getAllUsers = require('../../controllers/User/getAllUsers');
 const getUsersHandler = async (req, res) => {
   const { fullName } = req.query;
 
-  console.log(fullName);
+  // console.log(fullName);
 
   try {
     const results = fullName
