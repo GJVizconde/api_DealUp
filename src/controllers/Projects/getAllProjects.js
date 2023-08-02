@@ -63,16 +63,15 @@ const projectsWithRatings = dataBaseProjects.map((project) => {
     } else {
         project.dataValues.averageRating = 0;
     }
+   
     return project;
-
 })
 
 return projectsWithRatings;
- 
 } catch (error) {
    
     throw error;
+};
+};
 
-};
-};
-module.exports = { getAllProjects }
+module.exports = { getAllProjects };

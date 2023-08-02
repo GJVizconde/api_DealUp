@@ -36,8 +36,7 @@ const getAllRatings = async () => {
         averageRating: parseFloat(averageRating),
       })
     }
-
-
+   
     return ({message: 'Ratings founded', ratingList, projectWithRatings});
   } catch (error) {
     throw new Error('Error: ' + error.message);
