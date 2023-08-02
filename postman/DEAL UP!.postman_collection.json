@@ -46,7 +46,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shak@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shaki@gmail.com\",\r\n    \"rol\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"thirdPartycreated\": false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -208,7 +208,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"country\": \"Venezuela\"\r\n}",
+							"raw": "{\r\n    \"country\": \"Venezuela\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -216,7 +216,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/user/b37ed6bf-2440-44f3-bee7-322ead947665",
+							"raw": "http://localhost:3001/user/378c52c2-446e-4088-a4eb-2d655f067e3c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -224,14 +224,14 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"b37ed6bf-2440-44f3-bee7-322ead947665"
+								"378c52c2-446e-4088-a4eb-2d655f067e3c"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "updateAvatar Cloudnary",
+					"name": "updateAvatar Cloudinary",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -394,7 +394,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects/29325bf9-6a40-4a44-8d6a-4d734d18e1c0",
+							"raw": "http://localhost:3001/projects/414ed048-85dc-4498-901a-aa9059af87a4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -402,7 +402,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"29325bf9-6a40-4a44-8d6a-4d734d18e1c0"
+								"414ed048-85dc-4498-901a-aa9059af87a4"
 							]
 						}
 					},
@@ -493,16 +493,22 @@
 						"method": "PUT",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\"collected_amount\": 100\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "LosFi",
+									"type": "text"
+								},
+								{
+									"key": "image_cover",
+									"type": "file",
+									"src": "57aa74fc9a1e37c81ce7383d3a9b391d.jpg"
 								}
-							}
+							]
 						},
 						"url": {
-							"raw": "http://localhost:3001/projects/6715bcf8-c333-454b-bb70-98abbdd8b1c5",
+							"raw": "http://localhost:3001/projects/414ed048-85dc-4498-901a-aa9059af87a4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -510,7 +516,14 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"6715bcf8-c333-454b-bb70-98abbdd8b1c5"
+								"414ed048-85dc-4498-901a-aa9059af87a4"
+							],
+							"query": [
+								{
+									"key": "path",
+									"value": null,
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -526,7 +539,7 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "Germancios Yyyyyy Pablosgnfg",
+									"value": "LosFilesUp",
 									"type": "text"
 								},
 								{
@@ -1115,7 +1128,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n \"minAmountMin\": 50,\r\n \"maxAmountMin\": 100,\r\n \"minAmountMax\":null,\r\n  \"maxAmountMax\":2000,\r\n \"category\": [],\r\n \"order\": \"Desc\",\r\n \"attribute\":\"amount\",\r\n \"typeAmount\": \"min\"\r\n \r\n}",
+							"raw": "{\r\n \"minAmountMin\":null ,\r\n \"maxAmountMin\": null,\r\n \"minAmountMax\":null,\r\n  \"maxAmountMax\":null,\r\n \"category\": [],\r\n \"order\": \"Desc\",\r\n \"attribute\":\"rating\",\r\n \"typeAmount\": \"\"\r\n \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
