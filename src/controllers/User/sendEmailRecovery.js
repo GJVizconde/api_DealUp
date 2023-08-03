@@ -12,7 +12,7 @@ const sendEmailRecovery = async (email) => {
     }
 
     if (user && user.confirmEmail === false) {
-      throw new Error('Please register again');
+      throw new Error('Email already registered, confirm your email');
     }
 
     //Generamos el token
@@ -25,10 +25,8 @@ const sendEmailRecovery = async (email) => {
 
     await sendEmail(email, 'Reset your DealUp password', template);
 
-    const data = {
-      message:
-        'Recovery email was sent successfully. Please check your inbox for further instructions.',
-    };
+    const data =
+      'Recovery email was sent successfully. Please check your inbox for further instructions.';
 
     return data;
   } catch (error) {
