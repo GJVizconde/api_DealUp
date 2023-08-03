@@ -51,7 +51,7 @@ userRouter.delete('/investments/:id', deleteInvestmentHandler);
 
 //? /REGISTER CONFIRM EMAIL
 userRouter.post('/register', createRegisterHandler);
-userRouter.get('/register/confirm/:token', confirmRegisterHandler);
+userRouter.patch('/register/confirm/:token', confirmRegisterHandler);
 
 //? /FORGOT
 userRouter.post('/forgotPassword', sendEmailRecoveryHandler);
