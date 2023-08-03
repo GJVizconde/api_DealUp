@@ -1,4 +1,4 @@
-const { Project, User, Gallery, Rating, Post, Comment } = require('../../db');
+const { Project, User, Gallery, Rating, Post, Comment, Investment } = require('../../db');
 
 const getAllProjects = async () => {
 
@@ -19,7 +19,7 @@ const getAllProjects = async () => {
         },
         {
             model: Rating,
-            attributes:['points', 'comments', 'UserId'],
+            attributes:['id','points', 'comments'],
             include: [
                 {
                   model: User,
@@ -29,12 +29,12 @@ const getAllProjects = async () => {
         },       
         {
             model: Post,
-            attributes:['description', 'image_gallery', 'video_gallery'],
+            attributes:['id','description', 'image_gallery', 'video_gallery'],
                
             include: [
                 {
                     model: Comment,
-                    attributes:['comment', 'UserId'],
+                    attributes:['id','comment'],
                     include: [
                         {
                           model: User,
@@ -43,7 +43,21 @@ const getAllProjects = async () => {
                       ],
                 }
             ]
-        }
+        },
+        {
+            model: Investment,
+            attributes: ['id','contribution','comment'],
+            include: [
+              {
+                model: User,
+                attributes: ['id','fullName'],
+                through: {
+                  attributes: [],
+              }
+              }
+            ]
+          }
+
     
     ],
         attributes: {

@@ -25,7 +25,7 @@ const searchProjectByName = async (name) => {
       },
       {
         model: Rating,
-        attributes: ['points', 'comments', 'UserId'],
+        attributes: ['id','points', 'comments'],
         include: [
           {
             model: User,
@@ -35,12 +35,12 @@ const searchProjectByName = async (name) => {
       },
       {
         model: Post,
-        attributes: ['description', 'image_gallery', 'video_gallery'],
+        attributes: ['id','description', 'image_gallery', 'video_gallery'],
 
         include: [
           {
             model: Comment,
-            attributes: ['comment', 'UserId'],
+            attributes: ['id','comment'],
             include: [
               {
                 model: User,
@@ -50,6 +50,19 @@ const searchProjectByName = async (name) => {
           },
         ],
       },
+      {
+        model: Investment,
+        attributes: ['id','contribution','comment'],
+        include: [
+          {
+            model: User,
+            attributes: ['id','fullName'],
+            through: {
+              attributes: [],
+          }
+          }
+        ]
+      }
     ],
     attributes: {
       exclude: ['createdAt', 'updatedAt'],
@@ -81,7 +94,7 @@ const searchProjectById = async (id) => {
       },
       {
         model: Rating,
-        attributes: ['points', 'comments'],
+        attributes: ['id','points', 'comments'],
         include: [
           {
             model: User,
@@ -91,12 +104,12 @@ const searchProjectById = async (id) => {
       },
       {
         model: Post,
-        attributes: ['description', 'image_gallery', 'video_gallery'],
+        attributes: ['id','description', 'image_gallery', 'video_gallery'],
 
         include: [
           {
             model: Comment,
-            attributes: ['comment', 'UserId'],
+            attributes: ['id','comment', 'UserId'],
             include: [
               {
                 model: User,
@@ -108,11 +121,11 @@ const searchProjectById = async (id) => {
       },
       {
         model: Investment,
-        attributes: ['contribution','comment'],
+        attributes: ['id','contribution','comment'],
         include: [
           {
             model: User,
-            attributes: ['fullName'],
+            attributes: ['id','fullName'],
             through: {
               attributes: [],
           }
