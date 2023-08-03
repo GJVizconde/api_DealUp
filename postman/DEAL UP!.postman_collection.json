@@ -187,7 +187,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user/8edcaa9d-2887-4a4d-bac2-6f3c876e84ac",
+							"raw": "http://localhost:3001/user/3d19be4f-c644-40ab-ae1e-33e2dea7cf2c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -195,7 +195,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"8edcaa9d-2887-4a4d-bac2-6f3c876e84ac"
+								"3d19be4f-c644-40ab-ae1e-33e2dea7cf2c"
 							]
 						}
 					},
@@ -321,7 +321,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"wigik99215@inkiny.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"wigik99215@inkiny.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -346,10 +346,10 @@
 				{
 					"name": "confirmRegister",
 					"request": {
-						"method": "GET",
+						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user/register/confirm/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIwMjg3YzI1LTE5NDQtNGRhYS04OThkLTIxNWZhN2I2NTg5MyIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE2OTA5ODU4NDgsImV4cCI6MTY5MDk5MzA0OH0.R1v2YMHYDF8iUrAysy0quUjtEanBAvjxIlqJsuL1YJI",
+							"raw": "http://localhost:3001/user/register/confirm/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhZmM5MDUyLTg2ZWYtNDA0Ni1hMTEzLTA4ZjM2YTRmMzRiMCIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE2OTEwOTU3NjIsImV4cCI6MTY5MTEwMjk2Mn0.UFkNtqF2QJ9dRurcWtkiGGIkSAcTn6gyowRL51WQmDg",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -359,7 +359,66 @@
 								"user",
 								"register",
 								"confirm",
-								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIwMjg3YzI1LTE5NDQtNGRhYS04OThkLTIxNWZhN2I2NTg5MyIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE2OTA5ODU4NDgsImV4cCI6MTY5MDk5MzA0OH0.R1v2YMHYDF8iUrAysy0quUjtEanBAvjxIlqJsuL1YJI"
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhZmM5MDUyLTg2ZWYtNDA0Ni1hMTEzLTA4ZjM2YTRmMzRiMCIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE2OTEwOTU3NjIsImV4cCI6MTY5MTEwMjk2Mn0.UFkNtqF2QJ9dRurcWtkiGGIkSAcTn6gyowRL51WQmDg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sendRecoveryPass",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"wigik99215@inkiny.com\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/user/forgotPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user",
+								"forgotPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"Henry123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/user/resetPassword/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzZGM5MDZkLTQ3MWQtNDgxNC1iMjRhLTA0M2IxZDhmNDU0MSIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE2OTEwOTkwOTMsImV4cCI6MTY5MTEwNjI5M30.epbz1e-0FkNcxeNsQI7fQ0EoEUT2u9eb3_-91ON9SYs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user",
+								"resetPassword",
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzZGM5MDZkLTQ3MWQtNDgxNC1iMjRhLTA0M2IxZDhmNDU0MSIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE2OTEwOTkwOTMsImV4cCI6MTY5MTEwNjI5M30.epbz1e-0FkNcxeNsQI7fQ0EoEUT2u9eb3_-91ON9SYs"
 							]
 						}
 					},
@@ -421,7 +480,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects/414ed048-85dc-4498-901a-aa9059af87a4",
+							"raw": "http://localhost:3001/projects/3b885f0d-da76-4e38-8977-d2fec2da9a98",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -429,7 +488,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"414ed048-85dc-4498-901a-aa9059af87a4"
+								"3b885f0d-da76-4e38-8977-d2fec2da9a98"
 							]
 						}
 					},
@@ -694,7 +753,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"points\": 5,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"fa857ac9-ab0d-45d2-af91-349d8d2fa83f\",\r\n    \"UserId\": \"62cc7f91-3363-4130-ad78-f6b124a42ade\"\r\n}",
+							"raw": "{\r\n    \"points\": 5,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"3b885f0d-da76-4e38-8977-d2fec2da9a98\",\r\n    \"UserId\": \"23b30400-709c-416f-bec3-e82605e2f712\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1155,7 +1214,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n \"minAmountMin\":null ,\r\n \"maxAmountMin\": null,\r\n \"minAmountMax\":null,\r\n  \"maxAmountMax\":null,\r\n \"category\": [],\r\n \"order\": \"Asc\",\r\n \"attribute\":\"rating\",\r\n \"typeAmount\": \"min\"\r\n \r\n}",
+							"raw": "{\r\n \"minAmountMin\":40,\r\n \"maxAmountMin\": 100,\r\n \"minAmountMax\":null,\r\n  \"maxAmountMax\":null,\r\n \"category\": [],\r\n \"order\": \"Asc\",\r\n \"attribute\":\"rating\",\r\n \"typeAmount\": \"min\"\r\n \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1174,6 +1233,14 @@
 								"filter"
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "TOP_Project",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
