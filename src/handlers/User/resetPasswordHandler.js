@@ -2,7 +2,8 @@ const resetPassword = require('../../controllers/User/resetPassword');
 
 const resetPasswordHandler = async (req, res) => {
   try {
-    const { token, password } = req.body;
+    const { token } = req.params;
+    const { password } = req.body;
 
     const result = await resetPassword(token, password);
     res.status(200).json({ result });

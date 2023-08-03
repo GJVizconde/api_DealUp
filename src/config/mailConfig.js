@@ -58,11 +58,11 @@ const recoveryTemplate = (name, token) => {
           <h2>Forgotten your DealUp! password? No worries</h2>
           <p>Click below to reset your password.</p>
           <p>For your security, this link will expire in 2 hours or immediately after you reset your password.</p>
-          <p>Your password will be reset across all of Lucid's products.</p>
+          <p>Your password will be reset across all of Deal Up's products.</p>
           <a
-              href="http://localhost:3001/user/register/confirm/${token}"
+              href="http://localhost:3000/recoverPass/${token}"
               target="_blank"
-          >Confirm Account</a>
+          >Reset Password</a>
       </div>
     `;
 };
