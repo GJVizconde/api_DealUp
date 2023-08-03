@@ -5,8 +5,6 @@ const { User } = require('../../db');
 const confirmRegister = async (token) => {
   const data = verifyToken(token, jwtRegister);
 
-  console.log('data', data);
-
   try {
     if (!data) {
       throw new Error('Something was wrong, try again');

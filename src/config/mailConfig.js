@@ -2,7 +2,9 @@ const nodemailer = require('nodemailer');
 const { EMAIL_USER, EMAIL_PASSWORD } = process.env;
 
 let transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: false, // upgrade later with STARTTLS
   auth: {
     user: EMAIL_USER,
     pass: EMAIL_PASSWORD,
@@ -23,7 +25,7 @@ const sendEmail = async (email, subject, html) => {
   }
 };
 
-const getTemplate = (name, token) => {
+const registerTemplate = (name, token) => {
   return `
       <head>
           <link rel="stylesheet" href="./style.css">
@@ -44,7 +46,28 @@ const getTemplate = (name, token) => {
     `;
 };
 
+const recoveryTemplate = (name, token) => {
+  return `
+      <head>
+          <link rel="stylesheet" href="./style.css">
+      </head>
+      
+      <div id="email___content">
+          <img src="https://res.cloudinary.com/dgx2v3fnk/image/upload/v1690962284/fquqtc1tjkoq2ypb0haf.png" alt="">
+          <h2>Forgotten your DealUp! password? No worries</h2>
+          <p>Click below to reset your password.</p
+          <p>For your security, this link will expire in 2 hours or immediately after you reset your password.</p>
+          <p>Your password will be reset across all of Lucid's products.</p>
+          <a
+              href="http://localhost:3001/user/register/confirm/${token}"
+              target="_blank"
+          >Confirm Account</a>
+      </div>
+    `;
+};
+
 module.exports = {
   sendEmail,
-  getTemplate,
+  registerTemplate,
+  recoveryTemplate,
 };

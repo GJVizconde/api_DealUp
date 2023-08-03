@@ -1,5 +1,5 @@
 const { generateJWT } = require('../../config/JWT');
-const { getTemplate, sendEmail } = require('../../config/mailConfig');
+const { registerTemplate, sendEmail } = require('../../config/mailConfig');
 const { JWT_REGISTER: jwtRegister } = process.env;
 const { User } = require('../../db');
 
@@ -49,15 +49,15 @@ const createNewRegister = async (
 
     const token = generateJWT(newRegister, jwtRegister);
 
+    const template = registerTemplate(newRegister.fullName, token);
+
+    await sendEmail(newRegister.email, 'Confirm your password', template);
+
     const data = {
       msg: 'Register succesfuly, an email was sent',
       newRegister,
       token,
     };
-
-    const template = getTemplate(newRegister.fullName, token);
-
-    await sendEmail(newRegister.email, 'Confirm your password', template);
 
     return data;
   } catch (error) {
