@@ -26,6 +26,10 @@ const {
 const createRegisterHandler = require('../handlers/User/createRegisterHandler');
 const confirmRegisterHandler = require('../handlers/User/confirmRegisterHandler');
 
+//forgotPassword
+const sendEmailRecoveryHandler = require('../handlers/User/sendEmailRecoveryHandler');
+const resetPasswordHandler = require('../handlers/User/resetPasswordHandler');
+
 const {
   validateCreateUser,
   validateUpdateUser,
@@ -47,7 +51,11 @@ userRouter.delete('/investments/:id', deleteInvestmentHandler);
 
 //? /REGISTER CONFIRM EMAIL
 userRouter.post('/register', createRegisterHandler);
-userRouter.get('/register/confirm/:token', confirmRegisterHandler);
+userRouter.patch('/register/confirm/:token', confirmRegisterHandler);
+
+//? /FORGOT
+userRouter.post('/forgotPassword', sendEmailRecoveryHandler);
+userRouter.patch('/resetPassword/:token', resetPasswordHandler);
 
 //? /USER ORIGINAL CRUD
 userRouter.get('/', getUsersHandler);
