@@ -64,9 +64,9 @@ const searchProjectByName = async (name) => {
         ]
       }
     ],
-    attributes: {
-      exclude: ['createdAt', 'updatedAt'],
-    },
+    // attributes: {
+    //   exclude: ['createdAt', 'updatedAt'],
+    // },
   });
 
   if (projectByName) {
@@ -133,16 +133,19 @@ const searchProjectById = async (id) => {
         ]
       }
     ],
-    attributes: {
-      exclude: ['createdAt', 'updatedAt'],
-    },
+    // attributes: {
+    //   exclude: ['createdAt', 'updatedAt'],
+    // },
   });
 
   if (project) {
+    console.log(project.ceatedAt);
+    console.log(typeof(createdAt));
     return project;
   } else {
     return `ID project not found, ID = ${id}`;
   }
+  
 };
 
 module.exports = { searchProjectByName, searchProjectById };

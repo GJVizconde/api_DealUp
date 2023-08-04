@@ -17,12 +17,13 @@
             "Games",
             "Publishing"
         ],
+        "average_rating": 2.7,
         "status": "Pending",
         "Users": [
             {
                 "id": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c",
                 "fullName": "Esteban Andr",
-                "rol": "entrepreneur"
+                "role": "entrepreneur"
             }
         ],
         "Galleries": [
@@ -33,22 +34,35 @@
         ],
         "Ratings": [
             {
-                "points": 2,
-                "comments": "FIRE PROOF",
-                "UserId": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c"
-            },
-            {
-                "points": 5,
-                "comments": "FIRE PROOF",
-                "UserId": "6d585346-33e5-4db2-8e16-500cb6991725"
-            },
-            {
+                "id": "970793ed-542f-43ff-be5c-8f33ea564b99",
                 "points": 1,
                 "comments": "FIRE PROOF",
-                "UserId": "23b30400-709c-416f-bec3-e82605e2f712"
+                "User": {
+                    "id": "23b30400-709c-416f-bec3-e82605e2f712",
+                    "fullName": "Gilmer Jose"
+                }
+            },
+            {
+                "id": "c709ee4d-e2df-499f-98fa-8b7fad971a67",
+                "points": 2,
+                "comments": "FIRE PROOF",
+                "User": {
+                    "id": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c",
+                    "fullName": "Esteban Andr"
+                }
+            },
+            {
+                "id": "c014e11f-e10d-4dac-94ab-19fdaad4a75a",
+                "points": 5,
+                "comments": "FIRE PROOF",
+                "User": {
+                    "id": "6d585346-33e5-4db2-8e16-500cb6991725",
+                    "fullName": "Shakira Mebarak4"
+                }
             }
         ],
-        "Posts": []
+        "Posts": [],
+        "Investments": []
     },
     {
         "id": "29325bf9-6a40-4a44-8d6a-4d734d18e1c0",
@@ -57,7 +71,7 @@
         "min_amount": 110,
         "max_amount": 5000,
         "goal_amount": 100000,
-        "collected_amount": 0,
+        "collected_amount": 270,
         "initial_date": "12/08/2024",
         "deadline": "12/10/2024",
         "image_cover": null,
@@ -65,17 +79,42 @@
         "category": [
             "Food"
         ],
+        "average_rating": 0,
         "status": "Pending",
         "Users": [
             {
                 "id": "6d585346-33e5-4db2-8e16-500cb6991725",
                 "fullName": "Shakira Mebarak4",
-                "rol": "entrepreneur"
+                "role": "entrepreneur"
             }
         ],
         "Galleries": [],
         "Ratings": [],
-        "Posts": []
+        "Posts": [],
+        "Investments": [
+            {
+                "id": "527f2e28-935c-4970-b70c-673366fe062a",
+                "contribution": 150,
+                "comment": "Excelente proyecto",
+                "Users": [
+                    {
+                        "id": "62cc7f91-3363-4130-ad78-f6b124a42ade",
+                        "fullName": "Bruno Leon"
+                    }
+                ]
+            },
+            {
+                "id": "ff0bb5d6-6166-4aa4-98e4-dad61721c24d",
+                "contribution": 120,
+                "comment": "Me encanta la idea",
+                "Users": [
+                    {
+                        "id": "23b30400-709c-416f-bec3-e82605e2f712",
+                        "fullName": "Gilmer Jose"
+                    }
+                ]
+            }
+        ]
     },
     {
         "id": "2c3060fd-9577-4904-9e1f-39427789ad80",
@@ -92,17 +131,43 @@
         "category": [
             "Music"
         ],
+        "average_rating": 0,
         "status": "Pending",
         "Users": [
             {
                 "id": "23b30400-709c-416f-bec3-e82605e2f712",
                 "fullName": "Gilmer Jose",
-                "rol": "entrepreneur"
+                "role": "entrepreneur"
             }
         ],
         "Galleries": [],
         "Ratings": [],
-        "Posts": []
+        "Posts": [
+            {
+                "id": "2c1aed5a-5512-48fc-888f-32f08f3229a6",
+                "description": "Nuevo ingreso de instrumentos",
+                "image_gallery": null,
+                "video_gallery": null,
+                "Comments": [
+                    {
+                        "id": "d4d0c6f2-9501-49e7-842a-36ac28761e74",
+                        "comment": "Que intrumentos compraste?",
+                        "User": {
+                            "id": "6d585346-33e5-4db2-8e16-500cb6991725",
+                            "fullName": "Shakira Mebarak4"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "187d290f-4b0e-4565-af42-7894c8661e7d",
+                "description": "Nuevo ingreso de guitarras",
+                "image_gallery": null,
+                "video_gallery": null,
+                "Comments": []
+            }
+        ],
+        "Investments": []
     },
     {
         "id": "2da2e9f1-be84-4db1-bee8-aed30a452a64",
@@ -120,17 +185,19 @@
             "Art",
             "Music"
         ],
+        "average_rating": 0,
         "status": "Pending",
         "Users": [
             {
                 "id": "6d585346-33e5-4db2-8e16-500cb6991725",
                 "fullName": "Shakira Mebarak4",
-                "rol": "entrepreneur"
+                "role": "entrepreneur"
             }
         ],
         "Galleries": [],
         "Ratings": [],
-        "Posts": []
+        "Posts": [],
+        "Investments": []
     },
     {
         "id": "344e9f00-df7a-401b-b3dd-2ebeb807ef9a",
@@ -147,17 +214,19 @@
         "category": [
             "Music"
         ],
+        "average_rating": 0,
         "status": "Pending",
         "Users": [
             {
                 "id": "23b30400-709c-416f-bec3-e82605e2f712",
                 "fullName": "Gilmer Jose",
-                "rol": "entrepreneur"
+                "role": "entrepreneur"
             }
         ],
         "Galleries": [],
         "Ratings": [],
-        "Posts": []
+        "Posts": [],
+        "Investments": []
     },
     {
         "id": "37e13634-b6b5-4ec6-bad1-b3a4820c7c10",
@@ -177,28 +246,38 @@
             "Design",
             "Publishing"
         ],
+        "average_rating": 5,
         "status": "Pending",
         "Users": [
             {
                 "id": "62cc7f91-3363-4130-ad78-f6b124a42ade",
                 "fullName": "Bruno Leon",
-                "rol": "entrepreneur"
+                "role": "entrepreneur"
             }
         ],
         "Galleries": [],
         "Ratings": [
             {
+                "id": "e8a28f5d-e57a-4fdf-8d00-30b36b60dffb",
                 "points": 5,
                 "comments": "FIRE PROOF",
-                "UserId": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c"
+                "User": {
+                    "id": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c",
+                    "fullName": "Esteban Andr"
+                }
             },
             {
+                "id": "7c925965-7c3d-4588-b8ed-ff02fb084fff",
                 "points": 5,
                 "comments": "FIRE PROOF",
-                "UserId": "6d585346-33e5-4db2-8e16-500cb6991725"
+                "User": {
+                    "id": "6d585346-33e5-4db2-8e16-500cb6991725",
+                    "fullName": "Shakira Mebarak4"
+                }
             }
         ],
-        "Posts": []
+        "Posts": [],
+        "Investments": []
     },
     {
         "id": "39f690da-7529-408b-8a20-c639720ca2ec",
@@ -215,17 +294,19 @@
         "category": [
             "Food"
         ],
+        "average_rating": 0,
         "status": "Pending",
         "Users": [
             {
                 "id": "23b30400-709c-416f-bec3-e82605e2f712",
                 "fullName": "Gilmer Jose",
-                "rol": "entrepreneur"
+                "role": "entrepreneur"
             }
         ],
         "Galleries": [],
         "Ratings": [],
-        "Posts": []
+        "Posts": [],
+        "Investments": []
     },
     {
         "id": "3b885f0d-da76-4e38-8977-d2fec2da9a98",
@@ -242,17 +323,38 @@
         "category": [
             "Art"
         ],
+        "average_rating": 4.5,
         "status": "Pending",
         "Users": [
             {
                 "id": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c",
                 "fullName": "Esteban Andr",
-                "rol": "entrepreneur"
+                "role": "entrepreneur"
             }
         ],
         "Galleries": [],
-        "Ratings": [],
-        "Posts": []
+        "Ratings": [
+            {
+                "id": "b059de65-96f8-4d24-af87-d516e306ebd4",
+                "points": 4,
+                "comments": "FIRE PROOF",
+                "User": {
+                    "id": "6d585346-33e5-4db2-8e16-500cb6991725",
+                    "fullName": "Shakira Mebarak4"
+                }
+            },
+            {
+                "id": "b054c580-e612-4226-b674-1bdd7c6d8302",
+                "points": 5,
+                "comments": "FIRE PROOF",
+                "User": {
+                    "id": "23b30400-709c-416f-bec3-e82605e2f712",
+                    "fullName": "Gilmer Jose"
+                }
+            }
+        ],
+        "Posts": [],
+        "Investments": []
     },
     {
         "id": "6a7fbea2-3add-4680-b572-be60d1f09890",
@@ -269,17 +371,38 @@
         "category": [
             "Food"
         ],
+        "average_rating": 3,
         "status": "Pending",
         "Users": [
             {
                 "id": "23b30400-709c-416f-bec3-e82605e2f712",
                 "fullName": "Gilmer Jose",
-                "rol": "entrepreneur"
+                "role": "entrepreneur"
             }
         ],
         "Galleries": [],
-        "Ratings": [],
-        "Posts": []
+        "Ratings": [
+            {
+                "id": "ccce82d4-447e-4583-901c-3d130d089b47",
+                "points": 3,
+                "comments": "FIRE PROOF",
+                "User": {
+                    "id": "6d585346-33e5-4db2-8e16-500cb6991725",
+                    "fullName": "Shakira Mebarak4"
+                }
+            },
+            {
+                "id": "1e31ec25-4123-4276-abeb-10cd1969c234",
+                "points": 3,
+                "comments": "FIRE PROOF",
+                "User": {
+                    "id": "62cc7f91-3363-4130-ad78-f6b124a42ade",
+                    "fullName": "Bruno Leon"
+                }
+            }
+        ],
+        "Posts": [],
+        "Investments": []
     },
     {
         "id": "6e162daa-8ce0-4c57-9b03-5f6805e100e6",
@@ -296,17 +419,19 @@
         "category": [
             "Food"
         ],
+        "average_rating": 0,
         "status": "Pending",
         "Users": [
             {
                 "id": "23b30400-709c-416f-bec3-e82605e2f712",
                 "fullName": "Gilmer Jose",
-                "rol": "entrepreneur"
+                "role": "entrepreneur"
             }
         ],
         "Galleries": [],
         "Ratings": [],
-        "Posts": []
+        "Posts": [],
+        "Investments": []
     },
     {
         "id": "a62a6ac6-9281-45f0-9bd3-6b7502f67071",
@@ -327,38 +452,56 @@
             "Publishing",
             "Design"
         ],
+        "average_rating": 2.8,
         "status": "Pending",
         "Users": [
             {
                 "id": "23b30400-709c-416f-bec3-e82605e2f712",
                 "fullName": "Gilmer Jose",
-                "rol": "entrepreneur"
+                "role": "entrepreneur"
             }
         ],
         "Galleries": [],
         "Ratings": [
             {
-                "points": 2,
-                "comments": "FIRE PROOF",
-                "UserId": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c"
-            },
-            {
+                "id": "417d9d8b-5a1a-4243-b053-d9b61bc2f2e5",
                 "points": 1,
                 "comments": "FIRE PROOF",
-                "UserId": "23b30400-709c-416f-bec3-e82605e2f712"
+                "User": {
+                    "id": "23b30400-709c-416f-bec3-e82605e2f712",
+                    "fullName": "Gilmer Jose"
+                }
             },
             {
-                "points": 3,
+                "id": "5896626d-a7ec-4a2a-a5f5-9d404bd14eba",
+                "points": 2,
                 "comments": "FIRE PROOF",
-                "UserId": "6d585346-33e5-4db2-8e16-500cb6991725"
+                "User": {
+                    "id": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c",
+                    "fullName": "Esteban Andr"
+                }
             },
             {
+                "id": "5f3e8258-084a-43e6-8708-6a525f199c6e",
                 "points": 5,
                 "comments": "FIRE PROOF",
-                "UserId": "62cc7f91-3363-4130-ad78-f6b124a42ade"
+                "User": {
+                    "id": "62cc7f91-3363-4130-ad78-f6b124a42ade",
+                    "fullName": "Bruno Leon"
+                }
+            },
+            {
+                "id": "fb724bb5-e803-455b-9fe7-1885a56c6e94",
+                "points": 3,
+                "comments": "FIRE PROOF",
+                "User": {
+                    "id": "6d585346-33e5-4db2-8e16-500cb6991725",
+                    "fullName": "Shakira Mebarak4"
+                }
             }
         ],
-        "Posts": []
+        "Posts": [],
+        "Investments": []
     },
     {
         "id": "fa857ac9-ab0d-45d2-af91-349d8d2fa83f",
@@ -378,28 +521,47 @@
             "Games",
             "Technology"
         ],
+        "average_rating": 3.7,
         "status": "Pending",
         "Users": [
             {
                 "id": "6d585346-33e5-4db2-8e16-500cb6991725",
                 "fullName": "Shakira Mebarak4",
-                "rol": "entrepreneur"
+                "role": "entrepreneur"
             }
         ],
         "Galleries": [],
         "Ratings": [
             {
-                "points": 4,
-                "comments": "FIRE PROOF",
-                "UserId": "6d585346-33e5-4db2-8e16-500cb6991725"
-            },
-            {
+                "id": "4c266c71-340d-4d11-a058-e147159a2e9d",
                 "points": 2,
                 "comments": "FIRE PROOF",
-                "UserId": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c"
+                "User": {
+                    "id": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c",
+                    "fullName": "Esteban Andr"
+                }
+            },
+            {
+                "id": "45761716-246f-418f-9b2a-233947548615",
+                "points": 5,
+                "comments": "FIRE PROOF",
+                "User": {
+                    "id": "62cc7f91-3363-4130-ad78-f6b124a42ade",
+                    "fullName": "Bruno Leon"
+                }
+            },
+            {
+                "id": "dc740320-8687-442c-8c24-408903dcfef4",
+                "points": 8,
+                "comments": "ACTUALIZADO RATING",
+                "User": {
+                    "id": "6d585346-33e5-4db2-8e16-500cb6991725",
+                    "fullName": "Shakira Mebarak4"
+                }
             }
         ],
-        "Posts": []
+        "Posts": [],
+        "Investments": []
     },
     {
         "id": "fe98fd76-84c3-410d-9abb-0b4288ee7b26",
@@ -422,32 +584,46 @@
             "Photography",
             "Music"
         ],
+        "average_rating": 5,
         "status": "Pending",
         "Users": [
             {
                 "id": "62cc7f91-3363-4130-ad78-f6b124a42ade",
                 "fullName": "Bruno Leon",
-                "rol": "entrepreneur"
+                "role": "entrepreneur"
             }
         ],
         "Galleries": [],
         "Ratings": [
             {
+                "id": "3c06b59b-4cf2-4635-b465-2236d897870a",
                 "points": 5,
                 "comments": "FIRE PROOF",
-                "UserId": "62cc7f91-3363-4130-ad78-f6b124a42ade"
+                "User": {
+                    "id": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c",
+                    "fullName": "Esteban Andr"
+                }
             },
             {
+                "id": "80deb00f-d51a-4caf-a208-7848eba76041",
                 "points": 5,
                 "comments": "FIRE PROOF",
-                "UserId": "3d19be4f-c644-40ab-ae1e-33e2dea7cf2c"
+                "User": {
+                    "id": "62cc7f91-3363-4130-ad78-f6b124a42ade",
+                    "fullName": "Bruno Leon"
+                }
             },
             {
+                "id": "5baae767-c467-47fa-b1d7-d1c5217f3112",
                 "points": 5,
                 "comments": "FIRE PROOF",
-                "UserId": "6d585346-33e5-4db2-8e16-500cb6991725"
+                "User": {
+                    "id": "6d585346-33e5-4db2-8e16-500cb6991725",
+                    "fullName": "Shakira Mebarak4"
+                }
             }
         ],
-        "Posts": []
+        "Posts": [],
+        "Investments": []
     }
 ]
