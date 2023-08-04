@@ -1,5 +1,7 @@
 const { User, Project, Rating } = require('../../db');
 
+const calculatedAssingAverageRating = require('../../helpers/averageRating');
+
 const rateProject = async (points, comments, ProjectId, UserId) => {
   try {
     const existingRating = await Rating.findOne({
@@ -29,10 +31,11 @@ const rateProject = async (points, comments, ProjectId, UserId) => {
     });
 
     // console.log('newRating', newRating);
+    await calculatedAssingAverageRating();
 
     return newRating;
   } catch (error) {
-    throw new Error('Failed creating new Rating:' + error.message);
+    throw new Error('Failed creating new Rating: ' + error.message);
   }
 };
 

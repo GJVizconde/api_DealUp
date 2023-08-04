@@ -1,17 +1,14 @@
-
-const { Project, User, Gallery, Rating, Post, Comment } = require('../../db');
-
-const getAllRatings = require('../../controllers/Rating_Project/getAllRatings');
+const { Project, User, Gallery, Rating, Post, Comment, Investment } = require('../../db');
 
 const getAllProjects = async () => {
 
      try {
-    //return dataBaseProjects = await Project.findAll({
-      const dataBaseProjects = await Project.findAll({ 
+    return dataBaseProjects = await Project.findAll({
+  
         include: [
             {
             model: User,
-            attributes: ['id', 'fullName', 'rol'],
+            attributes: ['id', 'fullName', 'role'],
             through: {
                 attributes: [],
             }
@@ -22,18 +19,22 @@ const getAllProjects = async () => {
         },
         {
             model: Rating,
-            attributes:['points', 'comments', 'UserId'],
-        
-        },
-        
+            attributes:['id','points', 'comments'],
+            include: [
+                {
+                  model: User,
+                  attributes: ['id', 'fullName'],
+                },
+              ],   
+        },       
         {
             model: Post,
-            attributes:['description', 'image_gallery', 'video_gallery'],
+            attributes:['id','description', 'image_gallery', 'video_gallery'],
                
             include: [
                 {
                     model: Comment,
-                    attributes:['comment', 'UserId'],
+                    attributes:['id','comment'],
                     include: [
                         {
                           model: User,
@@ -42,7 +43,21 @@ const getAllProjects = async () => {
                       ],
                 }
             ]
-        }
+        },
+        {
+            model: Investment,
+            attributes: ['id','contribution','comment'],
+            include: [
+              {
+                model: User,
+                attributes: ['id','fullName'],
+                through: {
+                  attributes: [],
+              }
+              }
+            ]
+          }
+
     
     ],
         attributes: {
@@ -51,23 +66,6 @@ const getAllProjects = async () => {
        
     });
   
-const ratingsWithProjects = await getAllRatings();
-
-//combino info de rating con lista de proyecto
-const projectsWithRatings = dataBaseProjects.map((project) => {
-    //busco el rating prom para el project actual
-    const rating = ratingsWithProjects.projectWithRatings.find( (rating) => rating.ProjectId === project.id);
-
-    if(rating) {
-        project.dataValues.averageRating = rating.averageRating;
-    } else {
-        project.dataValues.averageRating = 0;
-    }
-   
-    return project;
-})
-
-return projectsWithRatings;
 } catch (error) {
    
     throw error;
