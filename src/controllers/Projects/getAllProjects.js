@@ -1,8 +1,13 @@
 const { Project, User, Gallery, Rating, Post, Comment, Investment } = require('../../db');
 
+const { updateProjectDates } = require('../../helpers/asingCreateAtProject');
+
 const getAllProjects = async () => {
 
      try {
+
+       // await updateProjectDates();
+
     return dataBaseProjects = await Project.findAll({
   
         include: [
@@ -60,9 +65,9 @@ const getAllProjects = async () => {
 
     
     ],
-        attributes: {
-            exclude: ['createdAt', 'updatedAt'],
-        },
+        // attributes: {
+        //     exclude: ['createdAt', 'updatedAt'],
+        // },
        
     });
   

@@ -94,6 +94,6 @@ module.exports = (sequelize) => {
         defaultValue: 'Pending',
       },
     },
-    { timestamps: false }
+    { timestamps: true }
   );
 };

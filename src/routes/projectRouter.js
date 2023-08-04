@@ -52,11 +52,15 @@ const {
   getFilterHandler,
 } = require('../handlers/FilterProject/filterProjectHandler');
 
+//FILTER TOP PROJECT
+const { getTopProjectHandler } = require('../handlers/FilterProject/topProjectHandler');
+
 const projectRouter = Router();
 
 projectRouter.get('/', getProjectsHandler);
 
 //route filter project
+projectRouter.get('/filter', getTopProjectHandler);
 projectRouter.put('/filter', getFilterHandler);
 
 //route comment_post_project
