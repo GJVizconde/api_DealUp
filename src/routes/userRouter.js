@@ -30,6 +30,9 @@ const confirmRegisterHandler = require('../handlers/User/confirmRegisterHandler'
 const sendEmailRecoveryHandler = require('../handlers/User/sendEmailRecoveryHandler');
 const resetPasswordHandler = require('../handlers/User/resetPasswordHandler');
 
+//checkUser
+const checkUserHandler = require('../handlers/User/checkUserHandler');
+
 const {
   validateCreateUser,
   validateUpdateUser,
@@ -56,6 +59,9 @@ userRouter.patch('/register/confirm/:token', confirmRegisterHandler);
 //? /FORGOT
 userRouter.post('/forgotPassword', sendEmailRecoveryHandler);
 userRouter.patch('/resetPassword/:token', resetPasswordHandler);
+
+//? /CHECK
+userRouter.get('/check', checkUserHandler);
 
 //? /USER ORIGINAL CRUD
 userRouter.get('/', getUsersHandler);
