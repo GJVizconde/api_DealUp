@@ -1,4 +1,5 @@
 const { JWT_RECOVERY: jwtRecovery } = process.env;
+const { v4: uuidv4 } = require('uuid'); // Importamos la función uuidv4 para generar identificadores únicos
 const { generateJWT } = require('../../config/JWT');
 const { recoveryTemplate, sendEmail } = require('../../config/mailConfig');
 const { User } = require('../../db');
@@ -17,7 +18,8 @@ const sendEmailRecovery = async (email) => {
 
     //Generamos el token
 
-    const token = generateJWT(user, jwtRecovery);
+    const uniqueId = uuidv4();
+    const token = generateJWT(user, jwtRecovery, uniqueId);
 
     //Enviamos el correo electronico
 

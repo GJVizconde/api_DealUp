@@ -21,7 +21,7 @@ const sendEmail = async (email, subject, html) => {
       html,
     });
   } catch (error) {
-    console.log('Something is wrong with the email', error);
+    throw ('Something is wrong with the email', error);
   }
 };
 
