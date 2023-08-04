@@ -56,7 +56,10 @@ const createNewRegister = async (
 
     await sendEmail(newRegister.email, 'Confirm Email', template);
 
-    const result = 'Register successfully, an email was sent, please confirm';
+    const result = {
+      message: 'Register successfully, an email was sent, please confirm',
+      newRegister,
+    };
 
     return result;
   } catch (error) {
