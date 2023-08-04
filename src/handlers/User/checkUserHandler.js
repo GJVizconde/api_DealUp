@@ -4,8 +4,8 @@ const checkUserHandler = async (req, res) => {
   const { email } = req.body;
 
   try {
-    result = await checkUser(email);
-    res.status(200).json({ result });
+    emailStatus = await checkUser(email);
+    res.status(200).json({ emailStatus });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

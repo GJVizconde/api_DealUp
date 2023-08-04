@@ -8,9 +8,7 @@ const checkUser = async (email) => {
 
     const user = await User.findOne({ where: { email } });
 
-    console.log('user', user);
-
-    return user ? 'Email already registered' : 'Email available';
+    return user ? 'Already registered' : 'Email available';
   } catch (error) {
     trow(error);
   }
