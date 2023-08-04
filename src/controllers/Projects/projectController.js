@@ -14,7 +14,7 @@ const searchProjectByName = async (name) => {
     include: [
       {
         model: User,
-        attributes: ['id', 'fullName', 'rol'],
+        attributes: ['id', 'fullName', 'role'],
         through: {
           attributes: [],
         },
@@ -25,23 +25,48 @@ const searchProjectByName = async (name) => {
       },
       {
         model: Rating,
-        attributes: ['points', 'comments', 'UserId'],
+        attributes: ['id','points', 'comments'],
+        include: [
+          {
+            model: User,
+            attributes: ['id', 'fullName'],
+          },
+        ],
       },
       {
         model: Post,
-        attributes: ['description', 'image_gallery', 'video_gallery'],
+        attributes: ['id','description', 'image_gallery', 'video_gallery'],
 
         include: [
           {
             model: Comment,
-            attributes: ['comment', 'UserId'],
+            attributes: ['id','comment'],
+            include: [
+              {
+                model: User,
+                attributes: ['id', 'fullName'],
+              },
+            ],
           },
         ],
       },
+      {
+        model: Investment,
+        attributes: ['id','contribution','comment'],
+        include: [
+          {
+            model: User,
+            attributes: ['id','fullName'],
+            through: {
+              attributes: [],
+          }
+          }
+        ]
+      }
     ],
-    attributes: {
-      exclude: ['createdAt', 'updatedAt'],
-    },
+    // attributes: {
+    //   exclude: ['createdAt', 'updatedAt'],
+    // },
   });
 
   if (projectByName) {
@@ -58,7 +83,7 @@ const searchProjectById = async (id) => {
     include: [
       {
         model: User,
-        attributes: ['id', 'fullName', 'rol'],
+        attributes: ['id', 'fullName', 'role'],
         through: {
           attributes: [],
         },
@@ -69,7 +94,7 @@ const searchProjectById = async (id) => {
       },
       {
         model: Rating,
-        attributes: ['points', 'comments'],
+        attributes: ['id','points', 'comments'],
         include: [
           {
             model: User,
@@ -79,12 +104,12 @@ const searchProjectById = async (id) => {
       },
       {
         model: Post,
-        attributes: ['description', 'image_gallery', 'video_gallery'],
+        attributes: ['id','description', 'image_gallery', 'video_gallery'],
 
         include: [
           {
             model: Comment,
-            attributes: ['comment', 'UserId'],
+            attributes: ['id','comment', 'UserId'],
             include: [
               {
                 model: User,
@@ -96,11 +121,11 @@ const searchProjectById = async (id) => {
       },
       {
         model: Investment,
-        attributes: ['contribution','comment'],
+        attributes: ['id','contribution','comment'],
         include: [
           {
             model: User,
-            attributes: ['fullName'],
+            attributes: ['id','fullName'],
             through: {
               attributes: [],
           }
@@ -108,16 +133,19 @@ const searchProjectById = async (id) => {
         ]
       }
     ],
-    attributes: {
-      exclude: ['createdAt', 'updatedAt'],
-    },
+    // attributes: {
+    //   exclude: ['createdAt', 'updatedAt'],
+    // },
   });
 
   if (project) {
+    console.log(project.ceatedAt);
+    console.log(typeof(createdAt));
     return project;
   } else {
     return `ID project not found, ID = ${id}`;
   }
+  
 };
 
 module.exports = { searchProjectByName, searchProjectById };

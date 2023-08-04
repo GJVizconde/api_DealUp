@@ -41,9 +41,17 @@ const updateProject = async (id, campoActualizar, path) => {
     if (campoActualizar.deadline !== undefined) {
       updatedProjectById.deadline = campoActualizar.deadline;
     }
-    if(path !== undefined){
+    if(path){
 
       const newImage = await cloudinary.uploader.upload(path, {
+      public_id: publicId,
+      overwrite: true
+      });
+      updatedProjectById.image_cover = newImage.secure_url
+    }
+    if(campoActualizar.image_cover !== undefined){
+
+      const newImage = await cloudinary.uploader.upload(campoActualizar.image_cover, {
       public_id: publicId,
       overwrite: true
       });

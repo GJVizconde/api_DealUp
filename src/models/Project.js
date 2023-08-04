@@ -84,6 +84,10 @@ module.exports = (sequelize) => {
           },
         },
       },
+      average_rating: {
+        type: DataTypes.FLOAT,
+        defaultValue: 0,
+      },
       status: {
         type: DataTypes.ENUM('Inactive', 'Rejected', 'Pending', 'Active'),
         allowNull: false,

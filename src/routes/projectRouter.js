@@ -52,11 +52,15 @@ const {
   getFilterHandler,
 } = require('../handlers/FilterProject/filterProjectHandler');
 
+//FILTER TOP PROJECT
+const { getTopProjectHandler } = require('../handlers/FilterProject/topProjectHandler');
+
 const projectRouter = Router();
 
 projectRouter.get('/', getProjectsHandler);
 
 //route filter project
+projectRouter.get('/filter', getTopProjectHandler);
 projectRouter.put('/filter', getFilterHandler);
 
 //route comment_post_project
@@ -77,6 +81,6 @@ projectRouter.post('/file', upload.single('image_cover'), createProjectHandlerFi
 projectRouter.post('/url', createProjectHandler);
 projectRouter.put('/prueba/:id', updateProjectHandler); //ruta vieja carga todos los campos
 projectRouter.delete('/:id', deleteProjectHandler);
-projectRouter.put('/:id', upload.single('image_cover'), updateHandler);
+projectRouter.patch('/:id', upload.single('image_cover'), updateHandler);
 
 module.exports = projectRouter;

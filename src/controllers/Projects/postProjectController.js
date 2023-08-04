@@ -1,5 +1,4 @@
-const { Project, User } = require('../../db');
-
+const { Project } = require('../../db');
 
 const createProject = async (name,
      description,
@@ -14,8 +13,6 @@ const createProject = async (name,
      status,
      UserId
       ) => {
-
-
 
 const newProject = await Project.create({
     name,
@@ -32,7 +29,6 @@ const newProject = await Project.create({
 })
 
 await newProject.addUser(UserId);
-
 
 return newProject;
 

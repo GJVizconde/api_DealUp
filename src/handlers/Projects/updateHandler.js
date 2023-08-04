@@ -4,7 +4,8 @@ const { updateProject } = require('../../controllers/Projects/updateProject');
 const updateHandler = async (req, res) => {
   try {
     const { id } = req.params;
-    const { path } = req.file;
+    // const { path } = req.file;
+    const { path } = req.file || { path: undefined };
     const campoActualizar = req.body;
  
 

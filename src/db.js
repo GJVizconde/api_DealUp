@@ -61,16 +61,8 @@ Project.belongsToMany(User, { through: 'user_project' });
 
 //USER-RATING
 
-User.hasOne(Rating, {
-  foreignKey: 'UserId',
-  onDelete: 'CASCADE',
-  onUpdate: 'CASCADE',
-});
-Rating.belongsTo(User, {
-  foreignKey: 'UserId',
-  onDelete: 'CASCADE',
-  onUpdate: 'CASCADE',
-});
+User.hasOne(Rating, { onUpdate: 'CASCADE'});
+Rating.belongsTo(User, {onDelete: 'CASCADE', onUpdate: 'CASCADE',});
 
 // USER-COMMENT
 User.hasMany(Comment, { onDelete: 'CASCADE', onUpdate: 'CASCADE' });
@@ -86,7 +78,7 @@ Gallery.belongsTo(Project);
 
 //PROJECT-INVESTMENT
 
-Project.hasMany(Investment, { onDelete: 'CASCADE', onUpdate: 'CASCADE' });
+Project.hasMany(Investment, { onUpdate: 'CASCADE' });
 Investment.belongsTo(Project);
 
 
