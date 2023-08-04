@@ -9,9 +9,9 @@ const { comment, PostId, UserId} = req.body;
 if(!comment) { return res.status(400).json('Comment is required');
 }
 
-if(!PostId) { return res.status(400).json('Post id is required');
+if(!PostId) { return res.status(400).json('Post ID is required');
 }
-if(!UserId) { return res.status(400).json('User id is required');
+if(!UserId) { return res.status(400).json('User ID is required');
 }
 
 
