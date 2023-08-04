@@ -271,7 +271,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user/9af1d7e7-9f89-4611-be58-9380d63aadb3",
+							"raw": "http://localhost:3001/user/f609c096-cd9b-4da7-acd0-b1339af0cafa",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -279,7 +279,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"9af1d7e7-9f89-4611-be58-9380d63aadb3"
+								"f609c096-cd9b-4da7-acd0-b1339af0cafa"
 							]
 						}
 					},
@@ -292,7 +292,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"shak@gmail.com\",\r\n    \"password\":\"Henry12345\"\r\n}",
+							"raw": "{\r\n    \"email\":\"wigik99215@inkiny.com\",\r\n    \"password\":\"Henry12345678912\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -349,7 +349,7 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user/register/confirm/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhZmM5MDUyLTg2ZWYtNDA0Ni1hMTEzLTA4ZjM2YTRmMzRiMCIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE2OTEwOTU3NjIsImV4cCI6MTY5MTEwMjk2Mn0.UFkNtqF2QJ9dRurcWtkiGGIkSAcTn6gyowRL51WQmDg",
+							"raw": "http://localhost:3001/user/register/confirm/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmYThhYzkwLWRiMzYtNDE5MC1hN2EwLTE2YzJiMjIwYzQyZSIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE2OTExMDYzNzgsImV4cCI6MTY5MTExMzU3OH0.t3IwfpSNyrwgJLzeB3r7V9DawsIzkWDvdUxJAfA0Tss",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -359,7 +359,7 @@
 								"user",
 								"register",
 								"confirm",
-								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhZmM5MDUyLTg2ZWYtNDA0Ni1hMTEzLTA4ZjM2YTRmMzRiMCIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE2OTEwOTU3NjIsImV4cCI6MTY5MTEwMjk2Mn0.UFkNtqF2QJ9dRurcWtkiGGIkSAcTn6gyowRL51WQmDg"
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmYThhYzkwLWRiMzYtNDE5MC1hN2EwLTE2YzJiMjIwYzQyZSIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE2OTExMDYzNzgsImV4cCI6MTY5MTExMzU3OH0.t3IwfpSNyrwgJLzeB3r7V9DawsIzkWDvdUxJAfA0Tss"
 							]
 						}
 					},
@@ -401,7 +401,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"password\":\"Henry123456789\"\r\n}",
+							"raw": "{\r\n    \"password\":\"Henry12345678912\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -409,7 +409,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/user/resetPassword/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzZGM5MDZkLTQ3MWQtNDgxNC1iMjRhLTA0M2IxZDhmNDU0MSIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE2OTEwOTkwOTMsImV4cCI6MTY5MTEwNjI5M30.epbz1e-0FkNcxeNsQI7fQ0EoEUT2u9eb3_-91ON9SYs",
+							"raw": "http://localhost:3001/user/resetPassword/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmYThhYzkwLWRiMzYtNDE5MC1hN2EwLTE2YzJiMjIwYzQyZSIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJ1bmlxdWVJZCI6IjhjZDkyN2EyLWVmZDItNDc1NS1iYmQzLTUwYmYyYjMxZjBkNCIsImlhdCI6MTY5MTEwNjcyMiwiZXhwIjoxNjkxMTEzOTIyfQ.PzIT626XQrqaTzYZ6NiEYHL5H_EtNfr7pYuRgXVbWP0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -418,7 +418,39 @@
 							"path": [
 								"user",
 								"resetPassword",
-								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzZGM5MDZkLTQ3MWQtNDgxNC1iMjRhLTA0M2IxZDhmNDU0MSIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE2OTEwOTkwOTMsImV4cCI6MTY5MTEwNjI5M30.epbz1e-0FkNcxeNsQI7fQ0EoEUT2u9eb3_-91ON9SYs"
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmYThhYzkwLWRiMzYtNDE5MC1hN2EwLTE2YzJiMjIwYzQyZSIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJ1bmlxdWVJZCI6IjhjZDkyN2EyLWVmZDItNDc1NS1iYmQzLTUwYmYyYjMxZjBkNCIsImlhdCI6MTY5MTEwNjcyMiwiZXhwIjoxNjkxMTEzOTIyfQ.PzIT626XQrqaTzYZ6NiEYHL5H_EtNfr7pYuRgXVbWP0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "checkUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"shaki1@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/user/check",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user",
+								"check"
 							]
 						}
 					},
