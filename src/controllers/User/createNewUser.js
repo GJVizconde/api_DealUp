@@ -15,11 +15,31 @@ const createNewUser = async (
   status,
   confirmEmail,
   thirdPartyCreated,
-  path
+  path,
+  url
 ) => {
   try {
     if (path) {
       const avatarUpload = await handleUpload(path);
+
+      const newUser = await User.create({
+        fullName,
+        email,
+        role,
+        password,
+        gender,
+        birthdate,
+        phone,
+        country,
+        avatar: avatarUpload.secure_url,
+        status,
+        confirmEmail,
+        thirdPartyCreated,
+      });
+
+      return newUser;
+    } else if (url){
+      const avatarUpload = await handleUpload(url);
 
       const newUser = await User.create({
         fullName,

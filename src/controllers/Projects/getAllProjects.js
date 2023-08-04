@@ -68,7 +68,6 @@ const getAllProjects = async () => {
         // attributes: {
         //     exclude: ['createdAt', 'updatedAt'],
         // },
-       
     });
   
 } catch (error) {

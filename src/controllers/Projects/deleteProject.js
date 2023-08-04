@@ -2,19 +2,15 @@ const { Project } = require('../../db');
 
 const deleteProject = async (id) => {
   try {
-    projectFound = await Project.findByPk(id);
+    const projectFound = await Project.findByPk(id);
 
     if (!projectFound) {
       throw new Error('Project not found');
     }
 
-    const deletedProject = await Project.destroy({
-      where: {
-        id,
-      },
-    });
+    await projectFound.destroy();
 
-    return deletedProject;
+    return projectFound;
   } catch (error) {
     throw new Error('Failed to delete project: ' + error.message);
   }

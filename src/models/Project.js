@@ -93,7 +93,15 @@ module.exports = (sequelize) => {
         allowNull: false,
         defaultValue: 'Pending',
       },
+      deletedAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        defaultValue: null,
+      },
     },
-    { timestamps: true }
+    { 
+      timestamps: true,
+      paranoid: true
+    }    
   );
 };

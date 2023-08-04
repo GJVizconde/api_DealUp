@@ -9,7 +9,7 @@ const updateUserHandler = async (req, res) => {
   try {
     const result = await updateUser(id, updateField, path);
 
-    res.status(200).json({ message: 'Changes have been saved', result });
+    res.status(200).json({ message: 'User changes have been saved', result });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
