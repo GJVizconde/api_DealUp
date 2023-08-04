@@ -5,8 +5,6 @@ const { User } = require('../../db');
 const confirmRegister = async (token) => {
   const data = verifyToken(token, jwtRegister);
 
-  console.log('data', data);
-
   try {
     if (!data) {
       throw new Error('Something was wrong, try again');
@@ -17,18 +15,16 @@ const confirmRegister = async (token) => {
     if (!updateUser) {
       throw new Error('Something was wrong, try again');
     }
+    if (updateUser.confirmEmail === true) {
+      throw new Error('User already registered');
+    }
 
     updateUser.confirmEmail = true;
     await updateUser.save();
 
-    return {
-      message: 'Confirm email was successful.',
-      updateUser,
-    };
+    return 'Welcome to DealUp!, email confirmed';
   } catch (error) {
-    throw new Error(
-      'Error: Unable to confirm your registration. Please try again later'
-    );
+    throw error;
   }
 };
 

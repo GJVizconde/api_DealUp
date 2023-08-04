@@ -1,7 +1,11 @@
-const { User } = require('../../db');
+const { User, Rating } = require('../../db');
 
 const getAllUsers = async () => {
-  const dataBaseUsers = await User.findAll();
+  const dataBaseUsers = await User.findAll({
+    include: {
+      model: Rating,
+    },
+  });
 
   return [...dataBaseUsers];
 };
