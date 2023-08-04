@@ -3,8 +3,8 @@
 		"_postman_id": "bc78c4c2-05ef-428f-aed3-a8631bac08e1",
 		"name": "DEAL UP!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "27477100",
-		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=27477100&source=collection_link"
+		"_exporter_id": "28612822",
+		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=28612822&source=collection_link"
 	},
 	"item": [
 		{
@@ -46,7 +46,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shak@gmail.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Esteban Andru\",\r\n    \"email\": \"shak3@gmail.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -271,7 +271,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user/f609c096-cd9b-4da7-acd0-b1339af0cafa",
+							"raw": "http://localhost:3001/user/09190f4e-f881-4516-8b63-338afadd0cef",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -279,7 +279,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"f609c096-cd9b-4da7-acd0-b1339af0cafa"
+								"09190f4e-f881-4516-8b63-338afadd0cef"
 							]
 						}
 					},
@@ -434,7 +434,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"shaki1@gmail.com\"\r\n}",
+							"raw": "{\r\n    \"email\":\"shak@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -533,7 +533,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Germancios Yyyyyy Pablos\",\r\n  \"description\": \"Queremos colocar un local peluqueria y arreglos de barbas\",\r\n  \"min_amount\": 5,\r\n  \"max_amount\": 50000,\r\n  \"goal_amount\": 85490,\r\n  \"initial_date\": \"01/03/2024\",\r\n  \"deadline\": \"12/09/2024\",\r\n  \"url\": \"https://www.fundacionaquae.org/wp-content/uploads/2020/04/Qu%C3%A9-es-el-agua-3.jpg\",\r\n  \"city\": \"Cordoba\",\r\n  \"category\": [\"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"c732a06c-afaf-4eb0-9416-d7fd120e967a\"\r\n}",
+							"raw": "{\r\n  \"name\": \"Gauze supermercado\",\r\n  \"description\": \"Queremos colocar un local de venta de mercaderias\",\r\n  \"min_amount\": 60,\r\n  \"max_amount\": 40000,\r\n  \"goal_amount\": 88890,\r\n  \"initial_date\": \"01/03/2024\",\r\n  \"deadline\": \"12/09/2024\",\r\n  \"url\": \"https://www.fundacionaquae.org/wp-content/uploads/2020/04/Qu%C3%A9-es-el-agua-3.jpg\",\r\n  \"city\": \"Cordoba\",\r\n  \"category\": [\"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"3893473e-ac72-48a2-81ec-7643e9f13005\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -676,7 +676,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/projects/ff09f53a-dcff-4467-8eea-268caa6904fe",
+							"raw": "http://localhost:3001/projects/b2051298-7412-4745-b082-574f803c7593",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -684,7 +684,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"ff09f53a-dcff-4467-8eea-268caa6904fe"
+								"b2051298-7412-4745-b082-574f803c7593"
 							]
 						}
 					},
@@ -785,7 +785,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"points\": 5,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"3b885f0d-da76-4e38-8977-d2fec2da9a98\",\r\n    \"UserId\": \"23b30400-709c-416f-bec3-e82605e2f712\"\r\n}",
+							"raw": "{\r\n    \"points\": 5,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"effb2755-dcae-4128-a280-0effddeb3e66\",\r\n    \"UserId\": \"09190f4e-f881-4516-8b63-338afadd0cef\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1050,7 +1050,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"description\": \"Nuevo ingreso de guitarras\",\r\n    \"image_gallery\":[\"\"],\r\n    \"video_galley\":[\"\"],\r\n    \"ProjectId\": \"2c3060fd-9577-4904-9e1f-39427789ad80\"\r\n}",
+							"raw": "{\r\n    \"description\": \"Nuevo ingreso de mercaderias\",\r\n    \"image_gallery\":[\"\"],\r\n    \"video_galley\":[\"\"],\r\n    \"ProjectId\": \"effb2755-dcae-4128-a280-0effddeb3e66\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1157,7 +1157,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"comment\": \"Que intrumentos compraste?\",\r\n    \"PostId\": \"2c1aed5a-5512-48fc-888f-32f08f3229a6\",\r\n    \"UserId\": \"6d585346-33e5-4db2-8e16-500cb6991725\"\r\n\r\n}",
+							"raw": "{\r\n    \"comment\": \"Tienen verdulerias?\",\r\n    \"PostId\": \"c60413c1-b97a-4a09-88e8-9913b276eb98\",\r\n    \"UserId\": \"09190f4e-f881-4516-8b63-338afadd0cef\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1272,12 +1272,24 @@
 					"name": "TOP_Project",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/projects/filter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"filter"
+							]
+						}
 					},
 					"response": []
 				}
 			],
-			"description": "StartFragment\n\n\"minAmountMin\": null, ( minimo valor de todos los amountMinimos agregar el number o null)\n\n\"maxAmountMin\": null, ( maximovalor de todos los amountMinimos agregar el number o null)\n\n\"minAmountMax\":null, ( minimo valor de todos los amountMaximos agregar el number o null)\n\n\"maxAmountMax\":null, ( maxim valor todos de los amountMaximos agregar el number o null)\n\n\"category\": \\[\\], (array de string de las categorias)\n\n\"order\": \"Desc\", (elegir el orden \"Asc\" o \"Desc\")\n\n\"attribute\":\"amount\", (\"amount\" para ordenar por amount; \"rating\" para ordenar por rating)\n\n\"typeAmount\": \"min\" ( Agregar: \"min\" ordenar por minimos; \"max\" ordenar por maximos)(INCLUIR EL VALOR UNICAMENTE CUANDO SE ORDENA POR AMOUNT)\n\nEndFragment"
+			"description": "StartFragment\n\n\"minAmountMin\": null, ( minimo valor de todos los amountMinimos agregar el number o null)\n\n\"maxAmountMin\": null, ( maximovalor de todos los amountMinimos agregar el number o null)\n\n\"minAmountMax\":null, ( minimo valor de todos los amountMaximos agregar el number o null)\n\n\"maxAmountMax\":null, ( maxim valor todos de los amountMaximos agregar el number o null)\n\n\"category\": \\[\\], (array de string de las categorias)\n\n\"order\": \"Desc\", (elegir el orden \"Asc\" o \"Desc\")\n\n\"attribute\":\"amount\", (\"amount\" para ordenar por amount; \"rating\" para ordenar por rating)\n\n\"typeAmount\": \"min\" ( Agregar: \"min\" ordenar por minimos; \"max\" ordenar por maximos)(INCLUIR EL VALOR UNICAMENTE CUANDO SE ORDENA POR AMOUNT)\n\n---\n\nTOP_Project: esta request es para traer el filtrado de los 10 mejores projectos y los 10 ultimos proyectos creados.\n\nEndFragment"
 		},
 		{
 			"name": "INVESTMENTS",
@@ -1309,7 +1321,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"contribution\": 150,\r\n\"comment\":\"Excelente proyecto\",\r\n\"ProjectId\":\"29325bf9-6a40-4a44-8d6a-4d734d18e1c0\",\r\n\"UserId\":\"62cc7f91-3363-4130-ad78-f6b124a42ade\"\r\n}",
+							"raw": "{\r\n\"contribution\": 350,\r\n\"comment\":\"Excelente proyecto\",\r\n\"ProjectId\":\"effb2755-dcae-4128-a280-0effddeb3e66\",\r\n\"UserId\":\"09190f4e-f881-4516-8b63-338afadd0cef\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
