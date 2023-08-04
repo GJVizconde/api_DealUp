@@ -66,7 +66,15 @@ module.exports = (sequelize) => {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
       },
+      deletedAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        defaultValue: null,
+      },
     },
-    { timestamps: true }
+    { 
+      timestamps: true,
+      paranoid: true 
+    }
   );
 };

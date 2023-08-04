@@ -6,6 +6,7 @@ const {
 } = require('../handlers/User/createUserHandler');
 const getUserHandler = require('../handlers/User/getUserHandler');
 const updateUserHandler = require('../handlers/User/updateUserHandler');
+const updateUserHandlerUrl = require('../handlers/User/updateUserHandlerUrl');
 const deleteUserHandler = require('../handlers/User/deleteUserHandler');
 const loginUserHandler = require('../handlers/User/loginUserHandler');
 //invesments
@@ -63,6 +64,11 @@ userRouter.patch(
   upload.single('avatar'),
   validateUpdateUser,
   updateUserHandler
+);
+userRouter.patch(
+  '/url/:id',
+  validateUpdateUser,
+  updateUserHandlerUrl
 );
 userRouter.delete('/:id', validateId, deleteUserHandler);
 userRouter.post('/login', validateLogin, loginUserHandler);

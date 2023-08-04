@@ -11,7 +11,7 @@ const getAllProjects = async () => {
         include: [
             {
             model: User,
-            attributes: ['id', 'fullName', 'rol'],
+            attributes: ['id', 'fullName', 'role'],
             through: {
                 attributes: [],
             }
@@ -48,7 +48,7 @@ const getAllProjects = async () => {
         attributes: {
             exclude: ['createdAt', 'updatedAt'],
         },
-       
+       paranoid: false
     });
   
 const ratingsWithProjects = await getAllRatings();
