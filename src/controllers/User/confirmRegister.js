@@ -22,9 +22,7 @@ const confirmRegister = async (token) => {
     updateUser.confirmEmail = true;
     await updateUser.save();
 
-    return {
-      message: 'Email confirm email was successful, please login.',
-    };
+    return 'Welcome to DealUp!, email confirmed';
   } catch (error) {
     throw error;
   }
