@@ -6,7 +6,7 @@ const deleteRatingHandler = async (req, res) => {
   try {
     const result = await deleteRating(id);
 
-    res.status(200).json({ message: 'User was deleted' });
+    res.status(200).json({ message: 'Rating was deleted' });
   } catch (error) {
     res.status(400).json({ message: error.message });
   }

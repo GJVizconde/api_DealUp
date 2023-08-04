@@ -4,7 +4,7 @@ const deleteRating = async (id) => {
     ratingFound = await Rating.findByPk(id);
 
     if (!ratingFound) {
-      throw new Error('User not found');
+      throw new Error('Rating not found');
     }
 
     const deletedRating = await Rating.destroy({
