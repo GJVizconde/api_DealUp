@@ -1,7 +1,7 @@
 const alreadyExistsUser = require('./alreadyExistsUser');
 
 const validateCreateUser = async (req, res, next) => {
-  const { fullName, email, role, birthdate } = req.body;
+  const { fullName, email, role } = req.body;
 
   // console.log(typeof(fullName), typeof(email));
 
@@ -15,7 +15,6 @@ const validateCreateUser = async (req, res, next) => {
     if (!fullName) return res.status(400).json({ error: 'Missing name' });
     if (!email) return res.status(400).json({ error: 'Missing email' });
     if (!role) return res.status(400).json({ error: 'Missing role' });
-    if (!birthdate) return res.status(400).json({ error: 'Missing birthdate' });
 
     next();
   } catch (error) {
