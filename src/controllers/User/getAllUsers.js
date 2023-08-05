@@ -7,6 +7,10 @@ const getAllUsers = async () => {
     },
   });
 
+  if (dataBaseUsers.length === 0) {
+    return "There aren't any users, but Database is WORKING!";
+  }
+
   return [...dataBaseUsers];
 };
 
