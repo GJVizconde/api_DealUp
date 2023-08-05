@@ -40,7 +40,7 @@ module.exports = (sequelize) => {
       },
       birthdate: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       phone: {
         type: DataTypes.STRING,
@@ -72,9 +72,9 @@ module.exports = (sequelize) => {
         defaultValue: null,
       },
     },
-    { 
+    {
       timestamps: true,
-      paranoid: true 
+      paranoid: true,
     }
   );
 };
