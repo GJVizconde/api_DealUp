@@ -38,27 +38,11 @@ const createNewUser = async (
       });
 
       return newUser;
-    } else if (url){
-      const avatarUpload = await handleUpload(url);
-
-      const newUser = await User.create({
-        fullName,
-        email,
-        role,
-        password,
-        gender,
-        birthdate,
-        phone,
-        country,
-        avatar: avatarUpload.secure_url,
-        status,
-        confirmEmail,
-        thirdPartyCreated,
-      });
-
-      return newUser;
     }
 
+    const avatarUpload = await handleUpload(avatar);
+
+    console.log(avatarUpload);
     const newUser = await User.create({
       fullName,
       email,
@@ -69,7 +53,7 @@ const createNewUser = async (
       birthdate,
       phone,
       country,
-      avatar,
+      avatar: avatarUpload.secure_url,
       status,
       confirmEmail,
       thirdPartyCreated,

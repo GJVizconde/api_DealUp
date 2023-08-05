@@ -18,7 +18,6 @@ const createUserHandler = async (req, res) => {
     status,
     confirmEmail,
     thirdPartyCreated,
-    url
   } = req.body;
 
   try {
@@ -36,8 +35,7 @@ const createUserHandler = async (req, res) => {
       status,
       confirmEmail,
       thirdPartyCreated,
-      path,
-      url
+      path
     );
 
     res.status(201).json(newUser);
