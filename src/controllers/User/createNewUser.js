@@ -40,9 +40,8 @@ const createNewUser = async (
       return newUser;
     }
 
-    const avatarUpload = await handleUpload(avatar);
+    const avatarUpload = avatar ? await handleUpload(avatar) : avatar;
 
-    console.log(avatarUpload);
     const newUser = await User.create({
       fullName,
       email,
