@@ -19,22 +19,37 @@
 // ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_______________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
 // ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶GJVL¶¶¶
 
-
 require('dotenv').config();
-const { PORT, USERNAME, NODE_ENV: env } = process.env;
+const { PORT, USERNAME, NODE_ENV: env, FORCE_STATUS: status } = process.env;
 const { app } = require('./src/app');
 const { conn } = require('./src/db');
 const user = USERNAME || 'dev';
 const port = PORT || 3001;
 
-conn
-  .sync({ alter: true })
-  .then(() => {
-    app.listen(port, () => {
-      console.log('Welcome Back %s!', user);
-      console.log(`%s listening at %s, %s mode on`, 'Server', port, env);
+if (env === 'development') {
+  conn
+    .sync({ force: status })
+    .then(() => {
+      app.listen(port, () => {
+        console.log('Welcome Back %s!', user);
+        console.log(`%s listening at %s, %s mode on`, 'Server', port, env);
+      });
+    })
+    .catch((error) => {
+      console.error('Error init:', error);
     });
-  })
-  .catch((error) => {
-    console.error('Error init:', error);
-  });
+}
+
+if (env === 'production') {
+  conn
+    .sync({ force: status })
+    .then(() => {
+      app.listen(port, () => {
+        console.log('Welcome Back %s!', user);
+        console.log(`%s listening at %s, %s mode on`, 'Server', port, env);
+      });
+    })
+    .catch((error) => {
+      console.error('Error init:', error);
+    });
+}
