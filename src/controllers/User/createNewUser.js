@@ -42,7 +42,6 @@ const createNewUser = async (
 
     const avatarUpload = await handleUpload(avatar);
 
-    console.log(avatarUpload);
     const newUser = await User.create({
       fullName,
       email,
