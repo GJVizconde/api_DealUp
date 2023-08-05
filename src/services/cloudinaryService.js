@@ -18,6 +18,22 @@ const handleUpload = async (file) => {
   }
 };
 
+const handleUploadFiles = async (files) => {
+  try {
+    const promises = files.map((file) =>
+      cloudinary.uploader.upload(file.path, {
+        resource_type: 'auto',
+      })
+    );
+
+    const results = await Promise.all(promises);
+    return results;
+  } catch (error) {
+    throw new Error('Error al cargar las imágenes a Cloudinary: ' + error);
+  }
+};
+
+
 const updateUpload = async (file) => {
   await cloudinary.uploader.upload(file, {
     public_id: image.public_id,
@@ -70,5 +86,6 @@ module.exports = {
   getAllImagesFromCloudinary,
   deleteImageFromCloudinary,
   handleUpload,
+  handleUploadFiles,
   updateUpload,
 };
