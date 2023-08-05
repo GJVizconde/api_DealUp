@@ -3,8 +3,8 @@
 		"_postman_id": "bc78c4c2-05ef-428f-aed3-a8631bac08e1",
 		"name": "DEAL UP!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "28612822",
-		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=28612822&source=collection_link"
+		"_exporter_id": "27477100",
+		"_collection_link": "https://dealup.postman.co/workspace/Deal-Up!~378dc71f-c03a-433d-8678-9135eb5af999/collection/27477100-bc78c4c2-05ef-428f-aed3-a8631bac08e1?action=share&creator=27477100&source=collection_link"
 	},
 	"item": [
 		{
@@ -40,13 +40,13 @@
 					"response": []
 				},
 				{
-					"name": "createUser",
+					"name": "createUser Url",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Esteban Andru\",\r\n    \"email\": \"shak3@gmail.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"https://s3.abcstatics.com/abc/www/multimedia/gente/2022/11/16/shakira-waka-waka-R6W4bozXCHRD6N6yvzV6dfJ-758x531@abc.jpg\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shak@gmail.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -65,10 +65,77 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "createUser Url",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"wimo111@inkiny.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"url\": \"\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "392"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"188-70fLaWfhbFLa5Zc2+yX7cHdHxSQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 04 Aug 2023 23:47:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"dfd9983b-48fc-4b47-9796-20093fa0edc0\",\n    \"deletedAt\": null,\n    \"fullName\": \"Shakira Mebarak\",\n    \"email\": \"shak2@gmail.com\",\n    \"role\": \"entrepreneur\",\n    \"password\": \"Henry12345\",\n    \"dni\": null,\n    \"gender\": \"\",\n    \"birthdate\": \"02/02/1977\",\n    \"phone\": \"\",\n    \"country\": \"\",\n    \"avatar\": \"https://www.cleverfiles.com/howto/wp-content/uploads/2018/03/minion.jpg\",\n    \"status\": false,\n    \"confirmEmail\": false,\n    \"thirdPartyCreated\": false,\n    \"updatedAt\": \"2023-08-04T23:47:24.624Z\",\n    \"createdAt\": \"2023-08-04T23:47:24.624Z\"\n}"
+						}
+					]
 				},
 				{
-					"name": "createUser Cloudinary",
+					"name": "createUser File",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -82,11 +149,11 @@
 								},
 								{
 									"key": "email",
-									"value": "shakira@gmail.com",
+									"value": "shakira1@gmail.com",
 									"type": "text"
 								},
 								{
-									"key": "rol",
+									"key": "role",
 									"value": "entrepreneur",
 									"type": "text"
 								},
@@ -138,7 +205,7 @@
 								{
 									"key": "avatar",
 									"type": "file",
-									"src": "/C:/Users/soygi/Desktop/PF LastDance/Resources/Logo/DealUp.png"
+									"src": "/C:/Users/hp/OneDrive/Pictures/Fondos Harold/PIramides GYza.jpg"
 								}
 							]
 						},
@@ -154,7 +221,135 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "createUser File",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fullName",
+											"value": "Shakira Mebarak",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "shakira1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "role",
+											"value": "entrepreneur",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Henry12345",
+											"type": "text"
+										},
+										{
+											"key": "dni",
+											"value": "null",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "birthdate",
+											"value": "02/02/1977",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "confirmEmail",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "thirdPartyCreated",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/C:/Users/hp/OneDrive/Pictures/Fondos Harold/PIramides GYza.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3001/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "476"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1dc-+IvEY85qiHTUkmi1F09KUwlL3kI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 05:13:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"871ba97b-aafe-418b-8071-0a417a3ded08\",\n    \"deletedAt\": null,\n    \"fullName\": \"Shakira Mebarak\",\n    \"email\": \"shakira1@gmail.com\",\n    \"role\": \"entrepreneur\",\n    \"password\": \"Henry12345\",\n    \"gender\": \"\",\n    \"birthdate\": \"02/02/1977\",\n    \"phone\": \"\",\n    \"country\": \"\",\n    \"avatar\": \"https://res.cloudinary.com/dgx2v3fnk/image/upload/v1691212410/dnwo2j4thvimsie3fnag.jpg\",\n    \"status\": false,\n    \"confirmEmail\": false,\n    \"thirdPartyCreated\": false,\n    \"updatedAt\": \"2023-08-05T05:13:31.107Z\",\n    \"createdAt\": \"2023-08-05T05:13:31.107Z\",\n    \"dni\": null\n}"
+						}
+					]
 				},
 				{
 					"name": "getUserByName",
@@ -208,7 +403,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"country\": \"Venezuela\"\r\n}",
+							"raw": "{\r\n    \"country\": \"Argentina\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -216,7 +411,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/user/b0287c25-1944-4daa-898d-215fa7b65893",
+							"raw": "http://localhost:3001/user/url/871ba97b-aafe-418b-8071-0a417a3ded08",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -224,11 +419,81 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"b0287c25-1944-4daa-898d-215fa7b65893"
+								"url",
+								"871ba97b-aafe-418b-8071-0a417a3ded08"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "updateUser",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"country\": \"Argentina\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/user/url/871ba97b-aafe-418b-8071-0a417a3ded08",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"user",
+										"url",
+										"871ba97b-aafe-418b-8071-0a417a3ded08"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "537"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"219-My9vFkyGh05g6uV77xM8xwANypE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 05:34:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User changes have been saved\",\n    \"result\": {\n        \"id\": \"871ba97b-aafe-418b-8071-0a417a3ded08\",\n        \"fullName\": \"Shakira Mebarak\",\n        \"email\": \"shakira1@gmail.com\",\n        \"role\": \"entrepreneur\",\n        \"password\": \"Henry12345\",\n        \"dni\": null,\n        \"gender\": \"\",\n        \"birthdate\": \"02/02/1977\",\n        \"phone\": \"\",\n        \"country\": \"Argentina\",\n        \"avatar\": \"https://res.cloudinary.com/dgx2v3fnk/image/upload/v1691212552/jlpyylhxk3lgzrqtcku5.jpg\",\n        \"status\": false,\n        \"confirmEmail\": false,\n        \"thirdPartyCreated\": false,\n        \"deletedAt\": null,\n        \"createdAt\": \"2023-08-05T05:13:31.107Z\",\n        \"updatedAt\": \"2023-08-05T05:34:23.993Z\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "updateAvatar Cloudinary",
@@ -241,7 +506,7 @@
 								{
 									"key": "avatar",
 									"type": "file",
-									"src": "/C:/Users/soygi/Desktop/PF LastDance/Resources/Last_Dance.jpg"
+									"src": "/C:/Users/hp/OneDrive/Pictures/Fondos Harold/PIramides GYza.jpg"
 								},
 								{
 									"key": "country",
@@ -251,7 +516,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3001/user/e6060001-1cd1-4a1e-8728-c3a41154c306",
+							"raw": "http://localhost:3001/user/abcf1921-630b-4418-b7a0-8b754904d9b8",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -259,11 +524,85 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"e6060001-1cd1-4a1e-8728-c3a41154c306"
+								"abcf1921-630b-4418-b7a0-8b754904d9b8"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "updateAvatar Cloudinary",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/C:/Users/hp/OneDrive/Pictures/Fondos Harold/PIramides GYza.jpg"
+										},
+										{
+											"key": "country",
+											"value": "Argentina",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3001/user/abcf1921-630b-4418-b7a0-8b754904d9b8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"user",
+										"abcf1921-630b-4418-b7a0-8b754904d9b8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "543"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21f-FYr5WqDJ9iiykclXBcaZnC3zVZM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Aug 2023 05:35:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User changes have been saved\",\n    \"result\": {\n        \"id\": \"abcf1921-630b-4418-b7a0-8b754904d9b8\",\n        \"fullName\": \"Shakira Mebarak\",\n        \"email\": \"wimo111112231@inkiny.com\",\n        \"role\": \"entrepreneur\",\n        \"password\": \"Henry12345\",\n        \"dni\": null,\n        \"gender\": \"\",\n        \"birthdate\": \"02/02/1977\",\n        \"phone\": \"\",\n        \"country\": \"Argentina\",\n        \"avatar\": \"https://res.cloudinary.com/dgx2v3fnk/image/upload/v1691213722/w4f4hyuasmqi18mt59hi.jpg\",\n        \"status\": false,\n        \"confirmEmail\": false,\n        \"thirdPartyCreated\": false,\n        \"deletedAt\": null,\n        \"createdAt\": \"2023-08-05T05:11:17.169Z\",\n        \"updatedAt\": \"2023-08-05T05:35:23.320Z\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "deleteUser",
@@ -482,6 +821,35 @@
 					"response": []
 				},
 				{
+					"name": "addProjects",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Gauze suercado\",\r\n  \"description\": \"Queremos colocar un local de venta de mercaderias\",\r\n  \"min_amount\": 60,\r\n  \"max_amount\": 40000,\r\n  \"goal_amount\": 88890,\r\n  \"initial_date\": \"01/03/2024\",\r\n  \"deadline\": \"12/09/2024\",\r\n  \"url\": \"https://www.fundacionaquae.org/wp-content/uploads/2020/04/Qu%C3%A9-es-el-agua-3.jpg\",\r\n  \"city\": \"Cordoba\",\r\n  \"category\": [\"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"f15dbeda-c3f8-4f72-900a-161229b4b1e0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/projects/url",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"url"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "nameProjects",
 					"request": {
 						"method": "GET",
@@ -527,35 +895,6 @@
 					"response": []
 				},
 				{
-					"name": "addProjects",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Gauze supermercado\",\r\n  \"description\": \"Queremos colocar un local de venta de mercaderias\",\r\n  \"min_amount\": 60,\r\n  \"max_amount\": 40000,\r\n  \"goal_amount\": 88890,\r\n  \"initial_date\": \"01/03/2024\",\r\n  \"deadline\": \"12/09/2024\",\r\n  \"url\": \"https://www.fundacionaquae.org/wp-content/uploads/2020/04/Qu%C3%A9-es-el-agua-3.jpg\",\r\n  \"city\": \"Cordoba\",\r\n  \"category\": [\"Music\"],\r\n  \"status\":\"Pending\",\r\n  \"UserId\": \"3893473e-ac72-48a2-81ec-7643e9f13005\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/projects/url",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"projects",
-								"url"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "addProjectsWFile",
 					"request": {
 						"method": "POST",
@@ -565,7 +904,7 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "LosFilesUp",
+									"value": "LosSoftsUp",
 									"type": "text"
 								},
 								{
@@ -620,7 +959,7 @@
 								},
 								{
 									"key": "UserId",
-									"value": "c732a06c-afaf-4eb0-9416-d7fd120e967a",
+									"value": "a0a57232-24aa-47e4-8e84-53c2da1b7e86",
 									"type": "text"
 								}
 							]
@@ -693,25 +1032,20 @@
 				{
 					"name": "updateForItem",
 					"request": {
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
 								{
 									"key": "name",
-									"value": "LosFi",
+									"value": "lol",
 									"type": "text"
-								},
-								{
-									"key": "image_cover",
-									"type": "file",
-									"src": "57aa74fc9a1e37c81ce7383d3a9b391d.jpg"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3001/projects/414ed048-85dc-4498-901a-aa9059af87a4",
+							"raw": "http://localhost:3001/projects/4959f6e6-82f6-4b65-a3b9-44e863359115",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -719,7 +1053,7 @@
 							"port": "3001",
 							"path": [
 								"projects",
-								"414ed048-85dc-4498-901a-aa9059af87a4"
+								"4959f6e6-82f6-4b65-a3b9-44e863359115"
 							],
 							"query": [
 								{
@@ -785,7 +1119,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"points\": 5,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"effb2755-dcae-4128-a280-0effddeb3e66\",\r\n    \"UserId\": \"09190f4e-f881-4516-8b63-338afadd0cef\"\r\n}",
+							"raw": "{\r\n    \"points\":3,\r\n    \"comments\": \"FIRE PROOF\",\r\n    \"ProjectId\": \"ee3ed52b-fc26-4898-a465-9492ca23baaa\",\r\n    \"UserId\": \"0c0cae0a-9478-4b16-aa12-d3822f89933a\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1013,6 +1347,50 @@
 							"path": [
 								"gallery",
 								"75ff6bd7-cbdd-463d-b291-860df97db460"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uploadGallery",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": [
+										"57aa74fc9a1e37c81ce7383d3a9b391d.jpg",
+										"autodraw 20_4_2023.png",
+										"me.jpg"
+									]
+								},
+								{
+									"key": "comments",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "ProjectId",
+									"value": "07eca0c9-6082-4287-b05a-f7c4eecb5404",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/gallery/files",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gallery",
+								"files"
 							]
 						}
 					},
@@ -1246,7 +1624,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n \"minAmountMin\":40,\r\n \"maxAmountMin\": 100,\r\n \"minAmountMax\":null,\r\n  \"maxAmountMax\":null,\r\n \"category\": [],\r\n \"order\": \"Asc\",\r\n \"attribute\":\"rating\",\r\n \"typeAmount\": \"min\"\r\n \r\n}",
+							"raw": "{\r\n \"minAmountMin\":null,\r\n \"maxAmountMin\": null,\r\n \"minAmountMax\":null,\r\n  \"maxAmountMax\":null,\r\n \"category\": [],\r\n \"order\": \"Desc\",\r\n \"attribute\":\"rating\",\r\n \"typeAmount\": \"min\"\r\n \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
