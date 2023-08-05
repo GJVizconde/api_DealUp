@@ -26,30 +26,14 @@ const { conn } = require('./src/db');
 const user = USERNAME || 'dev';
 const port = PORT || 3001;
 
-if (env === 'development') {
-  conn
-    .sync({ force: status })
-    .then(() => {
-      app.listen(port, () => {
-        console.log('Welcome Back %s!', user);
-        console.log(`%s listening at %s, %s mode on`, 'Server', port, env);
-      });
-    })
-    .catch((error) => {
-      console.error('Error init:', error);
+conn
+  .sync({ force: status })
+  .then(() => {
+    app.listen(port, () => {
+      console.log('Welcome Back %s!', user);
+      console.log(`%s listening at %s, %s mode on`, 'Server', port, env);
     });
-}
-
-if (env === 'production') {
-  conn
-    .sync({ force: status })
-    .then(() => {
-      app.listen(port, () => {
-        console.log('Welcome Back %s!', user);
-        console.log(`%s listening at %s, %s mode on`, 'Server', port, env);
-      });
-    })
-    .catch((error) => {
-      console.error('Error init:', error);
-    });
-}
+  })
+  .catch((error) => {
+    console.error('Error init:', error);
+  });
