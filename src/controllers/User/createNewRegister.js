@@ -23,7 +23,7 @@ const createNewRegister = async (
 
     if (registeredUser) {
       if (registeredUser.confirmEmail === false) {
-        await registeredUser.destroy();
+        await registeredUser.destroy({ force: true });
       } else {
         throw new Error('Email already registered');
       }

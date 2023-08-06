@@ -12,6 +12,7 @@ const deleteUser = async (id) => {
       where: {
         id,
       },
+      force: true, // Desactiva la eliminación lógica
     });
 
     return deletedUser;
