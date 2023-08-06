@@ -60,11 +60,7 @@ const createNewUser = async (
 
     return newUser;
   } catch (error) {
-    if (error.name === 'SequelizeValidationError') {
-      throw new Error('Validation error ' + error.message);
-    }
-
-    throw new Error('Failed to created a new user:' + error.message);
+    throw new Error(error);
   }
 };
 

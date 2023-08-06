@@ -32,7 +32,7 @@ conn
   .then(() => {
     app.listen(port, () => {
       console.log('Welcome Back %s!', user);
-      console.log(`%s listening at %s, %s mode on`, 'Server', port, env);
+      console.log(`%s listening at %s, %s mode on 🚀`, 'Server', port, env);
     });
   })
   .catch((error) => {
