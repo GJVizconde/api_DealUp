@@ -73,7 +73,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"wimo111@inkiny.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"url\": \"\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
+									"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shak@gmail.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -110,15 +110,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "392"
+									"value": "388"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"188-70fLaWfhbFLa5Zc2+yX7cHdHxSQ\""
+									"value": "W/\"184-idsKP2i5rAsni+WUg0eBvG6z8WQ\""
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 04 Aug 2023 23:47:24 GMT"
+									"value": "Sun, 06 Aug 2023 14:29:52 GMT"
 								},
 								{
 									"key": "Connection",
@@ -130,7 +130,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": \"dfd9983b-48fc-4b47-9796-20093fa0edc0\",\n    \"deletedAt\": null,\n    \"fullName\": \"Shakira Mebarak\",\n    \"email\": \"shak2@gmail.com\",\n    \"role\": \"entrepreneur\",\n    \"password\": \"Henry12345\",\n    \"dni\": null,\n    \"gender\": \"\",\n    \"birthdate\": \"02/02/1977\",\n    \"phone\": \"\",\n    \"country\": \"\",\n    \"avatar\": \"https://www.cleverfiles.com/howto/wp-content/uploads/2018/03/minion.jpg\",\n    \"status\": false,\n    \"confirmEmail\": false,\n    \"thirdPartyCreated\": false,\n    \"updatedAt\": \"2023-08-04T23:47:24.624Z\",\n    \"createdAt\": \"2023-08-04T23:47:24.624Z\"\n}"
+							"body": "{\n    \"id\": \"35a13bc7-83bc-4050-9e8a-468efbbaba4c\",\n    \"deletedAt\": null,\n    \"fullName\": \"Shakira Mebarak\",\n    \"email\": \"shak@gmail.com\",\n    \"role\": \"entrepreneur\",\n    \"password\": \"Henry12345\",\n    \"dni\": null,\n    \"gender\": \"\",\n    \"birthdate\": \"02/02/1977\",\n    \"phone\": \"\",\n    \"country\": \"\",\n    \"avatar\": null,\n    \"status\": false,\n    \"confirmEmail\": false,\n    \"thirdPartyCreated\": false,\n    \"updatedAt\": \"2023-08-06T14:29:52.121Z\",\n    \"createdAt\": \"2023-08-06T14:29:52.121Z\"\n}"
 						}
 					]
 				},
@@ -660,7 +660,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"wigik99215@inkiny.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"wigik99215111@inkiny.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
