@@ -39,7 +39,7 @@ const registerTemplate = (name, token) => {
           <p>Your new community, where we connect entrepreneurs with investments</p>
           <p>To confirm your account, please access the following link.</p>
           <a
-              href="http://localhost:3000/confirmEmail/${token}"
+              href="https://start-bussines.vercel.app/confirmEmail/${token}"
               target="_blank"
               style="display: block; margin: 20px auto; text-align: center; background-color: #007bff; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;"
           >Confirm Account</a>
@@ -60,7 +60,7 @@ const recoveryTemplate = (name, token) => {
           <p>For your security, this link will expire in 2 hours or immediately after you reset your password.</p>
           <p>Your password will be reset across all of Deal Up's products.</p>
           <a
-              href="http://localhost:3000/recoverPass/${token}"
+              href="https://start-bussines.vercel.app/recoverPass/${token}"
               target="_blank"
           >Reset Password</a>
       </div>
