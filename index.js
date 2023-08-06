@@ -27,8 +27,6 @@ const status = FORCE_STATUS === 'true';
 const user = USERNAME || 'dev';
 const port = PORT || 3001;
 
-console.log(status);
-
 conn
   .sync({ force: status })
   .then(() => {
