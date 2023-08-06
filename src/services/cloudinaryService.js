@@ -1,9 +1,10 @@
 const cloudinary = require('cloudinary').v2;
+const { CLOUD_NAME, CLOUD_API_KEY, CLOUD_API_SECRET } = process.env;
 
 cloudinary.config({
-  cloud_name: 'dgx2v3fnk',
-  api_key: '852753386513374',
-  api_secret: 'APa-UKXfdLf-WK5K0WBbMHZsJtU',
+  cloud_name: CLOUD_NAME,
+  api_key: CLOUD_API_KEY,
+  api_secret: CLOUD_API_SECRET,
 });
 
 const handleUpload = async (file) => {
@@ -32,7 +33,6 @@ const handleUploadFiles = async (files) => {
     throw new Error('Error al cargar las imágenes a Cloudinary: ' + error);
   }
 };
-
 
 const updateUpload = async (file) => {
   await cloudinary.uploader.upload(file, {
