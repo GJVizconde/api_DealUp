@@ -20,11 +20,14 @@
 // ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶GJVL¶¶¶
 
 require('dotenv').config();
-const { PORT, USERNAME, NODE_ENV: env, FORCE_STATUS: status } = process.env;
+const { PORT, USERNAME, NODE_ENV: env, FORCE_STATUS } = process.env;
 const { app } = require('./src/app');
 const { conn } = require('./src/db');
+const status = FORCE_STATUS === 'true';
 const user = USERNAME || 'dev';
 const port = PORT || 3001;
+
+console.log(status);
 
 conn
   .sync({ force: status })
