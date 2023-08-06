@@ -34,9 +34,9 @@ const registerTemplate = (name, token) => {
       <div id="email___content" style="text-align: center;">
           <img src="https://res.cloudinary.com/dgx2v3fnk/image/upload/v1690962284/fquqtc1tjkoq2ypb0haf.png" alt="" style="display: block; margin: 0 auto;">
           <h2>Welcome to DealUp!</h2>
-          <p>Hola ${name}, You’re just one click away from getting started with DealUp.</p>
+          <p>Hello ${name}, You’re just one click away from getting started with DealUp.</p>
           <p>All you need to do is verify your email address to activate your DealUp account.</p>
-          <p>Your new community, where we connect entrepreneurs with investments</p>
+          <p>Your new community, where we connect entrepreneurs with investors</p>
           <p>To confirm your account, please access the following link.</p>
           <a
               href="https://start-bussines.vercel.app/confirmEmail/${token}"
