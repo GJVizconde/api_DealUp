@@ -15,7 +15,9 @@ if(!contribution) { res.status(400).json('Contribution is required')};
 if(!UserId) { res.status(400).json('User ID is required')};
 if(!ProjectId) { res.status(400).json('Project ID is required')};
 
-const newInvestment = await createInvestment(contribution, comment, UserId, ProjectId);
+let status = "pending";
+
+const newInvestment = await createInvestment(contribution, comment, UserId, ProjectId, status);
 
 res.status(201).json({ message: 'Investments created successfully', newInvestment});
 

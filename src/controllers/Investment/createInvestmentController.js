@@ -1,6 +1,6 @@
 const { Investment, Project } = require('../../db');
 
-const createInvestment = async (contribution, comment, UserId, ProjectId) => {
+const createInvestment = async (contribution, comment, UserId, ProjectId, status) => {
 
 try {
 
