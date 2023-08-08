@@ -8,6 +8,7 @@ const getUserHandler = require('../handlers/User/getUserHandler');
 const updateUserHandler = require('../handlers/User/updateUserHandler');
 const updateUserHandlerUrl = require('../handlers/User/updateUserHandlerUrl');
 const deleteUserHandler = require('../handlers/User/deleteUserHandler');
+const { restoreUser } = require('../controllers/User/restoreUser');
 const loginUserHandler = require('../handlers/User/loginUserHandler');
 //invesments
 const {
@@ -85,6 +86,7 @@ userRouter.patch(
   updateUserHandlerUrl
 );
 userRouter.delete('/:id', validateId, deleteUserHandler);
+userRouter.patch('/restore/:id', validateId, restoreUser);
 userRouter.post('/login', validateLogin, loginUserHandler);
 
 module.exports = userRouter;

@@ -3,7 +3,9 @@ const { handleUpload } = require('../../services/cloudinaryService');
 
 const updateUserUrl = async (id, updateField) => {
   try {
-    const updateUser = await User.findByPk(id);
+    const updateUser = await User.findByPk(id, {paranoid: false});
+
+    // console.log(updateUser);
 
     if (!updateUser) {
       throw new Error('User not found');
@@ -53,6 +55,9 @@ const updateUserUrl = async (id, updateField) => {
     if (updateField.avatar !== undefined) {
       const uploadedAvatar = await handleUpload(updateField.avatar);
       updateUser.avatar = uploadedAvatar.secure_url;
+    }
+    if (updateField.deletedAt !== undefined) {
+      updateUser.deletedAt = updateField.deletedAt;
     }
 
     await updateUser.save();
