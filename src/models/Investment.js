@@ -17,6 +17,14 @@ module.exports = (sequelize) => {
                 type: DataTypes.STRING,
                 allowNull: true,
             },
+            status: {
+                type: DataTypes.ENUM('pending', 'approved', 'refused'),
+                defaultValue:'pending',
+            },
+            payment_time: {
+                type: DataTypes.STRING,
+                allowNull: true,
+            },
            
         },
         { timestamps: true }
