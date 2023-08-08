@@ -1,31 +1,48 @@
-const mercadopago = require('mercadopago');
+const mercadopago = require("mercadopago");
 //const { createInvestment } = require('../../controllers/Investment/createInvestmentController');
- const { Investment } = require('../../db');
-const receiveWebhook = async ( req, res) => {
-    const payment = req.query;
-console.log(payment);
-    try {
-        
-        const userId = payment.userId;
-        const projectId = payment.projectId;
-        const amount = payment.amount;
+const { Investment, Project } = require("../../db");
+const receiveWebhook = async (req, res) => {
+  const payment = req.query;
+  console.log("Webhook", payment, "Webhook");
+  try {
+    /*  const userId = payment.userId;
+    const projectId = payment.projectId;
+    const amount = payment.amount; */
 
-        if(payment.type === "payment") {
-            const data = await mercadopago.payment.get(payment.id);
-            console.log(" info de data mercado pago.paymant.get",data);
+    if (payment.type === "payment") {
+      const data = await mercadopago.payment.findById(payment["data.id"]);
+      console.log(" info de data mercado pago.paymant.get", data);
 
-            // Crear la inversión utilizando los datos extraídos
-            const contribution = amount;
-            const comment = '';
-            const status = 'completed';
-            const newInvestment = await createInvestment(contribution, comment, userId, projectId, status);
-        }
+      // Crear la inversión utilizando los datos extraídos
+      /*   const contribution = amount;
+      const comment = "";
+      const status = "completed"; */
+      console.log(data.response.status);
 
-res.status(204).send(data);
-    } catch (error) {
-        console.log(error);
-        return res.status(500).json({ error: error.message});
+      const investment = await Investment.findByPk(payment.InvestmentId);
+      investment.status =
+        data.response.status === "approved" ? "approved" : "refused";
+      investment.payment_time =
+        data.response.status === "approved"
+          ? data.response.date_approved
+          : "Payment was not succesfully";
+      investment.id_payment_mercadopago = payment["data.id"];
+      await investment.save();
+      const project = await Project.findByPk(investment.ProjectId);
+      project.collected_amount +=
+        data.response.status === "approved" ? investment.contribution : 0;
+      await project.save();
+
+      console.log("investment database", investment);
+      console.log(project);
+
+      return res.status(204);
     }
+    return;
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ error: error.message });
+  }
 };
 
-module.exports =  {receiveWebhook} ;
+module.exports = { receiveWebhook };
