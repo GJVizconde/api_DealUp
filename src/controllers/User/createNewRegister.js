@@ -1,6 +1,7 @@
 const { generateJWT } = require('../../config/JWT');
 const { registerTemplate, sendEmail } = require('../../config/mailConfig');
 const { JWT_REGISTER: jwtRegister } = process.env;
+const { hashPass } = require('../../config/bcryptConfig');
 const { User } = require('../../db');
 
 const createNewRegister = async (
@@ -18,6 +19,8 @@ const createNewRegister = async (
   confirmEmail,
   thirdPartyCreated
 ) => {
+  const hashedPassword = hashPass(password);
+
   try {
     let registeredUser = await User.findOne({ where: { email } });
 
@@ -38,7 +41,7 @@ const createNewRegister = async (
       fullName,
       email,
       role,
-      password,
+      password: hashedPassword,
       gender,
       dni,
       birthdate,
