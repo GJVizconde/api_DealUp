@@ -6,46 +6,46 @@ const {
   Post,
   Comment,
   Investment,
-} = require("../../db");
+} = require('../../db');
 
 const getAllProjects = async () => {
   try {
-
     return (dataBaseProjects = await Project.findAll({
+      paranoid: false,
       include: [
         {
           model: User,
-          attributes: ["id", "fullName", "role"],
+          attributes: ['id', 'fullName', 'role'],
           through: {
             attributes: [],
           },
         },
         {
           model: Gallery,
-          attributes: ["image", "comments"],
+          attributes: ['image', 'comments'],
         },
         {
           model: Rating,
-          attributes: ["id", "points", "comments"],
+          attributes: ['id', 'points', 'comments'],
           include: [
             {
               model: User,
-              attributes: ["id", "fullName", "role"],
+              attributes: ['id', 'fullName', 'role'],
             },
           ],
         },
         {
           model: Post,
-          attributes: ["id", "description", "image_gallery", "video_gallery"],
+          attributes: ['id', 'description', 'image_gallery', 'video_gallery'],
 
           include: [
             {
               model: Comment,
-              attributes: ["id", "comment"],
+              attributes: ['id', 'comment'],
               include: [
                 {
                   model: User,
-                  attributes: ["id", "fullName", "role"],
+                  attributes: ['id', 'fullName', 'role'],
                 },
               ],
             },
@@ -53,11 +53,17 @@ const getAllProjects = async () => {
         },
         {
           model: Investment,
-          attributes: ["id", "contribution", "comment", "status", "payment_time"],
+          attributes: [
+            'id',
+            'contribution',
+            'comment',
+            'status',
+            'payment_time',
+          ],
           include: [
             {
               model: User,
-              attributes: ["id", "fullName", "role"],
+              attributes: ['id', 'fullName', 'role'],
             },
           ],
         },
