@@ -28,13 +28,13 @@ const createrOrder = async (req, res) => {
         },
       ],
       back_urls: {
-        success: `${HOST}/home?InvestmentId=${newInvestment.id}`,
+        success: `https://start-bussines.vercel.app/investment-succes?InvestmentId=${newInvestment.id}`,
       },
       auto_return: "approved",
       payment_methods: {
         installments: 1,
       },
-      notification_url: `https://9cb6-2806-10a6-20-577e-69ca-8c5f-1923-c0e1.ngrok.io/payment/webhook?InvestmentId=${newInvestment.id}`,
+      notification_url: `https://deal-up-api.onrender.com/payment/webhook?InvestmentId=${newInvestment.id}`,
     });
 
     res.status(200).send(data);
