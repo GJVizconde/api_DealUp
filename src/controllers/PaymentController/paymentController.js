@@ -1,7 +1,7 @@
 const mercadopago = require("mercadopago");
 const { Investment } = require("../../db");
 const createrOrder = async (req, res) => {
-  const HOST = "http://localhost:3001";
+  const HOST = "http://localhost:3000";
   const { contribution, ProjectId, UserId, comment } = req.body;
 
   console.log({ contribution, ProjectId, UserId });
@@ -11,7 +11,6 @@ const createrOrder = async (req, res) => {
     ProjectId,
     UserId,
   });
-
   console.log("new investment pending", newInvestment);
   try {
     mercadopago.configure({
@@ -19,7 +18,7 @@ const createrOrder = async (req, res) => {
         "TEST-3380620890938082-080521-71b737ea9b6f8b8db1ea2949c6d6e778-1443137702",
     });
 
-    const result = await mercadopago.preferences.create({
+    const data = await mercadopago.preferences.create({
       items: [
         {
           title: "",
@@ -29,19 +28,16 @@ const createrOrder = async (req, res) => {
         },
       ],
       back_urls: {
-        success: `${HOST}/success?ProjectId=${newInvestment.id}`,
-        failure: `${HOST}/failure`,
-        pending: `${HOST}/pending`,
+        success: `${HOST}/home?InvestmentId=${newInvestment.id}`,
       },
       auto_return: "approved",
       payment_methods: {
         installments: 1,
       },
-      notification_url:
-        "https://797e-2806-10a6-20-577e-552c-36fc-7e69-3d5b.ngrok.io/webhook",
+      notification_url: `https://9cb6-2806-10a6-20-577e-69ca-8c5f-1923-c0e1.ngrok.io/payment/webhook?InvestmentId=${newInvestment.id}`,
     });
-    console.log(result);
-    res.send(result.body);
+
+    res.status(200).send(data);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

@@ -1,27 +1,24 @@
-const { Investment, User } = require('../../db');
+const { Investment, User } = require("../../db");
 
 const getAllInvestments = async () => {
-
-try {
- 
+  try {
     const allInvestments = await Investment.findAll({
-        include: [
-            {
-              model: User,
-              attributes: ['id', 'fullName', 'role'],
-              through: {
-                attributes: [],
-              },
-            },]
+      include: [
+        {
+          model: User,
+          attributes: ["id", "fullName", "role"],
+        },
+      ],
     });
 
-    if(allInvestments.length === 0) { throw new Error( 'There are no investments')};
+    if (allInvestments.length === 0) {
+      throw new Error("There are no investments");
+    }
 
     return allInvestments;
-} catch (error) {
+  } catch (error) {
     throw error;
-}
-
+  }
 };
 
-module.exports = { getAllInvestments }
+module.exports = { getAllInvestments };

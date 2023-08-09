@@ -1,11 +1,17 @@
-const { Post, Comment } = require('../../db');
+const { Post, Comment,User } = require('../../db');
 
 const getAllPostProjects = async () => {
 
     const dbPost = await Post.findAll({
         include: {
             model: Comment,
-            attributes: ['comment'],
+            attributes: ["id",'comment'],
+            include: [
+                {
+                  model: User,
+                  attributes: ["id", "fullName", "role"],
+                },
+              ],
         },       
     });
 
