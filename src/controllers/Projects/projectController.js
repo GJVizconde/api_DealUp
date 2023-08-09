@@ -75,6 +75,7 @@ const searchProjectByName = async (name) => {
 
 const searchProjectById = async (id) => {
   const project = await Project.findByPk(id, {
+    paranoid: false,
     include: [
       {
         model: User,

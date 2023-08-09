@@ -7,14 +7,11 @@ const restoreProject = async (req, res) => {
 
     const project = await Project.findByPk(id, {paranoid: false});
 
-    console.log(project);
-
     if (!project) {
       throw new Error('User not found');
     }
 
-    project.dataValues.deletedAt = null;
-    await project.save();
+    await project.restore();
 
     res.status(201).json(project);
   } catch (error) {

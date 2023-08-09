@@ -49,6 +49,9 @@ const updateUser = async (id, updateField, path) => {
     if (updateField.avatar !== undefined) {
       updateUser.avatar = updateField.avatar;
     }
+    if (updateField.deletedAt !== undefined) {
+      updateUser.deletedAt = updateField.deletedAt;
+    }
 
     if (path) {
       const uploadedAvatar = await handleUpload(path);

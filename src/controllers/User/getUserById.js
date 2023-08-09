@@ -23,6 +23,7 @@ const getUserById = async (id) => {
         ],
       },
     ],
+    paranoid: false
   });
 
   return userFound;
