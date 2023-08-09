@@ -57,9 +57,9 @@ const searchProjectByName = async (name) => {
           {
             model: User,
             attributes: ['id','fullName'],
-            through: {
-              attributes: [],
-          }
+          //   through: {
+          //     attributes: [],
+          // }
           }
         ]
       }
@@ -126,9 +126,9 @@ const searchProjectById = async (id) => {
           {
             model: User,
             attributes: ['id','fullName'],
-            through: {
-              attributes: [],
-          }
+          //   through: {
+          //     attributes: [],
+          // }
           }
         ]
       }

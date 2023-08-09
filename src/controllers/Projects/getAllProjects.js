@@ -56,9 +56,9 @@ const getAllProjects = async () => {
               {
                 model: User,
                 attributes: ['id','fullName'],
-                through: {
-                  attributes: [],
-              }
+              //   through: {
+              //     attributes: [],
+              // }
               }
             ]
           }
