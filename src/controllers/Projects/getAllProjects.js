@@ -8,11 +8,8 @@ const {
   Investment,
 } = require("../../db");
 
-const { updateProjectDates } = require("../../helpers/asingCreateAtProject");
-
 const getAllProjects = async () => {
   try {
-    // await updateProjectDates();
 
     return (dataBaseProjects = await Project.findAll({
       include: [
@@ -33,7 +30,7 @@ const getAllProjects = async () => {
           include: [
             {
               model: User,
-              attributes: ["id", "fullName"],
+              attributes: ["id", "fullName", "role"],
             },
           ],
         },
@@ -48,7 +45,7 @@ const getAllProjects = async () => {
               include: [
                 {
                   model: User,
-                  attributes: ["id", "fullName"],
+                  attributes: ["id", "fullName", "role"],
                 },
               ],
             },
@@ -56,18 +53,15 @@ const getAllProjects = async () => {
         },
         {
           model: Investment,
-          attributes: ["id", "contribution", "comment"],
+          attributes: ["id", "contribution", "comment", "status", "payment_time"],
           include: [
             {
               model: User,
-              attributes: ["id", "fullName"],
+              attributes: ["id", "fullName", "role"],
             },
           ],
         },
       ],
-      // attributes: {
-      //     exclude: ['createdAt', 'updatedAt'],
-      // },
     }));
   } catch (error) {
     throw error;
