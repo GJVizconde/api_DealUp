@@ -6,6 +6,7 @@ const loginUserHandler = async (req, res) => {
   try {
     const userRegistered = await loginUser(email, password);
 
+    res.setHeader('Authorization', `Bearer ${userRegistered.accessToken}`);
     res.status(200).json({ message: 'Welcome Back!', userRegistered });
   } catch (error) {
     res.status(400).json({ error: error.message });
