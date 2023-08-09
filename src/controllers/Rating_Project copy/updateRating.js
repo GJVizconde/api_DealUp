@@ -29,7 +29,7 @@ const updateRating = async (req, res) => {
       rating.comments = comments;
       await rating.save();
   
-      res.json({ message: 'Rating actualizado correctamente' });
+      res.json({ message: 'Updated rating correctly' });
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
