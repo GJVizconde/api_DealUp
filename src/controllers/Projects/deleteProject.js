@@ -8,12 +8,16 @@ const deleteProject = async (id) => {
       throw new Error('Project not found');
     }
 
-    await projectFound.destroy();
+    const deletedProject = await Project.destroy({
+      where: {
+        id
+      }
+    });
 
-    return projectFound;
+    return deletedProject;
   } catch (error) {
     throw new Error('Failed to delete project: ' + error.message);
   }
 };
 
-module.exports = {deleteProject}
+module.exports = { deleteProject };

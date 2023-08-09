@@ -66,6 +66,7 @@ const createProjectHandler = async (req, res) => {
       status,
       UserId
     );
+    console.log(newProject);
 
     // fs.unlinkSync(file.path);
 
