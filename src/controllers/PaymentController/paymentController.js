@@ -3,7 +3,6 @@ const { Investment } = require('../../db');
 const createrOrder = async (req, res) => {
   const HOST = 'http://localhost:3000';
   const { contribution, ProjectId, UserId, comment } = req.body;
-  const { MERCADOPAGO_TOKEN } = process.env;
 
   console.log({ contribution, ProjectId, UserId });
   const newInvestment = await Investment.create({
@@ -15,7 +14,8 @@ const createrOrder = async (req, res) => {
   console.log('new investment pending', newInvestment);
   try {
     mercadopago.configure({
-      access_token: MERCADOPAGO_TOKEN,
+      access_token:
+        'TEST-3380620890938082-080521-71b737ea9b6f8b8db1ea2949c6d6e778-1443137702',
     });
 
     const data = await mercadopago.preferences.create({
