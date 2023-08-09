@@ -6,6 +6,7 @@ const ratingRouter = require('./ratingRouter');
 const galleryRouter = require('./galleryRouter');
 const testingRouter = require('./testingRouter');
 const imageRouter = require('./imageRouter');
+const paymentRouter = require('./paymentRouter');
 
 const mainRouter = Router();
 rootRouter(mainRouter);
@@ -21,5 +22,7 @@ mainRouter.use('/gallery', galleryRouter);
 mainRouter.use('/testing', testingRouter);
 
 mainRouter.use('/image', imageRouter);
+
+mainRouter.use('/payment', paymentRouter);
 
 module.exports = mainRouter;
