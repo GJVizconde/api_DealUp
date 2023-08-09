@@ -14,14 +14,7 @@
 					"name": "getAllUsers",
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -135,6 +128,101 @@
 					]
 				},
 				{
+					"name": "createUser Url Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shak@gmail.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "createUser Url",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"shak@gmail.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "388"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"184-idsKP2i5rAsni+WUg0eBvG6z8WQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Aug 2023 14:29:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"35a13bc7-83bc-4050-9e8a-468efbbaba4c\",\n    \"deletedAt\": null,\n    \"fullName\": \"Shakira Mebarak\",\n    \"email\": \"shak@gmail.com\",\n    \"role\": \"entrepreneur\",\n    \"password\": \"Henry12345\",\n    \"dni\": null,\n    \"gender\": \"\",\n    \"birthdate\": \"02/02/1977\",\n    \"phone\": \"\",\n    \"country\": \"\",\n    \"avatar\": null,\n    \"status\": false,\n    \"confirmEmail\": false,\n    \"thirdPartyCreated\": false,\n    \"updatedAt\": \"2023-08-06T14:29:52.121Z\",\n    \"createdAt\": \"2023-08-06T14:29:52.121Z\"\n}"
+						}
+					]
+				},
+				{
 					"name": "createUser File",
 					"request": {
 						"method": "POST",
@@ -144,12 +232,12 @@
 							"formdata": [
 								{
 									"key": "fullName",
-									"value": "Shakira Mebarak",
+									"value": "Finn El Amigo",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "shakira1@gmail.com",
+									"value": "finnelamigo2@gmail.com",
 									"type": "text"
 								},
 								{
@@ -205,7 +293,7 @@
 								{
 									"key": "avatar",
 									"type": "file",
-									"src": "/C:/Users/hp/OneDrive/Pictures/Fondos Harold/PIramides GYza.jpg"
+									"src": "/C:/Users/soygi/Desktop/PF LastDance/Resources/Presentacion/Foto Proyecto.jpg"
 								}
 							]
 						},
@@ -382,7 +470,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/user/3d19be4f-c644-40ab-ae1e-33e2dea7cf2c",
+							"raw": "http://localhost:3001/user/065b0652-9e0e-4998-8158-2cf0bf3d9e8c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -390,7 +478,7 @@
 							"port": "3001",
 							"path": [
 								"user",
-								"3d19be4f-c644-40ab-ae1e-33e2dea7cf2c"
+								"065b0652-9e0e-4998-8158-2cf0bf3d9e8c"
 							]
 						}
 					},
@@ -403,7 +491,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"country\": \"Argentina\"\r\n\r\n}",
+							"raw": "{\r\n    \"country\": \"Argentina\",\r\n    \"deletedAt\": null\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -411,7 +499,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/user/url/871ba97b-aafe-418b-8071-0a417a3ded08",
+							"raw": "http://localhost:3001/user/url/71a61f69-1059-4be3-9b61-b1d7c3719e03",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -420,7 +508,7 @@
 							"path": [
 								"user",
 								"url",
-								"871ba97b-aafe-418b-8071-0a417a3ded08"
+								"71a61f69-1059-4be3-9b61-b1d7c3719e03"
 							]
 						}
 					},
@@ -605,7 +693,7 @@
 					]
 				},
 				{
-					"name": "deleteUser",
+					"name": "deleteTotalUser",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -631,7 +719,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"wigik99215@inkiny.com\",\r\n    \"password\":\"Henry12345678912\"\r\n}",
+							"raw": "{\r\n    \"email\":\"roniwef951@royalka.com\",\r\n    \"password\":\"Henry12345\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -660,7 +748,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Shakira Mebarak\",\r\n    \"email\": \"wigik99215111@inkiny.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Shakira Grillo\",\r\n    \"email\": \"roniwef9511@royalka.com\",\r\n    \"role\": \"entrepreneur\",\r\n    \"password\": \"Henry12345\",\r\n    \"dni\": null,\r\n    \"gender\": \"\",\r\n    \"birthdate\": \"02/02/1977\",\r\n    \"phone\": \"\",\r\n    \"country\": \"\",\r\n    \"avatar\": \"\",\r\n    \"status\": false,\r\n    \"confirmEmail\": false,\r\n    \"thirdPartyCreated\": false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -790,6 +878,48 @@
 							"path": [
 								"user",
 								"check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "restoreUser",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/user/restore/065b0652-9e0e-4998-8158-2cf0bf3d9e8c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user",
+								"restore",
+								"065b0652-9e0e-4998-8158-2cf0bf3d9e8c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserLogic",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/user/logic/065b0652-9e0e-4998-8158-2cf0bf3d9e8c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user",
+								"logic",
+								"065b0652-9e0e-4998-8158-2cf0bf3d9e8c"
 							]
 						}
 					},
@@ -1061,6 +1191,27 @@
 									"value": null,
 									"disabled": true
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "restoreProject",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/projects/restore/6563efbd-16bb-4cab-b63e-bd1195ecf097",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"projects",
+								"restore",
+								"6563efbd-16bb-4cab-b63e-bd1195ecf097"
 							]
 						}
 					},
@@ -1365,13 +1516,18 @@
 									"type": "file",
 									"src": [
 										"57aa74fc9a1e37c81ce7383d3a9b391d.jpg",
-										"autodraw 20_4_2023.png",
-										"me.jpg"
+										"autodraw 20_4_2023.png"
 									]
 								},
 								{
+									"key": "comments2",
+									"value": "geo",
+									"type": "text",
+									"disabled": true
+								},
+								{
 									"key": "comments",
-									"value": "",
+									"value": "'Hola', 'geo'",
 									"type": "text"
 								},
 								{
