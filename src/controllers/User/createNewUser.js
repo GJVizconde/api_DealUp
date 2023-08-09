@@ -1,5 +1,6 @@
 const { User } = require('../../db');
 const { handleUpload } = require('../../services/cloudinaryService');
+const { hashPass } = require('../../config/bcryptConfig');
 
 const createNewUser = async (
   fullName,
@@ -19,6 +20,8 @@ const createNewUser = async (
   url
 ) => {
   try {
+    const hashedPassword = hashPass(password);
+
     if (path) {
       const avatarUpload = await handleUpload(path);
 
@@ -26,7 +29,7 @@ const createNewUser = async (
         fullName,
         email,
         role,
-        password,
+        password: hashedPassword,
         gender,
         birthdate,
         phone,
@@ -46,7 +49,7 @@ const createNewUser = async (
       fullName,
       email,
       role,
-      password,
+      password: hashedPassword,
       dni,
       gender,
       birthdate,
