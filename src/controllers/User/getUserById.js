@@ -1,4 +1,4 @@
-const { User, Project, Rating } = require('../../db');
+const { User, Project, Rating, Investment } = require('../../db');
 
 const getUserById = async (id) => {
   const userFound = await User.findByPk(id, {
@@ -11,6 +11,16 @@ const getUserById = async (id) => {
       },
       {
         model: Rating,
+      },
+      {
+        model: Investment,
+        attributes: ["id", "contribution", "comment", "status", "payment_time"],
+        include: [
+          {
+            model: Project,
+            attributes: ["id", "name"],
+          },
+        ],
       },
     ],
   });
