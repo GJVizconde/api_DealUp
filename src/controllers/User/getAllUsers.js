@@ -22,7 +22,7 @@ const getAllUsers = async () => {
         },
       ],
     },
-  ]});
+  ], paranoid: false});
 
   if (dataBaseUsers.length === 0) {
     return "There aren't any users, but Database is WORKING! 💯 ";

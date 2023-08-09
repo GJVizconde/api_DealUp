@@ -15,7 +15,7 @@ const rateProject = async (req, res) => {
 
     if (existingRating) {
       return res.status(400).json({
-        error: 'The user has already created a rating for this project',
+        error: 'The user has already rate this project',
       });
     }
 

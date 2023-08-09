@@ -12,7 +12,7 @@ const rateProject = async (points, comments, ProjectId, UserId) => {
     });
 
     if (existingRating) {
-      throw new Error('The user has already created a rating for this project');
+      throw new Error('The user has already rate this project');
     }
 
     const rate = await Rating.create({
@@ -35,7 +35,7 @@ const rateProject = async (points, comments, ProjectId, UserId) => {
 
     return newRating;
   } catch (error) {
-    throw new Error('Failed creating new Rating: ' + error.message);
+    throw new Error('Failed create new Rating: ' + error.message);
   }
 };
 
