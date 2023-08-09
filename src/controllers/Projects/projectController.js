@@ -29,7 +29,7 @@ const searchProjectByName = async (name) => {
         include: [
           {
             model: User,
-            attributes: ['id', 'fullName'],
+            attributes: ['id', 'fullName', 'role'],
           },
         ],
       },
@@ -44,7 +44,7 @@ const searchProjectByName = async (name) => {
             include: [
               {
                 model: User,
-                attributes: ['id', 'fullName'],
+                attributes: ['id', 'fullName', 'role'],
               },
             ],
           },
@@ -52,21 +52,16 @@ const searchProjectByName = async (name) => {
       },
       {
         model: Investment,
-        attributes: ['id','contribution','comment'],
+        attributes: ['id','contribution','comment', "status", "payment_time"],
         include: [
           {
             model: User,
-            attributes: ['id','fullName'],
-            through: {
-              attributes: [],
-          }
+            attributes: ['id','fullName', 'role'],
           }
         ]
       }
     ],
-    // attributes: {
-    //   exclude: ['createdAt', 'updatedAt'],
-    // },
+   
   });
 
   if (projectByName) {
@@ -98,7 +93,7 @@ const searchProjectById = async (id) => {
         include: [
           {
             model: User,
-            attributes: ['id', 'fullName'],
+            attributes: ['id', 'fullName', "role"],
           },
         ],
       },
@@ -109,11 +104,11 @@ const searchProjectById = async (id) => {
         include: [
           {
             model: Comment,
-            attributes: ['id','comment', 'UserId'],
+            attributes: ['id','comment'],
             include: [
               {
                 model: User,
-                attributes: ['id', 'fullName'],
+                attributes: ['id', 'fullName', "role"],
               },
             ],
           },
@@ -121,31 +116,22 @@ const searchProjectById = async (id) => {
       },
       {
         model: Investment,
-        attributes: ['id','contribution','comment'],
+        attributes: ['id','contribution','comment', "status", "payment_time"],
         include: [
           {
             model: User,
-            attributes: ['id','fullName'],
-            through: {
-              attributes: [],
-          }
+            attributes: ['id','fullName', "role"],
           }
         ]
       }
     ],
-    // attributes: {
-    //   exclude: ['createdAt', 'updatedAt'],
-    // },
   });
 
   if (project) {
-    console.log(project.ceatedAt);
-    console.log(typeof(createdAt));
     return project;
   } else {
     return `ID project not found, ID = ${id}`;
-  }
-  
+  } 
 };
 
 module.exports = { searchProjectByName, searchProjectById };
