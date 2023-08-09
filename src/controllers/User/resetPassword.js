@@ -1,6 +1,7 @@
 const { JWT_RECOVERY: jwtRecovery } = process.env;
 const { verifyToken } = require('../../config/JWT');
 const { User } = require('../../db');
+const { hashPass } = require('../../config/bcryptConfig');
 
 const resetPassword = async (token, password) => {
   try {
@@ -21,6 +22,7 @@ const resetPassword = async (token, password) => {
     console.log('validToken', validToken);
 
     // Buscar Usuario
+    const hashedPassword = hashPass(password);
 
     const user = await User.findByPk(validToken.id);
 
@@ -30,7 +32,7 @@ const resetPassword = async (token, password) => {
 
     // Actualizar Password
 
-    user.password = password;
+    user.password = hashPass(password);
 
     await user.save();
 
