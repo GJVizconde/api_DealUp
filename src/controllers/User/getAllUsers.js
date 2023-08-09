@@ -2,6 +2,7 @@ const { User, Rating, Project, Investment } = require('../../db');
 
 const getAllUsers = async () => {
   const dataBaseUsers = await User.findAll({
+    paranoid: false, // Agrega esta línea para incluir registros eliminados lógicamente
     include: [
       {
         model: Project,
@@ -22,7 +23,7 @@ const getAllUsers = async () => {
         },
       ],
     },
-  ], paranoid: false});
+  ]});
 
   if (dataBaseUsers.length === 0) {
     return "There aren't any users, but Database is WORKING! 💯 ";
