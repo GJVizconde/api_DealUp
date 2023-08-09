@@ -1,8 +1,9 @@
-const mercadopago = require("mercadopago");
-const { Investment } = require("../../db");
+const mercadopago = require('mercadopago');
+const { Investment } = require('../../db');
 const createrOrder = async (req, res) => {
-  const HOST = "http://localhost:3000";
+  const HOST = 'http://localhost:3000';
   const { contribution, ProjectId, UserId, comment } = req.body;
+  const { MERCADOPAGO_TOKEN } = process.env;
 
   console.log({ contribution, ProjectId, UserId });
   const newInvestment = await Investment.create({
@@ -11,26 +12,25 @@ const createrOrder = async (req, res) => {
     ProjectId,
     UserId,
   });
-  console.log("new investment pending", newInvestment);
+  console.log('new investment pending', newInvestment);
   try {
     mercadopago.configure({
-      access_token:
-        "TEST-3380620890938082-080521-71b737ea9b6f8b8db1ea2949c6d6e778-1443137702",
+      access_token: MERCADOPAGO_TOKEN,
     });
 
     const data = await mercadopago.preferences.create({
       items: [
         {
-          title: "",
+          title: '',
           unit_price: contribution,
-          currency_id: "USD",
+          currency_id: 'USD',
           quantity: 1,
         },
       ],
       back_urls: {
         success: `https://start-bussines.vercel.app/investment-succes?InvestmentId=${newInvestment.id}`,
       },
-      auto_return: "approved",
+      auto_return: 'approved',
       payment_methods: {
         installments: 1,
       },
