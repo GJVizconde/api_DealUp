@@ -17,6 +17,9 @@ const {
 const {
   deleteProjectHandler,
 } = require('../handlers/Projects/deleteProjectHandler');
+const { 
+  restoreProject
+} = require('../controllers/Projects/restoreProject');
 const { updateHandler } = require('../handlers/Projects/updateHandler');
 
 //POST_PROJECT
@@ -81,6 +84,7 @@ projectRouter.post('/file', upload.single('image_cover'), createProjectHandlerFi
 projectRouter.post('/url', createProjectHandler);
 projectRouter.put('/prueba/:id', updateProjectHandler); //ruta vieja carga todos los campos
 projectRouter.delete('/:id', deleteProjectHandler);
+projectRouter.patch('/restore/:id', restoreProject);
 projectRouter.patch('/:id', upload.single('image_cover'), updateHandler);
 
 module.exports = projectRouter;
