@@ -5,14 +5,15 @@ const createrOrder = async (req, res) => {
   const { contribution, ProjectId, UserId, comment } = req.body;
 
   console.log({ contribution, ProjectId, UserId });
-  const newInvestment = await Investment.create({
-    contribution,
-    comment,
-    ProjectId,
-    UserId,
-  });
-  console.log('new investment pending', newInvestment);
   try {
+    const newInvestment = await Investment.create({
+      contribution,
+      comment,
+      ProjectId,
+      UserId,
+    });
+    console.log('new investment pending', newInvestment);
+
     mercadopago.configure({
       access_token:
         'TEST-3380620890938082-080521-71b737ea9b6f8b8db1ea2949c6d6e778-1443137702',
