@@ -9,7 +9,7 @@ const loginUser = async (email, password) => {
     where: { email },
   });
 
-  if (!userRegistered) throw new Error('Email or password does not match!');
+  if (!userRegistered) throw new Error('User not found, please register');
 
   //! Si encutra usuario pero no ha confirmado correo de una vez enviar correo
   if (userRegistered.confirmEmail === false) {
