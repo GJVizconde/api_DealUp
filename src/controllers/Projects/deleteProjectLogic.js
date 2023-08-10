@@ -1,6 +1,6 @@
 const { Project } = require('../../db');
 
-const deleteProject = async (id) => {
+const deleteProjectLogic = async (id) => {
   try {
     const projectFound = await Project.findByPk(id);
 
@@ -11,8 +11,7 @@ const deleteProject = async (id) => {
     const deletedProject = await Project.destroy({
       where: {
         id
-      },
-      force: true, // Desactiva la eliminación lógica
+      }
     });
 
     return deletedProject;
@@ -21,4 +20,4 @@ const deleteProject = async (id) => {
   }
 };
 
-module.exports = { deleteProject };
+module.exports = { deleteProjectLogic };
