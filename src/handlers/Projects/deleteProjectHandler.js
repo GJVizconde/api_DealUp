@@ -12,4 +12,4 @@ const deleteProjectHandler = async (req, res) => {
   }
 };
 
-module.exports = {deleteProjectHandler}
+module.exports = {deleteProjectHandler};
